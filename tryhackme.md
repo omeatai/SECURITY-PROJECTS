@@ -39,7 +39,6 @@
   - [x] [Become a Hacker](https://tryhackme.com/room/becomeahacker)
   - [x] [Become a Defender](https://tryhackme.com/room/becomeadefender)
 
-
 # [Cyber Security 101](https://tryhackme.com/paths)
 
 - [x] 1-Introduction to Cyber Security
