@@ -1,0 +1,46 @@
+---
+description: Format and append cybersecurity lab notes from labs/rough.md to letsdefend_course.md
+alwaysApply: false
+---
+
+# Security Labs Documentation Rule
+
+When the user says **"apply the new documentation rule file"** (or similar, e.g. "format and append to letsdefend_course"), perform the documentation workflow below.
+
+## Workflow Steps
+
+1. **Read** `labs/rough.md` for the raw content.
+2. **Read** `format.md` as the template structure.
+3. **Analyze** the rough content and map it to the format structure:
+   - Introduction
+   - Detailed Explanation (with `- [x]` checkboxes and sub-items)
+   - Terminal Commands (fenced `bash` blocks with explanations)
+   - Code (fenced code blocks with explanations)
+   - Questions and Answers (10–20 Q&A in nested `<details><summary>Answer</summary>`)
+   - Summary
+   - References
+4. **Generate** 10–20 revision Q&A from the content to aid study.
+5. **Append** (do not overwrite) the formatted content to `letsdefend_course.md`.
+
+## Format Requirements
+
+- Use HTML `<details>` and `<summary>` for accordion-style sections as defined in `format.md`.
+- Title for the accordion comes from the first `#` heading in `rough.md`.
+- First reference in References must be the TryHackMe/Let's Defend page link (pasted at top of `rough.md`).
+- Each Q&A uses nested `<details><summary>Answer</summary>` with the answer inside.
+
+## Content Guidelines
+
+- One topic per accordion.
+- Preserve all explanations, terminal commands, and code from the rough content.
+- Use checkboxes (`- [x]`) for breakdown items in Detailed Explanation.
+- Include sub-items where appropriate.
+- If a section has no content (e.g. no code), omit it or leave a brief placeholder.
+
+## File Paths
+
+| Purpose                | Path                   |
+| ---------------------- | ---------------------- |
+| Input (raw paste)      | `labs/rough.md`        |
+| Template               | `format.md`            |
+| Output (append target) | `letsdefend_course.md` |

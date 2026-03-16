@@ -1,5 +1,14 @@
 # SECURITY-LABS-IFEANYI by Ifeanyi Omeata
 
+### Documentation Workflow
+
+To document your cybersecurity learning (TryHackMe, Let's Defend, etc.):
+
+1. Paste the room/course URL at the top of `labs/rough.md`
+2. Paste your raw notes (explanations, commands, code, answers) below
+3. Ask: **"Apply the new documentation rule file"**
+4. The AI will format the content using `format.md` and append it to `letsdefend_course.md` in accordion style
+
 ### ONLINE
 
 - [x] [TRYHACKME.COM](https://github.com/omeatai/SECURITY-LABS-IFEANYI/blob/main/tryhackme.md)
