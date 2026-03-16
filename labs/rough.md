@@ -26,3 +26,6 @@ A: Offensive Security
 Here at TryHackMe, we use Virtual Machines to create simulated environments that serve as practical complements to lessons.
 
 In this lesson, we have prepared a fake bank application called FakeBank that you can safely hack. To start this machine, click on the Start Machine button below.
+
+
+
