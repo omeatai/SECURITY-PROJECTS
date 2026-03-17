@@ -1,209 +1,224 @@
 <!-- Paste the TryHackMe/Let's Defend page URL at the top -->
 <!-- Then paste your raw notes, explanations, commands, and code below -->
 
-https://tryhackme.com/room/introtolan
+https://tryhackme.com/room/osimodelzi
 
-# Intro to LAN
+# OSI Model
 
-Youtube Video: https://www.youtube.com/watch?v=csYtPidvvFQ
+The OSI model (or Open Systems Interconnection Model) is an essential model used in networking.  This critical model provides a framework dictating how all networked devices will send, receive and interpret data.
 
-Local Area Network (LAN) Topologies
-Over the years, there has been experimentation and implementation of various network designs. In reference to networking, when we refer to the term "topology", we are actually referring to the design or look of the network at hand. Let's discuss the advantages and disadvantages of these topologies below.
+One of the main benefits of the OSI model is that devices can have different functions and designs on a network while communicating with other devices. Data sent across a network that follows the uniformity of the OSI model can be understood by other devices.
 
-Star Topology
-The main premise of a star topology is that devices are individually connected via a central networking device such as a switch or hub. This topology is the most commonly found today because of its reliability and scalability - despite the cost.
+The OSI model consists of seven layers which are illustrated in the diagram below. Each layer has a different set of responsibilities and is arranged from Layer 7 to Layer 1.
 
-Any information sent to a device in this topology is sent via the central device to which it connects. Let's explore some of these advantages and disadvantages of this topology below:
-
-Because more cabling and the purchase of dedicated networking equipment is required for this topology, it is more expensive than any of the other topologies. However, despite the added cost, this does provide some significant advantages. For example, this topology is much more scalable in nature, which means that it is very easy to add more devices as the demand for the network increases.
-
-Unfortunately, the more the network scales, the more maintenance is required to keep the network functional. This increased dependence on maintenance can also make troubleshooting faults much harder. Furthermore, the star topology is still prone to failure - albeit reduced. For example, if the centralised hardware that connects devices fails, these devices will no longer be able to send or receive data. Thankfully, these centralised hardware devices are often robust.
-
-Bus Topology
-This type of connection relies upon a single connection which is known as a backbone cable. This type of topology is similar to the leaf off of a tree in the sense that devices (leaves) stem from where the branches are on this cable.
-
-Because all data destined for each device travels along the same cable, it is very quickly prone to becoming slow and bottlenecked if devices within the topology are simultaneously requesting data. This bottleneck also results in very difficult troubleshooting because it quickly becomes difficult to identify which device is experiencing issues with data all travelling along the same route.
-
-However, with this said, bus topologies are one of the easier and more cost-efficient topologies to set up because of their expenses, such as cabling or dedicated networking equipment used to connect these devices.
-
-Lastly, another disadvantage of the bus topology is that there is little redundancy in place in case of failures. This disadvantage is because there is a single point of failure along the backbone cable. If this cable were to break, devices can no longer receive or transmit data along the bus.
-
-
-
-Ring Topology
-The ring topology (also known as token topology) boasts some similarities. Devices such as computers are connected directly to each other to form a loop, meaning that there is little cabling required and less dependence on dedicated hardware such as within a star topology.
-
-A ring topology works by sending data across the loop until it reaches the destined device, using other devices along the loop to forward the data. Interestingly, a device will only send received data from another device in this topology if it does not have any to send itself. If the device happens to have data to send, it will send its own data first before sending data from another device.
-
-Because there is only one direction for data to travel across this topology, it is fairly easy to troubleshoot any faults that arise. However, this is a double-edged sword because it isn't an efficient way of data travelling across a network, as it may have to visit many multiple devices first before reaching the intended device.
-
-Lastly, ring topologies are less prone to bottlenecks, such as within a bus topology, as large amounts of traffic are not travelling across the network at any one time. The design of this topology does, however, mean that a fault such as cut cable, or broken device will result in the entire networking breaking.
-
-
-
-What is a Switch?
-Switches are dedicated devices within a network that are designed to aggregate multiple other devices such as computers, printers, or any other networking-capable device using ethernet. These various devices plug into a switch's port. Switches are usually found in larger networks such as businesses, schools, or similar-sized networks, where there are many devices to connect to the network. Switches can connect a large number of devices by having ports of 4, 8, 16, 24, 32, and 64 for devices to plug into.
-
-Switches are much more efficient than their lesser counterpart (hubs/repeaters). Switches keep track of what device is connected to which port. This way, when they receive a packet, instead of repeating that packet to every port like a hub would do, it just sends it to the intended target, thus reducing network traffic.
-
-
-
-Both Switches and Routers can be connected to one another. The ability to do this increases the redundancy (the reliability) of a network by adding multiple paths for data to take. If one path goes down, another can be used. Whilst this may reduce the overall performance of a network because packets have to take longer to travel, there is no downtime -- a small price to pay considering the alternative.
-
-What is a Router?
-It's a router's job to connect networks and pass data between them. It does this by using routing (hence the name router!).
-
-Routing is the label given to the process of data travelling across networks. Routing involves creating a path between networks so that this data can be successfully delivered.
-
-Routing is useful when devices are connected by many paths, such as in the example diagram below.
-
-
-
-Practical
-Attached to this task is an interactive practical featuring the discussed LAN topologies. Learn about the various ways in which they are vulnerable to breaking. Break the LAN topologies to retrieve the flag.
-
-Answer the questions below
-What does LAN stand for?
-Local Area Network
-
-What is the verb given to the job that Routers perform?
-Routing
-
-What device is used to centrally connect multiple devices on the local network and transmit data to the correct location?
-Switch
-
-What topology is cost-efficient to set up?
-Bus Topology
-
-What topology is expensive to set up and maintain?
-Star Topology
-
-Complete the interactive lab attached to this task. What is the flag given at the end?
-THM{TOPOLOGY_FLAWS}
-
-As we've previously discussed throughout the module so far, Networks can be found in all shapes and sizes - ranging from small to large. Subnetting is the term given to splitting up a network into smaller, miniature networks within itself. Think of it as slicing up a cake for your friends. There's only a certain amount of cake to go around, but everybody wants a piece. Subnetting is you deciding who gets what slice & reserving such a slice of this metaphorical cake.
-
-Take a business, for example; You will have different departments such as:
-
-Accounting
-Finance
-Human Resources
-
-
-Whilst you know where to send information in real life to the correct department, networks need to know as well. Network administrators use subnetting to categorise and assign specific parts of a network to reflect this.
-
-
-Subnetting is achieved by splitting up the number of hosts that can fit within the network, represented by a number called a subnet mask. Let's refer back to our diagram from the first room in this module:
-
-
-
-As we can recall, an IP address is made up of four sections called octets. The same goes for a subnet mask which is also represented as a number of four bytes (32 bits), ranging from 0 to 255 (0-255).
-
-Subnets use IP addresses in three different ways:
-
-Identify the network address
-Identify the host address
-Identify the default gateway
-Let's split these three up to understand their purposes into the table below:
-
-Type	Purpose	Explanation	Example
-Network Address
-This address identifies the start of the actual network and is used to identify a network's existence.
-For example, a device with the IP address of 192.168.1.100 will be on the network identified by 192.168.1.0
-192.168.1.0
-Host Address
-An IP address here is used to identify a device on the subnet
-For example, a device will have the network address of 192.168.1.1
-192.168.1.100
-Default Gateway
-The default gateway address is a special address assigned to a device on the network that is capable of sending information to another network
-Any data that needs to go to a device that isn't on the same network (i.e. isn't on 192.168.1.0) will be sent to this device. These devices can use any host address but usually use either the first or last host address in a network (.1 or .254)
-192.168.1.254
-
-Now, in small networks such as at home, you will be on one subnet as there is an unlikely chance that you need more than 254 devices connected at one time.
-
-However, places such as businesses and offices will have much more of these devices (PCs, printers, cameras and sensors), where subnetting takes place.
-
-Subnetting provides a range of benefits, including:
-
-Efficiency
-Security
-Full control
-We'll come on to explore exactly how subnetting provides these benefits at a later date; however, for now, all we need to understand is the security element to it. Let's take the typical café on the street. This cafe will have two networks:
-
-One for employees, cash registers, and other devices for the facility
-One for the general public to use as a hotspot
-
-Subnetting allows you to separate these two use cases from each other whilst having the benefits of a connection to larger networks such as the Internet.
-
-Answer the questions below
-What is the technical term for dividing a network up into smaller pieces?
-Subnetting
-
-How many bits are in a subnet mask?
-32
-
-What is the range of a section (octet) of a subnet mask?
-0-255
-
-What address is used to identify the start of a network?
-Network Address
-
-What address is used to identify devices within a network?
-Host Address
-
-What is the name used to identify the device responsible for sending data to another network?
-Default Gateway
-
-
-Recalling from our previous tasks that devices can have two identifiers: A MAC address and an IP address, the Address Resolution Protocol or ARP for short, is the technology that is responsible for allowing devices to identify themselves on a network.
-
-Simply, ARP allows a device to associate its MAC address with an IP address on the network. Each device on a network will keep a log of the MAC addresses associated with other devices.
-
-When devices wish to communicate with another, they will send a broadcast to the entire network searching for the specific device. Devices can use ARP to find the MAC address (and therefore the physical identifier) of a device for communication.
-
-How does ARP Work?
-
-Each device within a network has a ledger to store information on, which is called a cache. In the context of ARP, this cache stores the identifiers of other devices on the network.
-
-In order to map these two identifiers together (IP address and MAC address), ARP sends two types of messages:
-
-ARP Request
-ARP Reply
-When an ARP request is sent, a message is broadcasted on the network to other devices asking, "What is the mac address that owns this IP address?" When the other devices receive that message, they will only respond if they own that IP address and will send an ARP reply with its MAC address. The requesting device can now remember this mapping and store it in its ARP cache for future use.
-
-This process is illustrated in the diagram below:
-
-
-Answer the questions below
-What does ARP stand for?
-Address Resolution Protocol
-
-What category of ARP Packet asks a device whether or not it has a specific IP address?
-Request
-
-What address is used as a physical identifier for a device on a network?
-MAC Address
-
-What address is used as a logical identifier for a device on a network?
-IP Address
-
-IP addresses can be assigned either manually, by entering them physically into a device, or automatically and most commonly by using a DHCP (Dynamic Host Configuration Protocol) server. When a device connects to a network, if it has not already been manually assigned an IP address, it sends out a request (DHCP Discover) to see if any DHCP servers are on the network. The DHCP server then replies back with an IP address the device could use (DHCP Offer). The device then sends a reply confirming it wants the offered IP Address (DHCP Request), and then lastly, the DHCP server sends a reply acknowledging this has been completed, and the device can start using the IP Address (DHCP ACK).
+At every individual layer that data travels through, specific processes take place, and pieces of information are added to this data, which is what we'll come to discuss in the upcoming tasks within this room. However, for now, we only need to understand that this process is called encapsulation and what the OSI model looks like in the diagram below:
 
 
 
 Answer the questions below
-What type of DHCP packet is used by a device to retrieve an IP address?
-DHCP Discover
 
-What type of DHCP packet does a device send once it has been offered an IP address by the DHCP server?
-DHCP Request
+What does the "OSI" in "OSI Model" stand for?
+Open Systems Interconnection
 
-Finally, what is the last DHCP packet that is sent to a device from a DHCP server?
-DHCP ACK
+How many layers (in digits) does the OSI model have?
+7
 
-Continue your learning by joining the "OSI Model" room.
+What is the key term for when pieces of information get added to data?
+encapsulation
+
+This layer is one of the easiest layers to grasp. Put simply, this layer references the physical components of the hardware used in networking and is the lowest layer that you will find. Devices use electrical signals to transfer data between each other in a binary numbering system (1's and 0's).
+
+For example, ethernet cables connecting devices, such as in the picture below:
 
 Answer the questions below
-Join the "OSI Model" room.
+What is the name of this Layer?
+Physical
 
+What is the name of the numbering system that is both 0's and 1's?
+Binary
+
+What is the name of the cables that are used to connect devices?
+Ethernet Cables
+
+The data link layer focuses on the physical addressing of the transmission. It receives a packet from the network layer (including the IP address for the remote computer) and adds in the physical MAC (Media Access Control) address of the receiving endpoint. Inside every network-enabled computer is a Network Interface Card (NIC) which comes with a unique MAC address to identify it.
+
+MAC addresses are set by the manufacturer and literally burnt into the card; they can’t be changed – although they can be spoofed. When information is sent across a network, it’s actually the physical address that is used to identify where exactly to send the information.
+
+Additionally, it’s also the job of the data link layer to present the data in a format suitable for transmission.
+
+Answer the questions below
+What is the name of this Layer?
+Data Link
+
+Correct Answer
+What is the name of the piece of hardware that all networked devices come with?
+Network Interface Card
+
+The third layer of the OSI model (network layer) is where the magic of routing & re-assembly of data takes place (from these small chunks to the larger chunk). Firstly, routing simply determines the most optimal path in which these chunks of data should be sent.
+
+Whilst some protocols at this layer determine exactly what is the "optimal" path that data should take to reach a device, we should only know about their existence at this stage of the networking module. Briefly, these protocols include OSPF (Open Shortest Path First) and RIP (Routing Information Protocol). The factors that decide what route is taken is decided by the following:
+
+What path is the shortest? I.e. has the least amount of devices that the packet needs to travel across.
+What path is the most reliable? I.e. have packets been lost on that path before?
+Which path has the faster physical connection? I.e. is one path using a copper connection (slower) or a fibre (considerably faster)?
+At this layer, everything is dealt with via IP addresses such as 192.168.1.100. Devices such as routers capable of delivering packets using IP addresses are known as Layer 3 devices — because they are capable of working at the third layer of the OSI model.
+
+
+
+
+
+Answer the questions below
+What is the name of this Layer?
+
+Network
+
+
+Will packets take the most optimal route across a network? (Y/N)
+Y
+
+
+What does the acronym "OSPF" stand for?
+
+Open Shortest Path First
+
+
+What does the acronym "RIP" stand for?
+
+Routing Information Protocol
+
+
+What type of addresses are dealt with at this layer?
+IP Addresses
+
+
+Layer 4 of the OSI model plays a vital part in transmitting data across a network and can be a little bit difficult to grasp. When data is sent between devices, it follows one of two different protocols that are decided based upon several factors:
+
+TCP
+UDP
+Let's begin with TCP. The Transmission Control Protocol (TCP). Potentially hinted by the name, this protocol is designed with reliability and guarantee in mind. This protocol reserves a constant connection between the two devices for the amount of time it takes for the data to be sent and received.
+
+Not only this, but TCP incorporates error checking into its design. Error checking is how TCP can guarantee that data sent from the small chunks in the session layer (layer 5) has then been received and reassembled in the same order.
+
+Let's summarise the advantages and disadvantages of TCP in the table below:
+
+Advantages of TCP
+Disadvantages of TCP
+Guarantees the accuracy of data.
+Requires a reliable connection between the two devices. If one small chunk of data is not received, then the entire chunk of data cannot be used.
+Capable of synchronising two devices to prevent each other from being flooded with data.
+A slow connection can bottleneck another device as the connection will be reserved on the receiving computer the whole time.
+Performs a lot more processes for reliability.
+TCP is significantly slower than UDP because more work has to be done by the devices using this protocol.
+
+TCP is used for situations such as file sharing, internet browsing or sending an email. This usage is because these services require the data to be accurate and complete (no good having half a file!).
+
+In the diagram below, we can see how a picture of a cat is broken down into small pieces of data (known as packets) from the "webserver", where the "computer" re-constructs the picture of the cat into the correct order.
+
+
+
+
+
+
+
+Now let's move onto the User Datagram Protocol (or UDP for short). This protocol is not nearly as advanced as its brother - the TCP protocol. It doesn't boast the many features offered by TCP, such as error checking and reliability. In fact, any data that gets sent via UDP is sent to the computer whether it gets there or not. There is no synchronisation between the two devices or guarantee; just hope for the best, and fingers crossed.
+
+Whilst this sounds disadvantageous, it does have its merits, which we'll layout in the table below:
+
+Advantages of UDP	Disadvantages of UDP
+UDP is much faster than TCP.
+UDP doesn't care if the data is received.
+UDP leaves the application layer (user software) to decide if there is any control over how quickly packets are sent.
+It is quite flexible to software developers in this sense.
+UDP does not reserve a continuous connection on a device as TCP does.
+ This means that unstable connections result in a terrible experience for the user.
+Using the same example as before, we can now see that only Packets #1 and #3 have been received by the "Computer", meaning that half of the image is missing.
+
+
+
+
+UDP is useful in situations where there are small pieces of data being sent. For example, protocols used for discovering devices (ARP and DHCP that we discussed in Room 2 - Intro to LAN) or larger files such as video streaming (where it is okay if some part of the video is pixelated. Pixels are just lost pieces of data!)
+
+
+Answer the questions below
+What is the name of this Layer?
+
+Transport
+
+Correct Answer
+What does TCP stand for?
+Transmission Control Protocol
+
+Correct Answer
+What does UDP stand for?
+
+User Datagram Protocol
+
+Correct Answer
+What protocol guarantees the accuracy of data?
+
+TCP
+
+Correct Answer
+What protocol doesn't care if data is received or not by the other device?
+
+UDP
+
+Correct Answer
+What protocol would an application such as an email client use?
+TCP
+
+What protocol would an application that downloads files use?
+TCP
+
+What protocol would an application that streams video use?
+UDP
+
+
+Once data has been correctly translated or formatted from the presentation layer (layer 6), the session layer (layer 5) will begin to create and maintain the connection to other computer for which the data is destined. When a connection is established, a session is created. Whilst this connection is active, so is the session.
+
+The session layer is also responsible for closing the connection if it hasn't been used in a while or if it is lost. Additionally, a session can contain "checkpoints," where if the data is lost, only the newest pieces of data are required to be sent, saving bandwidth.
+
+What is worthy of noting is that sessions are unique — meaning that data cannot travel over different sessions, but in fact, only across each session instead.
+
+Answer the questions below
+What is the name of this layer?
+Session
+
+What is the technical term for when a connection is succesfully established?
+Session
+
+Layer 6 of the OSI model is the layer in which standardisation starts to take place. Because software developers can develop any software such as an email client differently, the data still needs to be handled in the same way — no matter how the software works.
+
+This layer acts as a translator for data to and from the application layer (layer 7). The receiving computer will also understand data sent to a computer in one format destined for in another format. For example, when you send an email, the other user may have another email client to you, but the contents of the email will still need to display the same.
+
+Security features such as data encryption (like HTTPS when visiting a secure site) occur at this layer.
+
+Answer the questions below
+What is the name of this Layer?
+Presentation
+
+Correct Answer
+What is the main purpose that this Layer acts as?
+Translator
+
+The application layer of the OSI model is the layer that you will be most familiar with. This familiarity is because the application layer is the layer in which protocols and rules are in place to determine how the user should interact with data sent or received.
+
+Everyday applications such as email clients, browsers, or file server browsing software such as FileZilla provide a friendly, Graphical User Interface (GUI) for users to interact with data sent or received. Other protocols include DNS (Domain Name System), which is how website addresses are translated into IP addresses.
+
+
+Answer the questions below
+What is the name of this Layer?
+Application
+
+Correct Answer
+What is the technical term that is given to the name of the software that users interact with?
+Graphical User Interface
+
+
+Can you escape the OSI dungeon? Climb the levels in the correct order to escape the dungeon and reveal the flag! (Can you beat our staff high score of 19 seconds?)
+
+Click the "View Site" button on the right to start.
+
+Answer the questions below
+Escape the dungeon to retrieve the flag. What is the flag?
+THM{OSI_DUNGEON_ESCAPED}

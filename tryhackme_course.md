@@ -1445,3 +1445,239 @@ The Intro to LAN room explains how local area networks can be built using differ
 - [Intro to LAN – YouTube](https://www.youtube.com/watch?v=csYtPidvvFQ)
 
 </details>
+
+<details>
+  <summary>OSI Model</summary>
+
+## Introduction
+
+The **OSI Model** (Open Systems Interconnection Model) is a fundamental networking framework that standardises how devices send, receive, and interpret data. It defines seven distinct layers, from the physical transmission of bits up to the user-facing application layer, so that diverse hardware and software can interoperate reliably. As data passes down and up these layers, additional information is added and removed in a process called **encapsulation**.
+
+## Detailed Explanation
+
+- [x] **OSI Model Overview**
+  - OSI stands for **Open Systems Interconnection**.
+  - The model has **7 layers**, numbered from Layer 1 (Physical) to Layer 7 (Application).
+  - Each layer has specific responsibilities and interacts only with adjacent layers.
+  - **Encapsulation** is the process of adding layer‑specific information (headers, trailers) to data as it descends through the stack.
+- [x] **Layer 1 – Physical**
+  - Concerned with the **physical components** and media that carry bits (0s and 1s).
+  - Uses electrical, optical, or radio signals to represent the binary **numbering system** (1s and 0s).
+  - Examples include **Ethernet cables** and other cabling/hardware that physically connect devices.
+- [x] **Layer 2 – Data Link**
+  - Handles **physical addressing** and framing for data on the same network.
+  - Adds the **MAC address** of the receiving endpoint to frames.
+  - Every networked device has a **Network Interface Card (NIC)** with a unique burned‑in MAC address (though it can be spoofed).
+  - Responsible for presenting data in a format suitable for physical transmission.
+- [x] **Layer 3 – Network**
+  - Responsible for **routing** and reassembly of packets across multiple networks.
+  - Works with **IP addresses** (e.g. `192.168.1.100`), deciding how packets traverse routers.
+  - Protocols such as **OSPF (Open Shortest Path First)** and **RIP (Routing Information Protocol)** help determine optimal paths based on:
+    - Shortest path (fewest hops).
+    - Reliability (loss history).
+    - Link speed (e.g. copper vs fibre).
+  - Devices like routers that operate here are called **Layer 3 devices**.
+- [x] **Layer 4 – Transport**
+  - Manages end‑to‑end transport of data using **TCP** or **UDP**.
+  - **TCP (Transmission Control Protocol)**:
+    - Connection‑oriented and focused on **reliability and accuracy**.
+    - Maintains a reserved connection while data is sent and received.
+    - Performs **error checking** and ensures packets are received and reassembled in order.
+    - Used by applications that require complete and correct data, such as file downloads, web browsing, and email.
+    - Disadvantages: slower and more resource‑intensive; can bottleneck if the connection is unreliable.
+  - **UDP (User Datagram Protocol)**:
+    - Connectionless and **faster** than TCP.
+    - No guarantee or error correction—data may be lost without retransmission.
+    - Leaves rate control and reliability to the application, making it flexible but less safe.
+    - Used where some loss is acceptable, e.g. **video streaming** or small discovery protocols like **ARP** and **DHCP**.
+- [x] **Layer 5 – Session**
+  - Creates, manages, and terminates **sessions** between devices.
+  - A **session** exists while a connection is successfully established and active.
+  - Can use **checkpoints** so that if a connection drops, only the most recent data needs to be resent.
+  - Sessions are **unique**, and data does not cross between different sessions.
+- [x] **Layer 6 – Presentation**
+  - Acts as a **translator** for data between the Application layer and lower layers.
+  - Ensures that data is formatted in a standard way so different software (e.g. different email clients) can interpret it consistently.
+  - Handles **data encryption and decryption**, such as HTTPS for secure web traffic.
+- [x] **Layer 7 – Application**
+  - Closest to the **end user**, defining how users interact with networked data.
+  - Everyday software like **email clients**, **web browsers**, and **FTP clients** (e.g. FileZilla) live here.
+  - Provides a **Graphical User Interface (GUI)** and uses protocols like **DNS** to translate domain names into IP addresses.
+- [x] **OSI Dungeon Practical**
+  - A gamified exercise where you climb layers of the OSI model in the correct order.
+  - Escaping the dungeon rewards you with the flag `THM{OSI_DUNGEON_ESCAPED}` and reinforces layer ordering.
+
+## Terminal Commands
+
+This room focuses on conceptual understanding of OSI layers and protocol behaviour rather than specific command‑line tools. Any practical elements are delivered through interactive labs (such as the OSI dungeon game) rather than CLI usage.
+
+```bash
+# No primary terminal commands for the OSI Model room.
+```
+
+## Code
+
+There is no direct programming component in this room. Instead, you focus on how network protocols and layers interact, which underpins how applications and services are implemented in code elsewhere.
+
+```py
+# No code snippets for the OSI Model room.
+```
+
+## Questions and Answers
+
+### Question 1: What does “OSI” in OSI Model stand for?
+
+<details>
+<summary>Answer</summary>
+It stands for **Open Systems Interconnection**.
+</details>
+
+### Question 2: How many layers does the OSI model have?
+
+<details>
+<summary>Answer</summary>
+The OSI model has **7** layers.
+</details>
+
+### Question 3: What is the key term for when pieces of information get added to data as it passes through OSI layers?
+
+<details>
+<summary>Answer</summary>
+This process is called **encapsulation**.
+</details>
+
+### Question 4: Which OSI layer deals with physical components like cables and electrical signals?
+
+<details>
+<summary>Answer</summary>
+The **Physical layer (Layer 1)**.
+</details>
+
+### Question 5: What numbering system consisting of 0s and 1s is used at the Physical layer?
+
+<details>
+<summary>Answer</summary>
+The **binary** numbering system.
+</details>
+
+### Question 6: Which cables are commonly used to physically connect devices in a LAN at the Physical layer?
+
+<details>
+<summary>Answer</summary>
+**Ethernet cables**.
+</details>
+
+### Question 7: Which layer adds MAC addresses and focuses on physical addressing?
+
+<details>
+<summary>Answer</summary>
+The **Data Link layer (Layer 2)**.
+</details>
+
+### Question 8: What piece of hardware in every networked device contains a burned‑in MAC address?
+
+<details>
+<summary>Answer</summary>
+The **Network Interface Card (NIC)**.
+</details>
+
+### Question 9: Which layer is responsible for routing packets between networks?
+
+<details>
+<summary>Answer</summary>
+The **Network layer (Layer 3)**.
+</details>
+
+### Question 10: Name two routing protocols mentioned that can help determine optimal paths at the Network layer.
+
+<details>
+<summary>Answer</summary>
+**OSPF (Open Shortest Path First)** and **RIP (Routing Information Protocol)**.
+</details>
+
+### Question 11: What type of addresses are handled at the Network layer?
+
+<details>
+<summary>Answer</summary>
+**IP addresses**.
+</details>
+
+### Question 12: At the Transport layer, which protocol guarantees the accuracy and correct ordering of data?
+
+<details>
+<summary>Answer</summary>
+**TCP (Transmission Control Protocol)**.
+</details>
+
+### Question 13: Which Transport‑layer protocol does not care whether data arrives or not?
+
+<details>
+<summary>Answer</summary>
+**UDP (User Datagram Protocol)**.
+</details>
+
+### Question 14: Which protocol would an email client or file download application typically use: TCP or UDP?
+
+<details>
+<summary>Answer</summary>
+They would typically use **TCP**.
+</details>
+
+### Question 15: Which protocol is better suited for video streaming where some data loss is acceptable?
+
+<details>
+<summary>Answer</summary>
+**UDP**, because it is faster and tolerates some packet loss.
+</details>
+
+### Question 16: What is the name of the OSI layer that creates, maintains, and terminates sessions between devices?
+
+<details>
+<summary>Answer</summary>
+The **Session layer (Layer 5)**.
+</details>
+
+### Question 17: What is the technical term used when a connection between two devices is successfully established at the Session layer?
+
+<details>
+<summary>Answer</summary>
+It is called a **session**.
+</details>
+
+### Question 18: Which OSI layer acts as a translator and is responsible for data formats and encryption like HTTPS?
+
+<details>
+<summary>Answer</summary>
+The **Presentation layer (Layer 6)**.
+</details>
+
+### Question 19: What is the main purpose of the Application layer (Layer 7)?
+
+<details>
+<summary>Answer</summary>
+It defines how users interact with networked data via software (e.g. email clients, web browsers) by providing **protocols and interfaces** such as GUIs.
+</details>
+
+### Question 20: What does GUI stand for, and where is it relevant in the OSI model?
+
+<details>
+<summary>Answer</summary>
+GUI stands for **Graphical User Interface**, and it is relevant at the **Application layer**, where users interact with applications.
+</details>
+
+### Question 21: What is the flag obtained when you successfully escape the OSI dungeon game?
+
+<details>
+<summary>Answer</summary>
+The flag is `THM{OSI_DUNGEON_ESCAPED}`.
+</details>
+
+## Summary
+
+The OSI Model organises networking into seven logical layers, from the physical movement of bits up to the user‑facing applications. Each layer has a specific role: the Physical and Data Link layers handle signals and local addressing, the Network and Transport layers route and reliably deliver data using IP, TCP, and UDP, and the Session, Presentation, and Application layers manage sessions, translation, security, and user interaction. By understanding how encapsulation works and what happens at each layer, you can reason about where problems occur, why certain protocols are used, and how different systems interoperate. Hands‑on activities like the OSI dungeon reinforce layer order and responsibilities through practice.
+
+## References
+
+- [OSI Model – TryHackMe](https://tryhackme.com/room/osimodelzi)
+
+</details>
