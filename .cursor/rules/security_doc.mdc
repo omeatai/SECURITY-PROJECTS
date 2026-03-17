@@ -1,11 +1,11 @@
 ---
-description: Format and append cybersecurity lab notes from rough.md to letsdefend_course.md
+description: Format and append cybersecurity lab notes from rough.md to tryhackme_course.md
 alwaysApply: false
 ---
 
 # Security Labs Documentation Rule
 
-When the user says **"apply the new documentation rule file"** (or similar, e.g. "format and append to letsdefend_course"), perform the documentation workflow below.
+When the user says **"apply the new documentation rule file"** (or similar, e.g. "format and append to tryhackme_course"), perform the documentation workflow below.
 
 ## Workflow Steps
 
@@ -20,7 +20,7 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
    - Summary
    - References
 4. **Generate** 10–20 revision Q&A from the content to aid study.
-5. **Append** (do not overwrite) the formatted content to `letsdefend_course.md`.
+5. **Append** (do not overwrite) the formatted content to `tryhackme_course.md`.
 
 ## Format Requirements
 
@@ -43,4 +43,4 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
 | ---------------------- | ---------------------- |
 | Input (raw paste)      | `rough.md`        |
 | Template               | `format.md`            |
-| Output (append target) | `letsdefend_course.md` |
+| Output (append target) | `tryhackme_course.md` |
