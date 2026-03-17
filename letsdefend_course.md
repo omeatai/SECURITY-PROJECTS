@@ -389,7 +389,207 @@ This lesson shifts from attacking to defending, showing how blue teams work to p
 </details>
 
 <details>
-  <summary>Defensive Security Intro</summary>
+  <summary>Careers in Cyber</summary>
+
+## Introduction
+
+The **Careers in Cyber** TryHackMe room gives an overview of key cyber security roles and why this field is attractive. Cyber security careers are in high demand, offer competitive salaries, and span a wide range of roles—from defending systems and responding to incidents, to analysing malware and legally hacking systems. This room outlines what different roles do, their responsibilities, and suggested learning paths and career resources.
+
+## Detailed Explanation
+
+- [x] **Why get a career in cyber?**
+  - High pay: security roles often have high starting salaries.
+  - Exciting work: can include legally hacking systems or defending against live cyber attacks.
+  - Strong demand: there are over 3.5 million unfilled cyber positions globally.
+  - This room links to learning paths that help you build the skills needed for these roles.
+- [x] **Security Analyst**
+  - Responsible for maintaining the security of an organisation’s data.
+  - Works with stakeholders to understand security requirements and the threat landscape.
+  - Analyses networks and systems to identify weaknesses and inform defensive improvements.
+  - Compiles ongoing reports about network safety, security issues, and responses.
+  - Develops security plans based on research into new attack tools, trends, and required controls.
+  - Learning Paths:
+    - Pre Security
+    - Cyber Security 101
+    - SOC Level 1
+  - Career Guides: Becoming a Cyber Security Analyst, How to Become a Level 1 SOC Analyst, A Day in the Life of a SOC Analyst, The Ultimate SOC L1 Analyst Interview Guide, Hayden’s Success Story.
+- [x] **Security Engineer**
+  - Designs, monitors, and maintains security controls, networks, and systems to help prevent cyberattacks.
+  - Uses threat and vulnerability data from across the security team to build and tune defences.
+  - Tests and screens security measures across software and infrastructure.
+  - Monitors networks and reports to update systems and mitigate vulnerabilities.
+  - Identifies and implements systems needed for optimal security posture.
+  - Learning Paths:
+    - SOC Level 1
+    - Jr Penetration Tester
+    - Offensive Pentesting
+  - Career Guides: Becoming a Security Engineer, How to Become a Security Engineer, A Day in the Life of a Security Engineer, Preparing for a Security Engineering Interview, Richárd’s Success Story.
+- [x] **Incident Responder**
+  - Identifies and mitigates attacks while the attacker’s operations are still unfolding.
+  - Creates and maintains incident response plans, policies, and procedures.
+  - Works under pressure, assessing and responding to security breaches in real time.
+  - Uses metrics such as MTTD (Mean Time To Detect), MTTA (Mean Time To Acknowledge), and MTTR (Mean Time To Recover) to measure effectiveness.
+  - Aims to minimise damage, protect data and reputation, and support rapid recovery.
+  - Learning Paths:
+    - SOC Level 1
+- [x] **Digital Forensics Analyst**
+  - Uses digital forensics to investigate incidents and crimes.
+  - In law enforcement contexts, collects and analyses evidence to help solve crimes, charge the guilty, and exonerate the innocent.
+  - In corporate contexts, investigates policy violations and internal incidents.
+  - Responsibilities include:
+    - Collecting digital evidence while following legal and procedural requirements.
+    - Analysing digital evidence to answer case-related questions.
+    - Documenting findings and reporting on the case for legal or internal use.
+- [x] **Malware Analyst**
+  - Analyses all types of malware to understand how they work and what they do.
+  - Often called a reverse engineer, focusing on converting compiled programs into readable low-level code.
+  - Requires strong programming skills, especially in low-level languages like assembly and C.
+  - Responsibilities include:
+    - Performing static analysis (reverse engineering) of malicious programs.
+    - Conducting dynamic analysis by running malware samples in a controlled environment.
+    - Documenting and reporting findings, including detection and mitigation recommendations.
+- [x] **Penetration Tester**
+  - Tests technology products for security loopholes; also known as a pentester or ethical hacker.
+  - Attempts to uncover and exploit vulnerabilities in systems, networks, and applications.
+  - Helps organisations understand risk so they can fix weaknesses before real attackers exploit them.
+  - Responsibilities include:
+    - Conducting tests on computer systems, networks, and web-based applications.
+    - Performing security assessments, audits, and policy reviews.
+    - Evaluating and reporting findings with recommended remediation steps.
+  - Learning Paths:
+    - Jr Penetration Tester
+    - Offensive Pentesting
+  - Career Guides: Becoming a Penetration Tester, How to Become a Penetration Tester, Junior Penetration Tester Interview prep, Tom’s Success Story from IT Support to Pentester.
+- [x] **Red Teamer**
+  - Plays the role of an adversary, attacking an organisation and providing feedback from an enemy’s perspective.
+  - Similar to pentesters but with a more targeted focus on detection and response capabilities.
+  - Emulates real-world adversaries: gaining access, maintaining persistence, and avoiding detection.
+  - Assessments can run for weeks and are often performed by external specialist teams.
+  - Best suited to organisations with mature security programs that want to test incident response and monitoring.
+  - Responsibilities include:
+    - Emulating threat actors to uncover exploitable weaknesses and test detection.
+    - Assessing security controls, threat intelligence, and incident response processes.
+    - Reporting insights with actionable recommendations to strengthen defences.
+  - Learning Paths:
+    - Jr Penetration Tester
+    - Offensive Pentesting
+    - Red Teamer
+  - Career Guides: Red Teaming roles, salaries, and opportunities.
+
+## Terminal Commands
+
+This room is informational and career-focused; it does not centre on specific terminal commands. Instead, it introduces you to roles and suggests learning paths and resources that will later involve hands-on labs and command-line work.
+
+```bash
+# No primary terminal commands for this careers overview room.
+```
+
+## Code
+
+There is no code to write or analyse in this room. The emphasis is on understanding job roles, not on implementing technical solutions directly within the exercise.
+
+```py
+# No code snippets for the Careers in Cyber room.
+```
+
+## Questions and Answers
+
+### Question 1: Why are cyber security careers considered attractive?
+
+<details>
+<summary>Answer</summary>
+They offer high starting pay, involve exciting work such as legally hacking systems or defending against attacks, and are in very high demand with millions of unfilled roles.
+</details>
+
+### Question 2: What is the main responsibility of a Security Analyst?
+
+<details>
+<summary>Answer</summary>
+A Security Analyst maintains the security of an organisation’s data by analysing networks and systems, working with stakeholders, and recommending or supporting defensive measures.
+</details>
+
+### Question 3: Name two key responsibilities of a Security Analyst.
+
+<details>
+<summary>Answer</summary>
+Compiling ongoing reports about network and data safety, and developing security plans based on research into new attack tools and trends.
+</details>
+
+### Question 4: What is the primary focus of a Security Engineer?
+
+<details>
+<summary>Answer</summary>
+Designing, monitoring, and maintaining security controls, networks, and systems to help prevent cyberattacks.
+</details>
+
+### Question 5: How does an Incident Responder measure the effectiveness of their response?
+
+<details>
+<summary>Answer</summary>
+Using metrics like MTTD (Mean Time To Detect), MTTA (Mean Time To Acknowledge), and MTTR (Mean Time To Recover) to track how quickly and effectively incidents are handled.
+</details>
+
+### Question 6: What is the core work of a Digital Forensics Analyst?
+
+<details>
+<summary>Answer</summary>
+Collecting, analysing, and reporting on digital evidence related to incidents or crimes, while following legal and procedural requirements.
+</details>
+
+### Question 7: Why does a Malware Analyst need strong low-level programming skills?
+
+<details>
+<summary>Answer</summary>
+Because they reverse engineer compiled malware into readable low-level code (often assembly or C) to understand exactly how it behaves.
+</details>
+
+### Question 8: What is the main goal of a Penetration Tester’s work?
+
+<details>
+<summary>Answer</summary>
+To identify and safely exploit vulnerabilities in systems and applications so organisations can understand their risk and fix weaknesses before real attackers abuse them.
+</details>
+
+### Question 9: How does a Red Teamer differ from a typical Penetration Tester?
+
+<details>
+<summary>Answer</summary>
+Red Teamers focus on emulating realistic adversaries to test an organisation’s detection and response capabilities over longer, more covert engagements, while pentesters typically focus on finding as many technical vulnerabilities as possible in a defined scope.
+</details>
+
+### Question 10: Why are Red Team assessments usually better suited to organisations with mature security programs?
+
+<details>
+<summary>Answer</summary>
+Because they are designed to test and refine existing detection, intelligence, and incident response capabilities, which require a baseline of monitoring and processes already in place.
+</details>
+
+### Question 11: Which learning paths are suggested for someone aiming to become a Penetration Tester?
+
+<details>
+<summary>Answer</summary>
+The Jr Penetration Tester and Offensive Pentesting learning paths.
+</details>
+
+### Question 12: What is one benefit of reading real-world career guides and success stories linked in this room?
+
+<details>
+<summary>Answer</summary>
+They provide practical insight into what the roles are like day to day and concrete steps others took to break into the field, helping you plan your own path.
+</details>
+
+## Summary
+
+The Careers in Cyber room outlines why cyber security is a high-opportunity field and introduces key roles such as Security Analyst, Security Engineer, Incident Responder, Digital Forensics Analyst, Malware Analyst, Penetration Tester, and Red Teamer. For each role, you learn the core responsibilities and how they contribute to defending organisations or understanding threats. The room also points you to TryHackMe learning paths and career guides so you can start building the practical skills and knowledge required for your target role.
+
+## References
+
+- [Careers in Cyber – TryHackMe](https://tryhackme.com/room/careersincyber)
+
+</details>
+
+<details>
+  <summary>Defensive Security Intro 2</summary>
 
 ## Introduction
 
@@ -531,3 +731,8 @@ In this TryHackMe room, you approach security from the defender’s perspective.
 - [Defensive Security Intro – TryHackMe](https://tryhackme.com/room/defensivesecurityintro)
 
 </details>
+
+## 2-Network Fundamentals
+
+
+
