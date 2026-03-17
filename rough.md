@@ -1,130 +1,161 @@
 <!-- Paste the TryHackMe/Let's Defend page URL at the top -->
 <!-- Then paste your raw notes, explanations, commands, and code below -->
 
-https://tryhackme.com/room/careersincyber
+https://tryhackme.com/room/whatisnetworking
 
-# Careers in Cyber
+# What is Networking?
 
-Cyber security careers are becoming more in demand and offer high salaries. There are many different jobs within the security industry, from offensive pentesting (hacking machines and reporting on vulnerabilities) to defensive security (defending against and investigating cyberattacks).
+Youtube Video: https://www.youtube.com/watch?v=42u_2e6eNF4
 
-Why get a career in cyber:
+Networks are simply things connected. For example, your friendship circle: you are all connected because of similar interests, hobbies, skills and sorts.
 
-High Pay - jobs in security have high starting salaries
-Exciting - work can include legally hacking systems or defending against cyber attacks
-Be in demand - there are over 3.5 million unfilled cyber positions
-This lesson helps you break into cyber security by providing information about various cyber security roles; it also links to different learning paths that you can use to start building your cyber skills.
+Networks can be found in all walks of life:
 
-Responsible for maintaining the security of an organisation's data
+A city's public transportation system
+Infrastructure such as the national power grid for electricity
+Meeting and greeting your neighbours
+Postal systems for sending letters and parcels
+But more specifically, in computing, networking is the same idea, just dispersed to technological devices. Take your phone as an example; the reason that you have it is to access things. We'll cover how these devices communicate with each other and the rules that follow.
 
-Security analysts are integral to constructing security measures across organisations to protect the company from attacks. Analysts explore and evaluate company networks to uncover actionable data and recommendations for engineers to develop preventative measures. This job role requires working with various stakeholders to gain an understanding of security requirements and the security landscape.
+In computing, a network can be formed by anywhere from 2 devices to billions. These devices include everything from your laptop and phone to security cameras, traffic lights and even farming!
 
-Responsibilities
-Working with various stakeholders to analyse the cyber security throughout the company
-Compile ongoing reports about the safety of networks, documenting security issues and measures taken in response
-Develop security plans, incorporating research on new attack tools and trends, and measures needed across teams to maintain data security.
-Learning Paths
-TryHackMe's learning paths will give you both the fundamental technical knowledge and hands-on experience, which is crucial to becoming a successful Security Analyst.
+Networks are integrated into our everyday life. Be it gathering data for the weather, delivering electricity to homes or even determining who has the right of way at a road. Because networks are so embedded in the modern-day, networking is an essential concept to grasp in cybersecurity.
 
-Pre Security
-Cyber Security 101
-SOC Level 1
-Relevant Career Guides
-Becoming a Cyber Security Analyst
-How to Become a Level 1 SOC Analyst
-A Day in the Life of a SOC Analyst
-The Ultimate SOC L1 Analyst Interview Guide
-From Student to SOC Analyst: Hayden’s Success Story
-
-Design, monitor and maintain security controls, networks, and systems to help prevent cyberattacks
-
-Security engineers develop and implement security solutions using threats and vulnerability data - often sourced from members of the security workforce. Security engineers work across circumventing a breadth of attacks, including web application attacks, network threats, and evolving trends and tactics. The ultimate goal is to retain and adopt security measures to mitigate the risk of attack and data loss.
-
-Responsibilities
-Testing and screening security measures across software
-Monitor networks and reports to update systems and mitigate vulnerabilities
-Identify and implement systems needed for optimal security
-Learning Paths
-TryHackMe's learning paths will give you both the fundamental technical knowledge and hands-on experience, which is crucial to becoming a successful Security Engineer.
-
-SOC Level 1
-JR Penetration Tester
-Offensive Pentesting
-Relevant Career Guides
-Becoming a Security Engineer
-How to Become a Security Engineer
-A Day in the Life of a Security Engineer
-Preparing for a Security Engineering Interview
-Becoming a Security Engineer: Richárd’s Success Story
-
-Identifies and mitigates attacks whilst an attackers operations are still unfolding
-
-Incident responders respond productively and efficiently to security breaches. Responsibilities include creating plans, policies, and protocols for organisations to enact during and following incidents. This is often a highly pressurised position with assessments and responses required in real-time, as attacks are unfolding. Incident response metrics include MTTD, MTTA, and MTTR - the meantime to detect, acknowledge, and recover (from attacks.) The aim is to achieve a swift and effective response, retain financial standing and avoid negative breach implications. Ultimately, incident responders protect the company's data, reputation, and financial standing from cyber attacks.
-
-Responsibilities
-Developing and adopting a thorough, actionable incident response plan
-Maintaining strong security best practices and supporting incident response measures
-Post-incident reporting and preparation for future attacks, considering learnings and adaptations to take from incidents
-Learning Paths
-TryHackMe's learning paths will give you both the fundamental technical knowledge and hands-on experience, which is crucial to becoming a successful Incident Responder.
-
-SOC Level 1
-
-Responsible for using digital forensics to investigate incidents and crimes
-
-If you like to play detective, this might be the perfect job. If you are working as part of a law-enforcement department, you would be focused on collecting and analysing evidence to help solve crimes: charging the guilty and exonerating the innocent. On the other hand, if your work falls under defending a company's network, you will be using your forensic skills to analyse incidents, such as policy violations.
-
-Responsibilities
-Collect digital evidence while observing legal procedures
-Analyse digital evidence to find answers related to the case
-Document your findings and report on the case
+Take the diagram below as an example, Alice, Bob and Jim have formed their network! We'll come onto this a bit later on.
 
 
-Analyses all types of malware to learn more about how they work and what they do
+Networks come in all shapes and sizes, which is something that we will also come on to discuss throughout this module.
 
-A malware analyst's work involves analysing suspicious programs, discovering what they do and writing reports about their findings. A malware analyst is sometimes called a reverse-engineer as their core task revolves around converting compiled programs from machine language to readable code, usually in a low-level language. This work requires the malware analyst to have a strong programming background, especially in low-level languages such as assembly language and C language. The ultimate goal is to learn about all the activities that a malicious program carries out, find out how to detect it and report it.
+Answer the questions below
+What is the key term for devices that are connected together?
+Network
 
-Responsibilities
-Carry out static analysis of malicious programs, which entails reverse-engineering
-Conduct dynamic analysis of malware samples by observing their activities in a controlled environment
-Document and report all the findings
+Now that we've learnt what a network is and how one is defined in computing (just devices connected), let's explore the Internet.
 
-Responsible for testing technology products for security loopholes
-
-You may see penetration testing referred to as pentesting and ethical hacking. A penetration tester's job role is to test the security of the systems and software within a company - this is achieved through attempts to uncover flaws and vulnerabilities through systemised hacking. Penetration testers exploit these vulnerabilities to evaluate the risk in each instance. The company can then take these insights to rectify issues to prevent a real-world cyberattack.
-
-Responsibilities
-Conduct tests on computer systems, networks, and web-based applications
-Perform security assessments, audits, and analyse policies
-Evaluate and report on insights, recommending actions for attack prevention
-Learning Paths
-TryHackMe's learning paths will give you both the fundamental technical knowledge and hands-on experience, which is crucial to becoming a successful Penetration Tester.
-
-Jr Penetration Tester
-Offensive Pentesting
-Relevant Career Guides
-Becoming a Penetration Tester
-How to Become a Penetration Tester
-Preparing for a Junior Penetration Tester Interview
-From IT Support to Pentester: Tom’s Success Story
-
-Plays the role of an adversary, attacking an organisation and providing feedback from an enemies perspective
-
-Red teamers share similarities to penetration testers, with a more targeted job role. Penetration testers look to uncover many vulnerabilities across systems to keep cyber-defence in good standing, whilst red teamers are enacted to test the company's detection and response capabilities. This job role requires imitating cyber criminals' actions, emulating malicious attacks, retaining access, and avoiding detection. Red team assessments can run for up to a month, typically by a team external to the company. They are often best suited to organisations with mature security programs in place.
-
-Responsibilities
-Emulate the role of a threat actor to uncover exploitable vulnerabilities, maintain access and avoid detection
-Assess organisations' security controls, threat intelligence, and incident response procedures
-Evaluate and report on insights, with actionable data for companies to avoid real-world instances
-Learning Paths
-TryHackMe's learning paths will give you both the fundamental technical knowledge and hands-on experience, which is crucial to becoming a successful Red Teamer.
-
-JR Penetration Tester
-Offensive Pentesting
-Red Teamer
-Relevant Career Guides
-Red Teaming: Job Roles, Salaries & Opportunities
-
-This room has provided you with a general overview of the different careers in cyber security. Don't forget that you can leverage online training to land your dream job in cyber security. To find out which cyber security role suits you best, try our fun quiz, which you can access by clicking the "View Site" button on the right.
+The Internet is one giant network that consists of many, many small networks within itself. Using our example from the previous task, let's now imagine that Alice made some new friends named Zayn and Toby that she wants to introduce to Bob and Jim. The problem is that Alice is the only person who speaks the same language as Zayn and Toby. So Alice will have to be the messenger!
 
 
 
+Because Alice can speak both languages, they can communicate to one another through Alice — forming a new network.
+
+The first iteration of the Internet was within the ARPANET project in the late 1960s. This project was funded by the United States Defence Department and was the first documented network in action. However, it wasn't until 1989 when the Internet as we know it was invented by Tim Berners-Lee by the creation of the World Wide Web (WWW). It wasn't until this point that the Internet started to be used as a repository for storing and sharing information, just like it is today.
+
+Let's relate Alice's network of friends to computing devices. The Internet looks like a much larger version of this sort of diagram:
+
+
+As previously stated, the Internet is made up of many small networks all joined together.  These small networks are called private networks, where networks connecting these small networks are called public networks -- or the Internet! So, to recap, a network can be one of two types:
+
+A private network
+A public network
+Devices will use a set of labels to identify themselves on a network, which we will come onto in the task below.
+
+Answer the questions below
+Who invented the World Wide Web?
+Tim Berners-Lee
+
+To communicate and maintain order, devices must be both identifying and identifiable on a network. What use is it if you don't know whom you're talking to at the end of the day?
+
+Devices on a network are very similar to humans in the fact that we have two ways of being identified:
+
+Our Name
+Our Fingerprints
+Now we can change our name through deed poll, but we can't, however, change our fingerprints. Every human has an individual set of fingerprints which means that even if they change their name, there is still an identity behind it. Devices have the same thing: two means of identification, with one being permeable. These are:
+
+An IP Address
+A Media Access Control (MAC) Address -- think of this as being similar to a serial number.
+
+IP Addresses
+Briefly, an IP address (or Internet Protocol) address can be used as a way of identifying a host on a network for a period of time, where that IP address can then be associated with another device without the IP address changing. First, let's split up precisely what an IP address is in the diagram below:
+
+An IP address is a set of numbers that are divided into four octets. The value of each octet will summarise to be the IP address of the device on the network. This number is calculated through a technique known as IP addressing & subnetting, but that is for another day. What's important to understand here is that IP addresses can change from device to device but cannot be active simultaneously more than once within the same network.
+
+IP Addresses follow a set of standards known as protocols. These protocols are the backbone of networking and force many devices to communicate in the same language, which is something that we'll come onto another time. However, we should recall that devices can be on both a private and public network. Depending on where they are will determine what type of IP address they have: a public or private IP address.
+
+A public address is used to identify the device on the Internet, whereas a private address is used to identify a device amongst other devices. Take the table & screenshot below as an example. Here we have two devices on a private network:
+
+
+Device Name	IP Address	IP Address Type
+DESKTOP-KJE57FD	192.168.1.77	Private
+DESKTOP-KJE57FD	86.157.52.21	Public
+CMNatic-PC	192.168.1.74	Private
+CMNatic-PC	86.157.52.21
+Public
+
+https://assets.tryhackme.com/additional/cmn-aoc2020/day-8/1.png
+These two devices will be able to use their private IP addresses to communicate with each other. However, any data sent to the Internet from either of these devices will be identified by the same public IP address. Public IP addresses are given by your Internet Service Provider (or ISP) at a monthly fee (your bill!)
+
+https://assets.tryhackme.com/additional/cmn-aoc2020/day-8/2.png
+
+As more and more devices become connected, it is becoming increasingly harder to get a public address that isn't already in use. For example, Cisco, an industry giant in the world of networking, estimated that there would be approximately 50 billion devices connected on the Internet by the end of 2021. (Cisco., 2021)(opens in new tab). Enter IP address versions. So far, we have only discussed one version of the Internet Protocol addressing scheme known as IPv4, which uses a numbering system of 2^32 IP addresses (4.29 billion) -- so you can see why there is such a shortage!
+
+IPv6 is a new iteration of the Internet Protocol addressing scheme to help tackle this issue. Although it is seemingly more daunting, it boasts a few benefits:
+
+Supports up to 2^128 of IP addresses (340 trillion-plus), resolving the issues faced with IPv4
+More efficient due to new methodologies
+The screenshot below compares both an IPv6 and IPv4 address.
+
+
+
+MAC Addresses
+
+Devices on a network will all have a physical network interface, which is a microchip board found on the device's motherboard. This network interface is assigned a unique address at the factory it was built at, called a MAC (Media Access Control ) address. The MAC address is a twelve-character hexadecimal number (a base sixteen numbering system used in computing to represent numbers) split into two's and separated by a colon. These colons are considered separators. For example, a4:c3:f0:85:ac:2d. The first six characters represent the company that made the network interface, and the last six is a unique number.
+
+
+
+
+However, an interesting thing with MAC addresses is that they can be faked or "spoofed" in a process known as spoofing. This spoofing occurs when a networked device pretends to identify as another using its MAC address. When this occurs, it can often break poorly implemented security designs that assume that devices talking on a network are trustworthy. Take the following scenario: A firewall is configured to allow any communication going to and from the MAC address of the administrator. If a device were to pretend or "spoof" this MAC address, the firewall would now think that it is receiving communication from the administrator when it isn't.
+
+Places such as cafes, coffee shops, and hotels alike often use MAC address control when using their "Guest "or "Public" Wi-Fi. This configuration could offer better services, i.e. a faster connection for a price if you are willing to pay the fee per device.  The interactive lab attached to this task has been made to replicate this scenario!
+
+Practical
+
+The interactive labs simulate a hotel Wi-Fi network where you have to pay for the service. You'll note that the router is not allowing Bob's packets ( blue) to the TryHackMe website and is placing them in the bin, but Alice's packets (green) are going through fine because she has paid for Wi-Fi. Try changing Bob's MAC address to the same as Alice's to see what happens.
+
+Deploy the interactive lab and proceed to answer the following questions below.
+
+
+Answer the questions below
+What does the term "IP" stand for?
+Internet Protocol
+
+What is each section of an IP address called?
+Octet
+
+How many sections (in digits) does an IPv4 address have?
+4
+
+What does the term "MAC" stand for?
+Media Access Control
+
+Deploy the interactive lab using the "View Site" button and spoof your MAC address to access the site.  What is the flag?
+THM{YOU_GOT_ON_TRYHACKME}
+
+Ping is one of the most fundamental network tools available to us. Ping uses ICMP (Internet Control Message Protocol) packets to determine the performance of a connection between devices, for example, if the connection exists or is reliable.
+
+The time taken for ICMP packets travelling between devices is measured by ping, such as in the screenshot below. This measuring is done using ICMP's echo packet and then ICMP's echo reply from the target device.
+
+Pings can be performed against devices on a network, such as your home network or resources like websites. This tool can be easily used and comes installed on Operating Systems (OSs) such as Linux and Windows. The syntax to do a simple ping is ping IP address or website URL. Let's see this in action in the screenshot below.
+
+
+
+
+
+Here we are pinging a device that has the private address of 192.168.1.254. Ping informs us that we have sent six ICMP packets, all of which were received with an average time of 4.16 milliseconds.
+
+
+
+Now you are going to do the same thing to ping the address of "8.8.8.8" on the deployable website in this task. Pinging the correct address will reveal a flag to answer the following question below.
+
+Answer the questions below
+What protocol does ping use?
+ICMP
+
+What is the syntax to ping 10.10.10.10?
+ping 10.10.10.10
+
+What flag do you get when you ping 8.8.8.8?
+THM{I_PINGED_THE_SERVER}
+
+Continue your learning by joining the "Intro to LAN" room.
+Answer the questions below
+Join the "Intro to LAN" room.

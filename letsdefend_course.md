@@ -735,4 +735,208 @@ The Careers in Cyber room outlines why cyber security is a high-opportunity fiel
 ## 2-Network Fundamentals
 
 
+<details>
+  <summary>What is Networking?</summary>
 
+## Introduction
+
+The **What is Networking?** TryHackMe room introduces networking from first principles and ties it to everyday examples. You learn that networks are simply things that are connected—whether that is a city’s transport system, the power grid, or computing devices like phones and laptops. The room then scales up to explain the Internet, IP and MAC addressing, IPv4 vs IPv6, and basic tools like `ping`, all of which are foundational for later cyber security work.
+
+## Detailed Explanation
+
+- [x] **What is a Network?**
+  - A network is a collection of things that are connected.
+  - Everyday examples include public transport systems, power grids, postal systems, and social circles.
+  - In computing, the same concept applies to technological devices that communicate and share data.
+  - Networks in computing can range from 2 devices to billions (laptops, phones, cameras, traffic lights, farming sensors, etc.).
+  - Because networks underpin so many aspects of modern life, understanding networking is essential in cyber security.
+- [x] **The Internet as a Giant Network**
+  - The Internet is a giant network made up of many smaller networks.
+  - The room uses an example of Alice, Bob, Jim, and new friends Zayn and Toby to show how someone who can speak multiple “languages” can connect groups together.
+  - Historically, ARPANET in the late 1960s was an early network funded by the U.S. Defence Department.
+  - In 1989, Tim Berners-Lee created the World Wide Web (WWW), transforming the Internet into a global information repository.
+  - The Internet can be seen as many small **private networks** interconnected by **public networks**.
+- [x] **Private vs Public Networks**
+  - A **private network** is a smaller network (e.g. your home or office network) where devices communicate with one another.
+  - A **public network** (the Internet) connects many private networks together.
+  - Devices use labels to identify themselves, enabling ordered communication.
+  - The room emphasises that devices must be identifiable, similar to how people are identified by names and fingerprints.
+- [x] **IP Addresses**
+  - Devices have two main identifiers:
+    - An **IP address** (Internet Protocol address) that can change over time.
+    - A **MAC address** that is more permanent (like a serial number).
+  - An IPv4 address is made up of four sections called **octets**.
+  - IP addressing & subnetting determine how these numbers are allocated, but the key idea is that one IP cannot be active on more than one device inside the same network at the same time.
+  - IP addresses follow protocols so that devices can “speak the same language”.
+  - Devices can have:
+    - A **private IP address** used within a local network.
+    - A **public IP address** used on the Internet, typically assigned by an ISP.
+- [x] **Public and Private IP Examples**
+  - Example devices:
+    - `DESKTOP-KJE57FD` with private `192.168.1.77` and public `86.157.52.21`.
+    - `CMNatic-PC` with private `192.168.1.74` and the same public `86.157.52.21`.
+  - Both devices can communicate privately using their private IP addresses.
+  - When either device accesses the Internet, the public IP (from the ISP) is what outside services see.
+  - Public IPs are scarce and managed because of the huge number of connected devices.
+- [x] **IPv4 vs IPv6**
+  - IPv4 supports about \(2^{32}\) addresses (~4.29 billion), which is not enough for the projected number of devices.
+  - Cisco estimated tens of billions of devices would be online, making address exhaustion a real problem.
+  - IPv6 is a newer protocol version providing up to \(2^{128}\) addresses (340 trillion-plus), solving the exhaustion issue.
+  - IPv6 also introduces more efficient methodologies, though the addressing format looks more complex.
+- [x] **MAC Addresses**
+  - Every network interface has a physical network interface card (NIC) with a factory-assigned **MAC address**.
+  - A MAC address is a 12-character hexadecimal number split by colons (e.g. `a4:c3:f0:85:ac:2d`).
+  - The first half (OUI) identifies the manufacturer; the second half is a unique identifier.
+  - MAC addresses can be **spoofed**, where a device pretends to be another by copying its MAC.
+  - Poor security that relies only on MAC-based trust can be bypassed by spoofing.
+- [x] **MAC Filtering and Guest Wi-Fi Scenario**
+  - Cafes, hotels, and similar locations often use MAC address control on guest/public Wi‑Fi.
+  - They may grant better service or access only to paid devices.
+  - In the lab scenario, a router allows Alice’s paid device while discarding Bob’s packets.
+  - Spoofing Bob’s MAC to match Alice’s shows how MAC control can be abused if used alone.
+- [x] **Ping and ICMP**
+  - `ping` is a fundamental network tool using ICMP (Internet Control Message Protocol).
+  - It tests if a connection exists and how reliable it is by sending ICMP echo requests and waiting for echo replies.
+  - Ping measures round-trip time and packet loss between devices.
+  - It can be run against local devices (private IPs) or public resources (websites).
+  - Example: pinging `192.168.1.254` and seeing multiple ICMP packets sent and received with an average time.
+  - In the lab, you ping `8.8.8.8` to reveal a flag.
+
+## Terminal Commands
+
+The main command-line tool introduced is `ping`, which tests connectivity and latency between devices using ICMP.
+
+```bash
+# Basic ping syntax
+ping 10.10.10.10
+
+# Example from the room
+ping 8.8.8.8
+```
+
+On most systems, `ping` will send multiple packets and show statistics including packets sent/received and average round-trip time.
+
+## Code
+
+This room focuses on conceptual networking foundations and simple command-line usage rather than programming. There are no specific code samples to implement; instead you practice using built-in tools like `ping` and visualise IP and MAC addressing.
+
+```py
+# No programming examples in this networking fundamentals room.
+```
+
+## Questions and Answers
+
+### Question 1: In simple terms, what is a network?
+
+<details>
+<summary>Answer</summary>
+A network is a collection of things that are connected—such as devices, people, or systems—that can communicate with each other.
+</details>
+
+### Question 2: What is the key term for devices that are connected together in computing?
+
+<details>
+<summary>Answer</summary>
+The key term is a **network**.
+</details>
+
+### Question 3: Who invented the World Wide Web?
+
+<details>
+<summary>Answer</summary>
+Tim Berners-Lee.
+</details>
+
+### Question 4: What are the two broad types of networks mentioned in the room?
+
+<details>
+<summary>Answer</summary>
+Private networks and public networks (the Internet).
+</details>
+
+### Question 5: What does the term “IP” stand for?
+
+<details>
+<summary>Answer</summary>
+Internet Protocol.
+</details>
+
+### Question 6: What is each section of an IPv4 address called, and how many sections are there?
+
+<details>
+<summary>Answer</summary>
+Each section is called an **octet**, and there are 4 octets in an IPv4 address.
+</details>
+
+### Question 7: What is the difference between a private and a public IP address?
+
+<details>
+<summary>Answer</summary>
+A private IP address identifies a device within a local/private network, while a public IP address identifies the network to the wider Internet and is assigned by an ISP.
+</details>
+
+### Question 8: Why was IPv6 introduced?
+
+<details>
+<summary>Answer</summary>
+To provide a vastly larger address space and new efficiencies because IPv4’s ~4.29 billion addresses are insufficient for the growing number of connected devices.
+</details>
+
+### Question 9: What does the term “MAC” stand for and what is its purpose?
+
+<details>
+<summary>Answer</summary>
+MAC stands for Media Access Control; it is a hardware address assigned to a device’s network interface to uniquely identify it on the data link layer.
+</details>
+
+### Question 10: What security risk is associated with relying solely on MAC addresses for access control?
+
+<details>
+<summary>Answer</summary>
+MAC addresses can be spoofed, so an attacker can impersonate a trusted device and bypass simple MAC-based access controls.
+</details>
+
+### Question 11: In the hotel Wi‑Fi scenario, what happens when Bob spoofs Alice’s MAC address?
+
+<details>
+<summary>Answer</summary>
+The router treats Bob’s traffic as if it were Alice’s paid device, allowing his packets through and granting him access he did not pay for.
+</details>
+
+### Question 12: What protocol does `ping` use, and what does it measure?
+
+<details>
+<summary>Answer</summary>
+`ping` uses the Internet Control Message Protocol (ICMP) and measures connectivity and round‑trip time between devices.
+</details>
+
+### Question 13: What is the correct syntax to ping the IP address `10.10.10.10`?
+
+<details>
+<summary>Answer</summary>
+The syntax is: `ping 10.10.10.10`.
+</details>
+
+### Question 14: What flag do you get when you ping `8.8.8.8` in the lab?
+
+<details>
+<summary>Answer</summary>
+You receive the flag `THM{I_PINGED_THE_SERVER}`.
+</details>
+
+### Question 15: What is the flag obtained by spoofing your MAC address in the interactive Wi‑Fi lab?
+
+<details>
+<summary>Answer</summary>
+The flag is `THM{YOU_GOT_ON_TRYHACKME}`.
+</details>
+
+## Summary
+
+This room explains networking in both everyday and technical terms, showing that networks are simply collections of connected things. You learn how the Internet is a giant network made of many private and public networks, and how devices identify themselves using IP and MAC addresses. The room introduces IPv4 vs IPv6, demonstrates why MAC spoofing can undermine weak access controls, and shows how `ping` and ICMP are used to test connectivity. These fundamentals provide a base for understanding more advanced networking and cyber security concepts.
+
+## References
+
+- [What is Networking? – TryHackMe](https://tryhackme.com/room/whatisnetworking)
+
+</details>
