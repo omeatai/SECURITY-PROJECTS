@@ -1191,3 +1191,253 @@ This room explains networking in both everyday and technical terms, showing that
 - [What is Networking? - Youtube Networking Basics](https://www.youtube.com/watch?v=42u_2e6eNF4)
 
 </details>
+
+<details>
+  <summary>Intro to LAN</summary>
+
+## Introduction
+
+The **Intro to LAN** TryHackMe room explores how Local Area Networks (LANs) are designed and operated. It focuses on common topologies (star, bus, ring), key devices like switches and routers, and concepts such as subnetting, ARP, and DHCP. You also complete an interactive lab where you intentionally break LAN topologies to understand their weaknesses and retrieve the flag `THM{TOPOLOGY_FLAWS}`.
+
+## Detailed Explanation
+
+- [x] **LAN Topologies Overview**
+  - A **topology** is the design or layout of a network—how devices are physically and logically connected.
+  - LANs can be built using different topologies, each with unique advantages, costs, and failure modes.
+- [x] **Star Topology**
+  - Devices are individually connected to a central networking device, such as a switch or hub.
+  - This is the most commonly found topology today because of its reliability and scalability.
+  - More cabling and dedicated equipment make it more expensive than other topologies.
+  - As the network grows, maintenance and troubleshooting become more complex.
+  - The central device is a single point of failure: if it fails, connected devices can no longer communicate.
+- [x] **Bus Topology**
+  - All devices share a single **backbone cable** from which they branch, like leaves off a tree.
+  - Because all data travels along the same cable, the network can become slow and **bottlenecked** when many devices send data at once.
+  - Troubleshooting is harder because all traffic shares one path, making it difficult to isolate issues.
+  - It is cost‑efficient and relatively simple to set up, using less cabling and fewer dedicated devices.
+  - A break in the backbone cable is a critical single point of failure; if it breaks, no devices can communicate.
+- [x] **Ring Topology**
+  - Devices are connected in a closed loop, each connected directly to two neighbours.
+  - Sometimes called a **token** topology because devices pass control in turn.
+  - Data circulates around the ring until it reaches the destination; a device forwards traffic if it has none of its own to send.
+  - Because data flows in one direction, faults are relatively easy to troubleshoot.
+  - However, traffic may have to traverse many devices before reaching the target, which is inefficient.
+  - The design is less prone to bottlenecks than a bus, but a single cut cable or failed device can break the entire ring.
+- [x] **Switches**
+  - Switches are dedicated devices that aggregate multiple networked devices (PCs, printers, etc.) via Ethernet.
+  - Common in larger environments (businesses, schools) where many ports (4, 8, 16, 24, 32, 64, etc.) are required.
+  - Unlike hubs, switches keep track of which device is on which port (MAC learning) and send packets only to the intended destination.
+  - This selective forwarding reduces unnecessary traffic and improves overall network efficiency.
+- [x] **Routers and Routing**
+  - A **router** connects different networks and passes data between them.
+  - **Routing** is the process of creating and using paths between networks so data can be delivered end‑to‑end.
+  - Routing becomes especially useful when multiple paths exist between networks, enabling redundancy and resilience.
+  - Switches and routers can be combined to create multiple paths; if one path fails, another can still carry traffic, trading some performance for reliability.
+- [x] **Subnetting Basics**
+  - **Subnetting** is splitting a larger network into smaller subnetworks (subnets), like slicing a cake into pieces for different groups.
+  - Organisations may subnet for departments such as Accounting, Finance, and Human Resources.
+  - A subnet is described by a **subnet mask**, also made up of four octets (32 bits), each in the range 0–255.
+  - IP addresses in a subnet are used in three main ways:
+    - **Network Address** – identifies the start of the network (e.g. `192.168.1.0`).
+    - **Host Address** – identifies individual devices (e.g. `192.168.1.100`).
+    - **Default Gateway** – a device that can send data to other networks (commonly `192.168.1.1` or `192.168.1.254`).
+  - Small home networks typically live on a single subnet, but larger networks use subnetting for:
+    - **Efficiency** – better use of address space and traffic control.
+    - **Security** – segmenting sensitive systems from general users.
+    - **Full control** – administrative separation of departments or functions.
+  - Example: a café may use one subnet for internal devices (staff, tills) and another for public Wi‑Fi.
+- [x] **ARP (Address Resolution Protocol)**
+  - Devices have two identifiers: a logical **IP address** and a physical **MAC address**.
+  - **ARP** maps IP addresses to MAC addresses so devices can communicate on a LAN.
+  - Each device maintains an **ARP cache**, a ledger of IP‑to‑MAC mappings.
+  - ARP uses two key packet types:
+    - **ARP Request** – broadcast: “Who has this IP address? Tell me your MAC.”
+    - **ARP Reply** – unicast response from the device that owns the IP, returning its MAC.
+  - Once learned, mappings are stored in the cache for future use.
+- [x] **DHCP (Dynamic Host Configuration Protocol)**
+  - Devices can be assigned IP addresses manually or automatically using **DHCP**.
+  - When a device joins a network without a configured IP, it follows a four‑step DHCP exchange:
+    - **DHCP Discover** – the device broadcasts to find DHCP servers.
+    - **DHCP Offer** – a server responds with an available IP address and configuration.
+    - **DHCP Request** – the device requests to use the offered address.
+    - **DHCP ACK** – the server acknowledges the assignment so the device can begin using the IP.
+- [x] **Interactive Topology Lab**
+  - The attached lab lets you interact with star, bus, and ring topologies and intentionally break them.
+  - You explore how single points of failure and design weaknesses cause outages.
+  - Completing the lab and breaking the topologies as instructed yields the flag `THM{TOPOLOGY_FLAWS}`.
+
+## Terminal Commands
+
+This room is primarily conceptual and uses interactive browser‑based labs rather than CLI tools. There is no specific terminal command focus beyond your existing networking knowledge.
+
+```bash
+# No primary terminal commands for the Intro to LAN room.
+```
+
+## Code
+
+There is no programming component in this room. The focus is on network design, behaviour, and protocols rather than writing or analysing code.
+
+```py
+# No code snippets for the Intro to LAN room.
+```
+
+## Questions and Answers
+
+### Question 1: What does LAN stand for?
+
+<details>
+<summary>Answer</summary>
+LAN stands for **Local Area Network**.
+</details>
+
+### Question 2: In simple terms, what is a network topology?
+
+<details>
+<summary>Answer</summary>
+A network topology is the design or layout of how devices are connected and how data flows between them in a network.
+</details>
+
+### Question 3: Why is the star topology so common in modern networks?
+
+<details>
+<summary>Answer</summary>
+Because it is reliable and scalable—devices are individually connected to a central device, making it easy to add more devices as demand grows.
+</details>
+
+### Question 4: What is the main cost‑related disadvantage of a star topology?
+
+<details>
+<summary>Answer</summary>
+It requires more cabling and dedicated networking equipment, making it more expensive to set up and maintain than simpler topologies.
+</details>
+
+### Question 5: What is the central single point of failure in a star topology?
+
+<details>
+<summary>Answer</summary>
+The central device (such as a switch or hub); if it fails, all connected devices lose connectivity.
+</details>
+
+### Question 6: Why can a bus topology quickly become slow or bottlenecked?
+
+<details>
+<summary>Answer</summary>
+Because all devices share a single backbone cable, so simultaneous data transmissions compete for the same path and create congestion.
+</details>
+
+### Question 7: What makes troubleshooting a bus topology difficult?
+
+<details>
+<summary>Answer</summary>
+All traffic travels along one cable, so pinpointing which device or segment is causing problems is challenging.
+</details>
+
+### Question 8: What is the critical single point of failure in a bus topology?
+
+<details>
+<summary>Answer</summary>
+The backbone cable itself—if it breaks, devices can no longer send or receive data along the bus.
+</details>
+
+### Question 9: How are devices connected in a ring topology?
+
+<details>
+<summary>Answer</summary>
+Each device is connected directly to two neighbours, forming a closed loop through which data circulates.
+</details>
+
+### Question 10: Why is a ring topology relatively easy to troubleshoot but potentially inefficient?
+
+<details>
+<summary>Answer</summary>
+Data travels in a single direction, simplifying fault location, but it may have to pass through many devices before reaching its destination, which is inefficient.
+</details>
+
+### Question 11: What is the primary job of a switch on a LAN?
+
+<details>
+<summary>Answer</summary>
+To connect multiple devices and intelligently forward packets only to the correct destination port, reducing unnecessary traffic.
+</details>
+
+### Question 12: What is the verb used to describe the job that routers perform?
+
+<details>
+<summary>Answer</summary>
+Routers perform **routing**, creating and using paths so data can travel between different networks.
+</details>
+
+### Question 13: What is the technical term for dividing a network into smaller pieces?
+
+<details>
+<summary>Answer</summary>
+The term is **subnetting**.
+</details>
+
+### Question 14: How many bits are in a subnet mask, and what is the valid range for each octet?
+
+<details>
+<summary>Answer</summary>
+A subnet mask is 32 bits long, made up of four octets, each ranging from 0 to 255.
+</details>
+
+### Question 15: What address identifies the start of a network, and what address identifies devices within that network?
+
+<details>
+<summary>Answer</summary>
+The **Network Address** identifies the start of the network, while **Host Addresses** identify individual devices within that network.
+</details>
+
+### Question 16: What is the role of the default gateway on a subnet?
+
+<details>
+<summary>Answer</summary>
+It is the device responsible for sending data to other networks when the destination is not on the local subnet.
+</details>
+
+### Question 17: What does ARP stand for, and what problem does it solve?
+
+<details>
+<summary>Answer</summary>
+ARP stands for **Address Resolution Protocol**; it maps IP addresses to MAC addresses so devices can find each other’s physical identifiers and communicate on a LAN.
+</details>
+
+### Question 18: Which ARP packet asks “Who has this IP address?” and which packet responds?
+
+<details>
+<summary>Answer</summary>
+An **ARP Request** asks who owns a specific IP address, and an **ARP Reply** responds with the MAC address of the device that owns that IP.
+</details>
+
+### Question 19: Which address is the physical identifier for a device, and which is the logical identifier?
+
+<details>
+<summary>Answer</summary>
+The **MAC address** is the physical identifier, and the **IP address** is the logical identifier.
+</details>
+
+### Question 20: What are the four main DHCP packet types involved in automatic IP assignment?
+
+<details>
+<summary>Answer</summary>
+They are **DHCP Discover**, **DHCP Offer**, **DHCP Request**, and **DHCP ACK**.
+</details>
+
+### Question 21: What flag do you receive at the end of the LAN topology lab when you successfully break the topologies?
+
+<details>
+<summary>Answer</summary>
+You receive the flag `THM{TOPOLOGY_FLAWS}`.
+</details>
+
+## Summary
+
+The Intro to LAN room explains how local area networks can be built using different topologies—star, bus, and ring—and what trade‑offs each design introduces in terms of cost, scalability, and reliability. It shows how switches and routers move traffic efficiently, how subnetting divides a larger network into smaller, manageable pieces, and how ARP and DHCP help devices discover each other and automatically obtain IP addresses. Through an interactive lab, you see how single points of failure and design weaknesses can break networks and practice reasoning about resilience. Together, these concepts give you a solid foundation for understanding and troubleshooting LANs.
+
+## References
+
+- [Intro to LAN – TryHackMe](https://tryhackme.com/room/introtolan)
+- [Intro to LAN – YouTube](https://www.youtube.com/watch?v=csYtPidvvFQ)
+
+</details>

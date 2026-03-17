@@ -2,10 +2,9 @@
 description: Format and append cybersecurity lab notes from rough.md to tryhackme_course.md
 alwaysApply: false
 ---
-
 # Security Labs Documentation Rule
 
-When the user says **"apply the new documentation rule file"** (or similar, e.g. "format and append to tryhackme_course"), perform the documentation workflow below.
+When the user says **"apply the new documentation rule file"** (or similar, e.g. "apply security_doc.mdc to tryhackme_course.md"), perform the documentation workflow below.
 
 ## Workflow Steps
 
@@ -20,13 +19,14 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
    - Summary
    - References
 4. **Generate** 10–20 revision Q&A from the content to aid study.
-5. **Append** (do not overwrite) the formatted content to `tryhackme_course.md`.
+5. **Append** (do not overwrite) the formatted content to `tryhackme_course.md` even if the formatted content currently exists in tryhackme_course.md.
 
 ## Format Requirements
 
 - Use HTML `<details>` and `<summary>` for accordion-style sections as defined in `format.md`.
 - Title for the accordion comes from the first `#` heading in `rough.md`.
 - First reference in References must be the TryHackMe/Let's Defend page link (pasted at top of `rough.md`).
+- Every other links should also be added under the reference section after the TryHackMe/Let's Defend page link.
 - Each Q&A uses nested `<details><summary>Answer</summary>` with the answer inside.
 
 ## Content Guidelines
