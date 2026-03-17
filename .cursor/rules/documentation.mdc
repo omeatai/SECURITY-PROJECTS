@@ -1,5 +1,5 @@
 ---
-description: Format and append cybersecurity lab notes from labs/rough.md to letsdefend_course.md
+description: Format and append cybersecurity lab notes from rough.md to letsdefend_course.md
 alwaysApply: false
 ---
 
@@ -9,7 +9,7 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
 
 ## Workflow Steps
 
-1. **Read** `labs/rough.md` for the raw content.
+1. **Read** `rough.md` for the raw content.
 2. **Read** `format.md` as the template structure.
 3. **Analyze** the rough content and map it to the format structure:
    - Introduction
@@ -41,6 +41,6 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
 
 | Purpose                | Path                   |
 | ---------------------- | ---------------------- |
-| Input (raw paste)      | `labs/rough.md`        |
+| Input (raw paste)      | `rough.md`        |
 | Template               | `format.md`            |
 | Output (append target) | `letsdefend_course.md` |
