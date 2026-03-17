@@ -1681,3 +1681,271 @@ The OSI Model organises networking into seven logical layers, from the physical 
 - [OSI Model – TryHackMe](https://tryhackme.com/room/osimodelzi)
 
 </details>
+
+<details>
+  <summary>Packets & Frames</summary>
+
+## Introduction
+
+The **Packets & Frames** TryHackMe room explains how data is broken into smaller units for transmission and how different protocols and models describe this process. At Layer 3 of the OSI model, **packets** carry IP information, while at Layer 2, **frames** encapsulate packets with MAC addressing. The room also introduces the TCP/IP model, TCP vs UDP behaviour (including the three‑way handshake), port numbers, and a few hands‑on challenges with flags.
+
+## Detailed Explanation
+
+- [x] **Packets vs Frames**
+  - A **packet** is a unit of data at **Layer 3 (Network)** and includes IP addressing information plus a payload.
+  - A **frame** is a unit of data at **Layer 2 (Data Link)** that encapsulates a packet and adds MAC addresses and other link‑layer details.
+  - Analogy: the **frame** is the envelope that carries the letter (the **packet**) through the postal system; once opened, the letter can be processed or forwarded.
+  - The process of adding these headers as data moves through layers is **encapsulation**.
+  - When the encapsulating information is stripped off, you are looking at the underlying packet or data itself.
+- [x] **Why Packets Are Useful**
+  - Data is split into smaller pieces (packets) instead of being sent as one large message.
+  - This reduces the chance of **bottlenecks** and improves efficiency when many devices share a network.
+  - Example: when loading an image from a website, the image is broken into several packets and then **reconstructed** on the receiving device.
+- [x] **IP Packet Headers**
+  - Packets using the Internet Protocol (IP) have standardised headers that help devices handle and route data.
+  - Important IP headers include:
+    - **Time to Live (TTL)** – sets an expiry for the packet so it does not circulate indefinitely and clog the network.
+    - **Checksum** – provides integrity checking; if the computed value on receipt differs, the packet is considered corrupt.
+    - **Source Address** – the IP address of the sending device so responses know where to return.
+    - **Destination Address** – the IP address of the target device so routers know where to forward the packet.
+- [x] **TCP/IP Model Overview**
+  - The **TCP/IP model** is a four‑layer model that parallels the OSI model in a simplified form:
+    - **Application**
+    - **Transport**
+    - **Internet**
+    - **Network Interface**
+  - Like the OSI model, information is added at each layer as packets traverse the stack (encapsulation) and removed in reverse (decapsulation).
+- [x] **TCP Basics and Reliability**
+  - **TCP (Transmission Control Protocol)** is connection‑based and emphasises reliability.
+  - Before data is sent, TCP must establish a connection between client and server.
+  - Because of this, TCP **guarantees** that data sent will be received in order at the other end, or it will be retransmitted.
+  - Advantages:
+    - Integrity of data is guaranteed.
+    - Can synchronise devices to avoid flooding or reordering issues.
+  - Disadvantages:
+    - Requires a reliable connection; if small chunks are lost, larger units may need to be resent.
+    - Slower than UDP due to extra processing and connection maintenance.
+- [x] **TCP Headers**
+  - Key TCP header fields include:
+    - **Source Port** – random high port on the sender used to send the packet.
+    - **Destination Port** – the port where a service is listening on the receiver (e.g. port 80 for a web server).
+    - **Source IP** – IP address of the sender.
+    - **Destination IP** – IP address of the receiver.
+    - **Sequence Number** – initial random number assigned to the first piece of data to track ordering.
+    - **Acknowledgement Number** – used to confirm receipt; typically previous sequence number + 1.
+    - **Checksum** – integrity check; if recalculated value differs, data is corrupt.
+    - **Data** – the actual payload being transferred.
+    - **Flag** – indicates how to handle the packet during connection setup and teardown (e.g. SYN, ACK, FIN, RST).
+- [x] **TCP Three‑Way Handshake**
+  - The **three‑way handshake** establishes a reliable TCP connection:
+    - **SYN** – client initiates connection and proposes an Initial Sequence Number (ISN).
+    - **SYN/ACK** – server responds with its own ISN and acknowledges the client’s.
+    - **ACK** – client acknowledges the server’s ISN; the connection is established.
+  - After this, **DATA** packets carry the payload, and finally:
+    - **FIN** – used to close the connection cleanly.
+    - **RST** – used to abruptly terminate communication when something goes wrong.
+- [x] **TCP Closing a Connection**
+  - When a device determines that all data has been successfully sent and received, it should close the TCP connection to free resources.
+  - A **FIN** packet is sent to initiate closure and must be acknowledged by the other side.
+  - Both sides exchange FIN and ACK as part of a graceful shutdown.
+- [x] **UDP Basics**
+  - **UDP (User Datagram Protocol)** is **stateless** and does not require a three‑way handshake.
+  - There is no synchronisation, acknowledgement, or built‑in integrity checking beyond basic mechanisms.
+  - UDP is useful where:
+    - Some data loss is acceptable (e.g. video streaming, voice chat).
+    - High speed and low overhead are more important than guaranteed delivery.
+  - Trade‑offs:
+    - Faster and simpler than TCP.
+    - Does not care whether data is received; unstable connections can cause poor user experience.
+- [x] **UDP Headers**
+  - UDP packets have fewer headers but share some with IP:
+    - **Time to Live (TTL)** – expiry timer.
+    - **Source Address** – IP of the sender.
+    - **Destination Address** – IP of the receiver.
+    - **Source Port** – randomly chosen port used by the sender.
+    - **Destination Port** – port where the application or service is listening.
+    - **Data** – payload.
+- [x] **Ports and Services**
+  - Ports are numeric identifiers (0–65535) that allow multiple applications to share a single IP address.
+  - Common ports (0–1024) are reserved for standard services:
+    - **FTP (21)** – File Transfer Protocol for client‑server file sharing.
+    - **SSH (22)** – Secure Shell for remote text‑based management.
+    - **HTTP (80)** – unencrypted web traffic.
+    - **HTTPS (443)** – encrypted web traffic.
+    - **SMB (445)** – file and printer sharing.
+    - **RDP (3389)** – Remote Desktop Protocol for graphical remote access.
+  - Services can run on non‑standard ports (e.g. HTTP on 8080), but clients must know and specify the port (often using `:<port>` in URLs).
+- [x] **Practical Challenges and Flags**
+  - One challenge has you reconstruct a TCP handshake conversation between Alice and Bob to understand the sequence of SYN, SYN/ACK, and ACK messages, yielding the flag `THM{TCP_CHATTER}`.
+  - Another challenge involves connecting to IP `8.8.8.8` on port `1234`, which returns the flag `THM{YOU_CONNECTED_TO_A_PORT}`.
+  - Additional tasks reinforce concepts of TCP vs UDP, and using ports in practice.
+
+## Terminal Commands
+
+This room is primarily conceptual and uses static or browser‑based labs rather than heavy command‑line interaction. You may, however, conceptually work with tools like `netcat` or similar to connect to specific IP:port combinations in practical challenges.
+
+```bash
+# Example (conceptual) usage to connect to a host and port:
+nc 8.8.8.8 1234
+```
+
+## Code
+
+There is no dedicated programming component; instead, you focus on how network protocols structure and move data. Any code‑like interactions are typically done through network tools or lab interfaces.
+
+```py
+# No direct code samples for the Packets & Frames room.
+```
+
+## Questions and Answers
+
+### Question 1: What is the name for a piece of data when it has IP addressing information?
+
+<details>
+<summary>Answer</summary>
+It is called a **packet**.
+</details>
+
+### Question 2: What is the name for a piece of data when it does not have IP addressing information and is used at Layer 2?
+
+<details>
+<summary>Answer</summary>
+It is called a **frame**.
+</details>
+
+### Question 3: Which OSI layer uses packets, and which uses frames?
+
+<details>
+<summary>Answer</summary>
+Packets are used at **Layer 3 (Network)**, and frames are used at **Layer 2 (Data Link)**.
+</details>
+
+### Question 4: What IP header field prevents packets from living forever on a network?
+
+<details>
+<summary>Answer</summary>
+The **Time to Live (TTL)** field.
+</details>
+
+### Question 5: What is the purpose of the checksum field in IP or TCP headers?
+
+<details>
+<summary>Answer</summary>
+It provides **integrity checking**; if the computed checksum at the receiver differs from the sender’s value, the data is considered corrupt.
+</details>
+
+### Question 6: Name the four layers of the TCP/IP model.
+
+<details>
+<summary>Answer</summary>
+They are **Application**, **Transport**, **Internet**, and **Network Interface**.
+</details>
+
+### Question 7: Is TCP connection‑based or stateless, and what does that imply?
+
+<details>
+<summary>Answer</summary>
+TCP is **connection‑based**, meaning it must establish and maintain a connection between client and server to reliably deliver data.
+</details>
+
+### Question 8: What is the correct order of a normal TCP three‑way handshake?
+
+<details>
+<summary>Answer</summary>
+The order is **SYN, SYN/ACK, ACK**.
+</details>
+
+### Question 9: Which TCP header field ensures the integrity of data?
+
+<details>
+<summary>Answer</summary>
+The **checksum** field.
+</details>
+
+### Question 10: What is the role of the Sequence Number and Acknowledgement Number in TCP?
+
+<details>
+<summary>Answer</summary>
+The **Sequence Number** labels each piece of data so it can be reassembled in order, and the **Acknowledgement Number** confirms receipt and indicates the next expected sequence value.
+</details>
+
+### Question 11: What does the FIN flag in TCP signify?
+
+<details>
+<summary>Answer</summary>
+It indicates that a device wants to **cleanly close** the TCP connection.
+</details>
+
+### Question 12: What is the purpose of the RST flag in TCP?
+
+<details>
+<summary>Answer</summary>
+It abruptly **resets** the connection, usually when there is a problem or the service is unavailable.
+</details>
+
+### Question 13: What does “UDP” stand for, and what type of connection is it?
+
+<details>
+<summary>Answer</summary>
+UDP stands for **User Datagram Protocol**, and it is a **stateless** connectionless protocol.
+</details>
+
+### Question 14: In general, which protocol would you use to transfer a file reliably: TCP or UDP?
+
+<details>
+<summary>Answer</summary>
+You would use **TCP**.
+</details>
+
+### Question 15: Which protocol is more appropriate for a video call: TCP or UDP?
+
+<details>
+<summary>Answer</summary>
+**UDP**, because it tolerates some data loss while prioritising speed and low latency.
+</details>
+
+### Question 16: How many possible port numbers are there on a host?
+
+<details>
+<summary>Answer</summary>
+There are **65,535** possible port numbers (0–65535).
+</details>
+
+### Question 17: What port does HTTP typically use, and what about HTTPS?
+
+<details>
+<summary>Answer</summary>
+HTTP typically uses port **80**, and HTTPS uses port **443**.
+</details>
+
+### Question 18: Which port is commonly used by SSH, and what is it for?
+
+<details>
+<summary>Answer</summary>
+SSH commonly uses port **22** and is used for secure remote login over a text‑based interface.
+</details>
+
+### Question 19: What is the flag obtained after helping Alice and Bob complete a TCP handshake conversation in the lab?
+
+<details>
+<summary>Answer</summary>
+The flag is `THM{TCP_CHATTER}`.
+</details>
+
+### Question 20: What flag do you receive after connecting to `8.8.8.8` on port `1234` in the practical challenge?
+
+<details>
+<summary>Answer</summary>
+You receive the flag `THM{YOU_CONNECTED_TO_A_PORT}`.
+</details>
+
+## Summary
+
+The Packets & Frames room deepens your understanding of how data is structured and transported on networks. You learn the distinction between packets and frames across OSI layers, see how IP and TCP/UDP headers support routing and reliability, and explore how the TCP/IP model maps to practical networking. By comparing TCP and UDP, examining key headers, and working with common ports and simple labs, you build intuition for how real‑world traffic is formed, transmitted, and interpreted. This knowledge is essential for analysing network behaviour and troubleshooting connectivity issues in later security work.
+
+## References
+
+- [Packets & Frames – TryHackMe](https://tryhackme.com/room/packetsframes)
+- [Packets & Frames – YouTube](https://www.youtube.com/watch?v=vzcLrE0SfiQ)
+
+</details>
