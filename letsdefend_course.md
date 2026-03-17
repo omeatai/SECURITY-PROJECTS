@@ -938,5 +938,6 @@ This room explains networking in both everyday and technical terms, showing that
 ## References
 
 - [What is Networking? – TryHackMe](https://tryhackme.com/room/whatisnetworking)
+- [What is Networking? - Youtube Networking Basics] (https://www.youtube.com/watch?v=42u_2e6eNF4)
 
 </details>
