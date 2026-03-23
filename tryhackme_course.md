@@ -2398,3 +2398,275 @@ They are the entry point of the delegated hierarchy and **refer** the query towa
 - [IANA Root Zone Database](https://www.iana.org/domains/root/db) (TLD reference)
 
 </details>
+
+<details>
+  <summary>HTTP in Detail</summary>
+
+## Introduction
+
+**HTTP (HyperText Transfer Protocol)** is the rule set browsers and servers use to exchange **web resources**—HTML, images, video, and more—developed by Tim Berners-Lee’s team (1989–1991). **HTTPS** adds **encryption** and stronger **server identity** (certificates) so traffic cannot be read trivially in transit and impersonation is harder. This room also breaks down **URLs**, **request/response** lines and **headers**, **methods**, **status codes**, **cookies**, and ends with an **HTTP request emulator** where you earn flags for specific **GET**, **POST**, **PUT**, and **DELETE** calls.
+
+## Detailed Explanation
+
+- [x] **HTTP vs HTTPS**
+  - **HTTP**: plaintext rules for talking to **web servers** and transferring page assets.
+  - **HTTPS**: HTTP over a secure channel; the **S** stands for **secure**—data is **encrypted**, and TLS helps assure you reach the **real** server (not a simple impostor).
+  - Interactive task: find the certificate problem on the mock page → flag `THM{INVALID_HTTP_CERT}`.
+- [x] **URLs (Uniform Resource Locators)**
+  - A URL is an **instruction** for **how** and **where** to fetch a resource.
+  - **Scheme**: protocol to use (**http**, **https**, **ftp**, …).
+  - **User** (optional): `user:password` embedded for services that accept it.
+  - **Host**: **domain name** or **IP** of the server.
+  - **Port**: TCP port (often **80** for HTTP, **443** for HTTPS; valid range **1–65535**).
+  - **Path**: resource path on the server (e.g. `/view-room`).
+  - **Query string**: extra parameters after `?` (e.g. `?id=1`).
+  - **Fragment**: client-side anchor after `#` (e.g. `#task3`), often scrolls to part of a page.
+  - Full example from the room:  
+    `http://user:password@tryhackme.com:80/view-room?id=1#task3`
+- [x] **Making requests and reading responses**
+  - A minimal request line: `GET / HTTP/1.1`
+  - Extra context goes in **headers** (`Host`, `User-Agent`, `Referer`, …).
+  - Requests end with a **blank line** after headers.
+  - Responses start with a **status line** (version + **status code** + reason), then headers, blank line, then **body** (e.g. HTML).
+- [x] **Example request/response (room)**
+  - Request uses **HTTP/1.1**, `Host: tryhackme.com`, `User-Agent`, `Referer`.
+  - Response `HTTP/1.1 200 OK` with `Server`, `Date`, `Content-Type`, `Content-Length`, then HTML body.
+  - **`Content-Length`** tells the client **how many bytes** the body contains so it knows the response is complete.
+- [x] **HTTP methods (common)**
+  - **GET**: **retrieve** resources (e.g. read a news article).
+  - **POST**: **submit** data, often **create** new records (e.g. new user account).
+  - **PUT**: **update** existing data (e.g. change email).
+  - **DELETE**: **remove** resources (e.g. delete an uploaded picture).
+- [x] **Status code ranges**
+  - **1xx**: informational (continue) — uncommon today.
+  - **2xx**: **success**.
+  - **3xx**: **redirection**.
+  - **4xx**: **client** errors.
+  - **5xx**: **server** errors.
+- [x] **Common status codes (room)**
+  - **200** OK — success.
+  - **201** Created — resource created (new user, blog post).
+  - **301** Moved Permanently — permanent redirect.
+  - **302** Found — temporary redirect.
+  - **400** Bad Request — malformed or incomplete request.
+  - **401** Not Authorised — **authentication** required (e.g. editing profile while logged out).
+  - **403** Forbidden — not allowed even if authenticated.
+  - **404** Not Found — no such page/resource.
+  - **405** Method Not Allowed — wrong verb for the route (e.g. GET where POST expected).
+  - **500** Internal **Server** Error — server-side failure handling the request (room text says “Service” in one place; the usual phrase is **Internal Server Error**).
+  - **503** Service Unavailable — overload or maintenance (room uses this for “cannot access database” / unavailable scenario).
+- [x] **Request headers (selection)**
+  - **Host**: which **site** on a shared server you want (virtual hosting).
+  - **User-Agent**: browser/OS string so the server can tailor content.
+  - **Content-Length** (request): size of body when **posting** form/API data.
+  - **Accept-Encoding**: compression algorithms the client supports.
+  - **Cookie**: sends **stored** cookies back to the server.
+- [x] **Response headers (selection)**
+  - **Set-Cookie**: tells the browser to **store** a cookie for later requests.
+  - **Cache-Control**: how long to cache the response.
+  - **Content-Type**: MIME type of the body (HTML, JSON, image, …).
+  - **Content-Encoding**: compression used on the body.
+- [x] **Cookies and statelessness**
+  - HTTP is **stateless**—each request is independent; **cookies** carry a **token** or identifier so the server can recognise sessions, preferences, or auth **across** requests.
+  - Cookies are set via **`Set-Cookie`** responses and returned on subsequent requests in the **`Cookie`** header (often **not** the cleartext password—a **token**).
+  - Use **Developer Tools → Network** to inspect requests, responses, and **Cookies** per resource.
+
+## Terminal Commands
+
+You can reproduce many room ideas with **`curl`**: methods, headers, and viewing status lines. Replace hosts and paths as needed.
+
+```bash
+# Simple GET (shows response headers with -i)
+curl -i https://tryhackme.com/
+
+# GET with query string
+curl -i "https://example.com/blog?id=1"
+
+# POST form fields
+curl -i -X POST -d "username=thm&password=letmein" https://example.com/login
+
+# PUT with body
+curl -i -X PUT -d "username=admin" https://example.com/user/2
+
+# DELETE
+curl -i -X DELETE https://example.com/user/1
+```
+
+## Code
+
+Example **HTTP/1.1** request and response from the room (abbreviated for study):
+
+```http
+GET / HTTP/1.1
+Host: tryhackme.com
+User-Agent: Mozilla/5.0 Firefox/87.0
+Referer: https://tryhackme.com/
+
+```
+
+```http
+HTTP/1.1 200 OK
+Server: nginx/1.15.8
+Date: Fri, 09 Apr 2021 13:34:03 GMT
+Content-Type: text/html
+Content-Length: 98
+
+<html>
+<head><title>TryHackMe</title></head>
+<body>Welcome To TryHackMe.com</body>
+</html>
+```
+
+## Questions and Answers
+
+### Question 1: What does **HTTP** stand for?
+
+<details>
+<summary>Answer</summary>
+**HyperText Transfer Protocol**.
+</details>
+
+### Question 2: In **HTTPS**, what does the **S** stand for?
+
+<details>
+<summary>Answer</summary>
+**secure**.
+</details>
+
+### Question 3: What is the challenge flag after you find and click the HTTP certificate issue on the mock page?
+
+<details>
+<summary>Answer</summary>
+`THM{INVALID_HTTP_CERT}`
+</details>
+
+### Question 4: Name the main parts of a URL discussed in the room (scheme, host, path, and at least three others).
+
+<details>
+<summary>Answer</summary>
+**Scheme**, **user** (optional credentials), **host**, **port**, **path**, **query string** (after `?`), and **fragment** (after `#`).
+</details>
+
+### Question 5: Which ports are **usually** used for HTTP and HTTPS?
+
+<details>
+<summary>Answer</summary>
+**80** for HTTP and **443** for HTTPS (other ports are possible).
+</details>
+
+### Question 6: In the sample request line `GET / HTTP/1.1`, which **HTTP protocol version** is used?
+
+<details>
+<summary>Answer</summary>
+**HTTP/1.1**
+</details>
+
+### Question 7: Which **response** header tells the browser **how many bytes** to expect in the body?
+
+<details>
+<summary>Answer</summary>
+**Content-Length**
+</details>
+
+### Question 8: Which method would you use to **create** a new user account?
+
+<details>
+<summary>Answer</summary>
+**POST**
+</details>
+
+### Question 9: Which method would you use to **update** your email address?
+
+<details>
+<summary>Answer</summary>
+**PUT**
+</details>
+
+### Question 10: Which method would you use to **remove** a picture you uploaded?
+
+<details>
+<summary>Answer</summary>
+**DELETE**
+</details>
+
+### Question 11: Which method would you use to **view** a news article?
+
+<details>
+<summary>Answer</summary>
+**GET**
+</details>
+
+### Question 12: Which **2xx** status code indicates a resource was **created** (e.g. new user or blog post)?
+
+<details>
+<summary>Answer</summary>
+**201** (Created).
+</details>
+
+### Question 13: Which status code indicates the requested **page does not exist**?
+
+<details>
+<summary>Answer</summary>
+**404** (Not Found).
+</details>
+
+### Question 14: Which status code fits a server that **cannot serve** requests because it is **overloaded** or **down for maintenance** (and the room also uses this pattern when the app cannot reach its database)?
+
+<details>
+<summary>Answer</summary>
+**503** (Service Unavailable).
+</details>
+
+### Question 15: Which status code would you expect if you try to **edit your profile** without **logging in** first?
+
+<details>
+<summary>Answer</summary>
+**401** (Not Authorised).
+</details>
+
+### Question 16: Which **request** header tells the server **which browser** (and often version) you are using?
+
+<details>
+<summary>Answer</summary>
+**User-Agent**
+</details>
+
+### Question 17: Which **response** header tells the browser **what kind of data** is in the body (HTML, JSON, image, etc.)?
+
+<details>
+<summary>Answer</summary>
+**Content-Type**
+</details>
+
+### Question 18: Which **request** header selects **which website** you want when the same server hosts many sites?
+
+<details>
+<summary>Answer</summary>
+**Host**
+</details>
+
+### Question 19: Which **response** header is used to **save** a cookie on your computer?
+
+<details>
+<summary>Answer</summary>
+**Set-Cookie**
+</details>
+
+### Question 20: In the HTTP request emulator, what flags do you get for: **GET** `/room`; **GET** `/blog` with `id=1`; **DELETE** `/user/1`; **PUT** `/user/2` with `username=admin`; **POST** `/login` with `username=thm` and `password=letmein`?
+
+<details>
+<summary>Answer</summary>
+Respectively: `THM{YOU'RE_IN_THE_ROOM}`, `THM{YOU_FOUND_THE_BLOG}`, `THM{USER_IS_DELETED}`, `THM{USER_HAS_UPDATED}`, and `THM{HTTP_REQUEST_MASTER}`.
+</details>
+
+## Summary
+
+**HTTP in Detail** explains how browsers and servers exchange resources using **URLs**, **HTTP/1.1** request lines and **headers**, and structured **responses** with **status codes** from **1xx** through **5xx**. You compare **GET**, **POST**, **PUT**, and **DELETE**, interpret common codes like **200**, **201**, **401**, **404**, and **503**, and see how **cookies** compensate for HTTP’s **stateless** nature via **`Set-Cookie`** and **`Cookie`**. The mock certificate exercise and the **request emulator** turn the theory into short, flag-based practice.
+
+## References
+
+- [HTTP in Detail – TryHackMe](https://tryhackme.com/room/httpindetail)
+- [HTTP in Detail – YouTube](https://www.youtube.com/watch?v=XZyapIKV3Rw)
+- [HTTP Cats](https://http.cat) (visual HTTP status code reference)
+
+</details>
