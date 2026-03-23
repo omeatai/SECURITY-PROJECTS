@@ -988,7 +988,6 @@ The Careers in Cyber room outlines why cyber security is a high-opportunity fiel
 
 ## 2-Network Fundamentals
 
-
 <details>
   <summary>What is Networking?</summary>
 
@@ -2164,3 +2163,5 @@ An encrypted **tunnel** that lets remote devices participate in a **private** ne
 - [Snort](https://www.snort.org)
 
 </details>
+
+## 3-How The Web Works
