@@ -16,7 +16,7 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
    - Detailed Explanation (with `- [x]` checkboxes and sub-items)
    - Terminal Commands (fenced `bash` blocks with explanations)
    - Code (fenced code blocks with explanations)
-   - Questions and Answers (10–20 Q&A in nested `<details><summary>Answer</summary>`)
+   - Questions and Answers (10–20 Q&A in nested `<details><summary>Answer</summary>`; see bullet rule below)
    - Summary
    - References
 4. **Generate** 10–20 revision Q&A from the content to aid study.
@@ -29,9 +29,11 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
 - First reference in References must be the TryHackMe/Let's Defend page link (pasted at top of `rough.md`).
 - Every other links should also be added under the reference section after the TryHackMe/Let's Defend page link.
 - Each Q&A uses nested `<details><summary>Answer</summary>` with the answer inside.
+- **Answer formatting:** When an answer lists **multiple distinct items** (e.g. parts of a URL, record types, steps, flags, “A vs B” comparisons, enumerations), put the answer body on **separate lines** as a **markdown bullet list** (`- ` per item), not one long comma-separated line. Use a short lead-in sentence only when it helps; otherwise bullets alone are fine. Single-fact answers stay a normal paragraph (no forced bullets).
 
 ## Content Guidelines
 
+- For **Questions and Answers**, prefer **markdown bullet lists** inside `<details>` when the answer contains several separate facts, parts, or options (same rule as Format Requirements above).
 - One topic per accordion.
 - Preserve all explanations, terminal commands, and code from the rough content.
 - Use checkboxes (`- [x]`) for breakdown items in Detailed Explanation.

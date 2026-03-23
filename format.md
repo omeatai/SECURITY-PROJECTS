@@ -37,12 +37,23 @@
 
   <details>
   <summary>Answer</summary>
-    Answer to Question 1
+
+  - Physical
+  - Data Link
+  - Network
+  - (…continue as needed)
+
   </details>
-  ### Question 2: What are the 4 key levels of the TCP-IP Model?
+  ### Question 2: Name the main parts of a URL discussed in the room.
+
   <details>
   <summary>Answer</summary>
-    Answer to Question 2
+
+  - **Scheme** — protocol to use (e.g. HTTP, HTTPS)
+  - **Host** — domain or IP
+  - **Path** — resource location
+  - (…other parts as applicable)
+
   </details>
 
 ## Summary

@@ -242,7 +242,8 @@ Because all devices share the same cable and path, making it hard to pinpoint wh
 
 <details>
 <summary>Answer</summary>
-Advantage: relatively easy to troubleshoot and less prone to bottlenecks; Disadvantage: a single break or failed device can disrupt the whole ring.
+- Advantage: relatively easy to troubleshoot and less prone to bottlenecks
+- Disadvantage: a single break or failed device can disrupt the whole ring.
 </details>
 
 ### Question 9: What is the technical term for dividing a network into smaller pieces?
@@ -263,7 +264,8 @@ A subnet mask is 32 bits long, split into four octets, each ranging from 0 to 25
 
 <details>
 <summary>Answer</summary>
-The **Network Address** identifies the start of the network; the **Host Address** identifies devices within the network.
+- The **Network Address** identifies the start of the network
+- The **Host Address** identifies devices within the network
 </details>
 
 ### Question 12: What is the role of the default gateway?
@@ -277,7 +279,8 @@ The default gateway is the device responsible for sending data to other networks
 
 <details>
 <summary>Answer</summary>
-ARP stands for **Address Resolution Protocol**; it maps IP addresses to MAC addresses so devices can communicate on a LAN.
+- ARP stands for **Address Resolution Protocol**
+- It maps IP addresses to MAC addresses so devices can communicate on a LAN
 </details>
 
 ### Question 14: Which type of ARP packet asks devices whether they own a specific IP address?
@@ -291,7 +294,8 @@ An **ARP Request** asks which device has a particular IP address.
 
 <details>
 <summary>Answer</summary>
-The **MAC address** is the physical identifier, and the **IP address** is the logical identifier.
+- The **MAC address** is the physical identifier
+- The **IP address** is the logical identifier
 </details>
 
 ### Question 16: What DHCP packet does a device send to discover available DHCP servers?
@@ -358,7 +362,8 @@ Gobuster is a command-line tool used to brute-force a website for hidden directo
 
 <details>
 <summary>Answer</summary>
-`-u` specifies the target website URL to scan; `-w` specifies the path to the wordlist file used for brute-forcing directory/page names.
+- `-u` specifies the target website URL to scan
+- `-w` specifies the path to the wordlist file used for brute-forcing directory/page names.
 </details>
 
 ### Question 6: What does Status 200 in Gobuster output indicate?
@@ -524,21 +529,24 @@ To prevent intrusions from occurring and to detect and respond properly when int
 
 <details>
 <summary>Answer</summary>
-Because many attacks target end users; training them reduces risks from phishing, unsafe downloads, and other user‑driven threats.
+- Many attacks target end users
+- Training them reduces risks from phishing, unsafe downloads, and other user‑driven threats
 </details>
 
 ### Question 4: Why must assets be documented and managed in defensive security?
 
 <details>
 <summary>Answer</summary>
-You can only adequately protect systems and devices if you know what you own, where they are, and how critical they are.
+- You can only protect what you know you have
+- You need to know **where** assets are and **how critical** they are
 </details>
 
 ### Question 5: What is the role of firewalls and intrusion prevention systems (IPS) in defence?
 
 <details>
 <summary>Answer</summary>
-Firewalls control what traffic can enter or leave a network; IPS blocks network traffic that matches rules or attack signatures to stop malicious activity.
+- Firewalls control what traffic can enter or leave a network
+- IPS blocks network traffic that matches rules or attack signatures to stop malicious activity.
 </details>
 
 ### Question 6: Why are logging and monitoring critical in defensive security?
@@ -566,21 +574,26 @@ For example, users uploading confidential company data to an online storage serv
 
 <details>
 <summary>Answer</summary>
-Threat intelligence is the collection, processing, and analysis of data about adversaries and threats to inform better defences and response strategies.
+Threat intelligence is the **collection**, **processing**, and **analysis** of data about adversaries and threats to inform better defences and response strategies.
 </details>
 
 ### Question 10: Why does threat intelligence need data from both local and public sources?
 
 <details>
 <summary>Answer</summary>
-Local sources (like logs) show what is happening in your environment, while public sources (like forums and reports) reveal wider adversary behaviour and emerging threats; together, they give a fuller picture.
+- **Local** sources (e.g. logs) show what is happening in your environment
+- **Public** sources (e.g. forums, reports) reveal wider adversary behaviour and emerging threats
+- **Together**, they give a fuller picture for decision-making
 </details>
 
 ### Question 11: What are some key evidence sources used in digital forensics?
 
 <details>
 <summary>Answer</summary>
-File system images, system memory dumps, system logs, and network logs.
+- File system images
+- System memory dumps
+- System logs
+- Network logs
 </details>
 
 ### Question 12: What is the main aim of incident response?
@@ -594,7 +607,10 @@ To reduce damage from an incident and recover affected systems as quickly and ef
 
 <details>
 <summary>Answer</summary>
-Preparation; Detection and Analysis; Containment, Eradication and Recovery; Post‑Incident Activity.
+- Preparation
+- Detection and Analysis
+- Containment, Eradication and Recovery
+- Post‑Incident Activity.
 </details>
 
 ### Question 14: What is ransomware and how does it impact victims?
@@ -608,21 +624,24 @@ Ransomware is malware that encrypts a user’s files and demands payment (a rans
 
 <details>
 <summary>Answer</summary>
-A trojan horse appears to offer a legitimate or desirable function but secretly performs malicious actions, whereas a virus attaches to other programs and replicates by infecting additional files or systems.
+- **Trojan**: appears to offer a legitimate or desirable function but secretly performs malicious actions
+- **Virus**: attaches to other programs and replicates by infecting additional files or systems
 </details>
 
 ### Question 16: What is static malware analysis?
 
 <details>
 <summary>Answer</summary>
-It is analysing malware without executing it, often by examining its code or binary, and typically requires knowledge of low‑level instructions like assembly.
+- Analysing malware **without executing** it (often by examining its code or binary)
+- Typically requires knowledge of low‑level instructions such as **assembly**
 </details>
 
 ### Question 17: What is dynamic malware analysis?
 
 <details>
 <summary>Answer</summary>
-Running malware in a controlled environment and monitoring its behaviour, such as file changes, network connections, and process activity.
+- Running malware in a **controlled environment** and monitoring its behaviour
+- Examples of what you observe: **file** changes, **network** connections, **process** activity
 </details>
 
 ### Question 18: In the SIEM simulation scenario, what is the purpose of the flag `THM{THREAT-BLOCKED}`?
@@ -703,7 +722,8 @@ The main goal of defensive security is to detect and respond to attacks before t
 
 <details>
 <summary>Answer</summary>
-In defensive security you monitor and protect systems, focusing on detection and response, whereas in offensive security you actively attempt to exploit systems to find weaknesses.
+- **Defensive security**: monitor and protect systems, focusing on detection and response
+- **Offensive security**: actively attempt to exploit systems to find weaknesses
 </details>
 
 ### Question 3: What type of information is stored as an alert in the monitoring system?
@@ -738,14 +758,18 @@ The latest URL the attacker tried to find is `https://fakebank.com/admin`.
 
 <details>
 <summary>Answer</summary>
-Such URLs often expose administrative or sensitive functionality; if attackers discover and exploit them, they may gain powerful access or control over the system.
+- Such URLs often expose administrative or sensitive functionality
+- If attackers discover and exploit them, they may gain powerful access or control over the system
 </details>
 
 ### Question 8: What defensive actions do you take once the attack has been identified?
 
 <details>
 <summary>Answer</summary>
-You block the attacker’s IP address, apply rate limits to prevent overwhelming traffic, update security rules, and add additional measures to prevent the attack from recurring.
+- Block the attacker’s IP address
+- Apply rate limits to prevent overwhelming traffic
+- Update security rules
+- Add further measures to prevent the attack from recurring
 </details>
 
 ### Question 9: What is meant by containment in the context of this exercise?
@@ -773,7 +797,9 @@ Reviewing recent alerts helps defenders quickly spot abnormal activity that may 
 
 <details>
 <summary>Answer</summary>
-It uses a virtual machine and monitoring dashboard to replicate how defenders review alerts, investigate suspicious IPs and URLs, and apply controls like blocking and rate limiting to protect a production-like system.
+- It uses a virtual machine and monitoring dashboard to replicate how defenders review alerts
+- You investigate suspicious IPs and URLs
+- You apply controls like blocking and rate limiting to protect a production-like system
 </details>
 
 ## Summary
@@ -896,21 +922,26 @@ There is no code to write or analyse in this room. The emphasis is on understand
 
 <details>
 <summary>Answer</summary>
-They offer high starting pay, involve exciting work such as legally hacking systems or defending against attacks, and are in very high demand with millions of unfilled roles.
+- High starting pay
+- Exciting work such as legally hacking systems or defending against attacks
+- Very high demand, with millions of unfilled roles
 </details>
 
 ### Question 2: What is the main responsibility of a Security Analyst?
 
 <details>
 <summary>Answer</summary>
-A Security Analyst maintains the security of an organisation’s data by analysing networks and systems, working with stakeholders, and recommending or supporting defensive measures.
+- Maintains the security of an organisation’s data by analysing networks and systems
+- Works with stakeholders
+- Recommends or supports defensive measures
 </details>
 
 ### Question 3: Name two key responsibilities of a Security Analyst.
 
 <details>
 <summary>Answer</summary>
-Compiling ongoing reports about network and data safety, and developing security plans based on research into new attack tools and trends.
+- Compiling ongoing reports about network and data safety
+- Developing security plans based on research into new attack tools and trends
 </details>
 
 ### Question 4: What is the primary focus of a Security Engineer?
@@ -924,14 +955,18 @@ Designing, monitoring, and maintaining security controls, networks, and systems 
 
 <details>
 <summary>Answer</summary>
-Using metrics like MTTD (Mean Time To Detect), MTTA (Mean Time To Acknowledge), and MTTR (Mean Time To Recover) to track how quickly and effectively incidents are handled.
+- **MTTD** (Mean Time To Detect)
+- **MTTA** (Mean Time To Acknowledge)
+- **MTTR** (Mean Time To Recover)
+- Together, these metrics track how quickly and effectively incidents are handled.
 </details>
 
 ### Question 6: What is the core work of a Digital Forensics Analyst?
 
 <details>
 <summary>Answer</summary>
-Collecting, analysing, and reporting on digital evidence related to incidents or crimes, while following legal and procedural requirements.
+- Collecting, analysing, and reporting on digital evidence related to incidents or crimes
+- Following legal and procedural requirements throughout
 </details>
 
 ### Question 7: Why does a Malware Analyst need strong low-level programming skills?
@@ -952,7 +987,8 @@ To identify and safely exploit vulnerabilities in systems and applications so or
 
 <details>
 <summary>Answer</summary>
-Red Teamers focus on emulating realistic adversaries to test an organisation’s detection and response capabilities over longer, more covert engagements, while pentesters typically focus on finding as many technical vulnerabilities as possible in a defined scope.
+- **Red Teamer**: emulates realistic adversaries to test detection and response over longer, more covert engagements
+- **Penetration Tester**: typically focuses on finding as many technical vulnerabilities as possible within a defined scope
 </details>
 
 ### Question 10: Why are Red Team assessments usually better suited to organisations with mature security programs?
@@ -1104,7 +1140,8 @@ Tim Berners-Lee.
 
 <details>
 <summary>Answer</summary>
-Private networks and public networks (the Internet).
+- **Private** networks
+- **Public** networks (the Internet)
 </details>
 
 ### Question 5: What does the term “IP” stand for?
@@ -1125,7 +1162,8 @@ Each section is called an **octet**, and there are 4 octets in an IPv4 address.
 
 <details>
 <summary>Answer</summary>
-A private IP address identifies a device within a local/private network, while a public IP address identifies the network to the wider Internet and is assigned by an ISP.
+- A **private** IP address identifies a device within a local/private network
+- A **public** IP address identifies the network to the wider Internet and is assigned by an ISP
 </details>
 
 ### Question 8: Why was IPv6 introduced?
@@ -1139,7 +1177,8 @@ To provide a vastly larger address space and new efficiencies because IPv4’s ~
 
 <details>
 <summary>Answer</summary>
-MAC stands for Media Access Control; it is a hardware address assigned to a device’s network interface to uniquely identify it on the data link layer.
+- **MAC** stands for **Media Access Control**
+- It is a hardware address assigned to a device’s network interface to uniquely identify it on the data link layer
 </details>
 
 ### Question 10: What security risk is associated with relying solely on MAC addresses for access control?
@@ -1389,7 +1428,8 @@ A subnet mask is 32 bits long, made up of four octets, each ranging from 0 to 25
 
 <details>
 <summary>Answer</summary>
-The **Network Address** identifies the start of the network, while **Host Addresses** identify individual devices within that network.
+- The **Network Address** identifies the start of the network
+- **Host Addresses** identify individual devices within that network
 </details>
 
 ### Question 16: What is the role of the default gateway on a subnet?
@@ -1403,28 +1443,34 @@ It is the device responsible for sending data to other networks when the destina
 
 <details>
 <summary>Answer</summary>
-ARP stands for **Address Resolution Protocol**; it maps IP addresses to MAC addresses so devices can find each other’s physical identifiers and communicate on a LAN.
+- ARP stands for **Address Resolution Protocol**
+- It maps IP addresses to MAC addresses so devices can find each other’s physical identifiers and communicate on a LAN
 </details>
 
 ### Question 18: Which ARP packet asks “Who has this IP address?” and which packet responds?
 
 <details>
 <summary>Answer</summary>
-An **ARP Request** asks who owns a specific IP address, and an **ARP Reply** responds with the MAC address of the device that owns that IP.
+- An **ARP Request** asks who owns a specific IP address
+- An **ARP Reply** responds with the MAC address of the device that owns that IP
 </details>
 
 ### Question 19: Which address is the physical identifier for a device, and which is the logical identifier?
 
 <details>
 <summary>Answer</summary>
-The **MAC address** is the physical identifier, and the **IP address** is the logical identifier.
+- The **MAC address** is the physical identifier
+- The **IP address** is the logical identifier
 </details>
 
 ### Question 20: What are the four main DHCP packet types involved in automatic IP assignment?
 
 <details>
 <summary>Answer</summary>
-They are **DHCP Discover**, **DHCP Offer**, **DHCP Request**, and **DHCP ACK**.
+- **DHCP Discover**
+- **DHCP Offer**
+- **DHCP Request**
+- **DHCP ACK**
 </details>
 
 ### Question 21: What flag do you receive at the end of the LAN topology lab when you successfully break the topologies?
@@ -1830,14 +1876,18 @@ The **Time to Live (TTL)** field.
 
 <details>
 <summary>Answer</summary>
-It provides **integrity checking**; if the computed checksum at the receiver differs from the sender’s value, the data is considered corrupt.
+- Provides **integrity checking** for the header (and payload where applicable)
+- If the computed checksum at the receiver differs from the sender’s value, the data is considered corrupt
 </details>
 
 ### Question 6: Name the four layers of the TCP/IP model.
 
 <details>
 <summary>Answer</summary>
-They are **Application**, **Transport**, **Internet**, and **Network Interface**.
+- **Application**
+- **Transport**
+- **Internet**
+- **Network Interface**
 </details>
 
 ### Question 7: Is TCP connection‑based or stateless, and what does that imply?
@@ -2024,7 +2074,8 @@ The **router** (gateway) of the network.
 
 <details>
 <summary>Answer</summary>
-**Port forwarding** maps or opens specific ports so traffic can reach internal services; a **firewall** decides **whether** traffic is **allowed** or **denied** on those paths (and can block even when ports are forwarded).
+- **Port forwarding** maps or opens specific ports so traffic can reach internal services
+- A **firewall** decides **whether** traffic is **allowed** or **denied** on those paths (and can block even when ports are forwarded)
 </details>
 
 ### Question 3: Which two OSI layers (numbers only, ascending, separated by `&`) do firewalls operate at in this room’s quiz?
@@ -2136,7 +2187,8 @@ So you can **reach** vulnerable machines **securely** without exposing them dire
 
 <details>
 <summary>Answer</summary>
-Because it is reachable only on the **private LAN** (intranet); **NAT** and addressing keep it off the public Internet until the router **forwards** a public port to that host.
+- It is reachable only on the **private LAN** (intranet)
+- **NAT** and addressing keep it off the public Internet until the router **forwards** a public port to that host
 </details>
 
 ### Question 19: What kind of network path does a VPN create over the Internet between separated sites?
@@ -2307,7 +2359,8 @@ The **underscore** (**\_**).
 
 <details>
 <summary>Answer</summary>
-Another **canonical hostname**; the client must **resolve** that name in a further lookup.
+- Another **canonical hostname** (not an IP directly)
+- The client must **resolve** that name in a further lookup
 </details>
 
 ### Question 10: What field on DNS records controls how long answers may be **cached**?
@@ -2370,7 +2423,8 @@ The **local DNS cache** (recent lookups on the machine).
 
 <details>
 <summary>Answer</summary>
-They are the entry point of the delegated hierarchy and **refer** the query toward the correct **TLD** servers (e.g. for `.com`).
+- **refer**
+- **TLD**
 </details>
 
 ### Question 19: Why might a domain list **multiple** authoritative name servers?
@@ -2384,7 +2438,8 @@ They are the entry point of the delegated hierarchy and **refer** the query towa
 
 <details>
 <summary>Answer</summary>
-**Email authentication** hints (e.g. SPF-related data, fighting spam/spoofing) and **domain ownership verification** for third-party services.
+- **Email authentication** hints (e.g. SPF-related data, fighting spam/spoofing)
+- **Domain ownership verification** for third-party services
 </details>
 
 ## Summary
@@ -2544,14 +2599,21 @@ Content-Length: 98
 
 <details>
 <summary>Answer</summary>
-**Scheme**, **user** (optional credentials), **host**, **port**, **path**, **query string** (after `?`), and **fragment** (after `#`).
+- **Scheme** — protocol to use (e.g. HTTP, HTTPS, FTP)
+- **User** — optional credentials embedded in the URL
+- **Host** — domain name or IP of the server
+- **Port** — TCP port to connect to
+- **Path** — resource path on the server
+- **Query string** — parameters after `?`
+- **Fragment** — anchor after `#`
 </details>
 
 ### Question 5: Which ports are **usually** used for HTTP and HTTPS?
 
 <details>
 <summary>Answer</summary>
-**80** for HTTP and **443** for HTTPS (other ports are possible).
+- **80** for HTTP
+- **443** for HTTPS (other ports are possible)
 </details>
 
 ### Question 6: In the sample request line `GET / HTTP/1.1`, which **HTTP protocol version** is used?
@@ -2656,7 +2718,11 @@ Content-Length: 98
 
 <details>
 <summary>Answer</summary>
-Respectively: `THM{YOU'RE_IN_THE_ROOM}`, `THM{YOU_FOUND_THE_BLOG}`, `THM{USER_IS_DELETED}`, `THM{USER_HAS_UPDATED}`, and `THM{HTTP_REQUEST_MASTER}`.
+- **GET** `/room` → `THM{YOU'RE_IN_THE_ROOM}`
+- **GET** `/blog` with `id=1` → `THM{YOU_FOUND_THE_BLOG}`
+- **DELETE** `/user/1` → `THM{USER_IS_DELETED}`
+- **PUT** `/user/2` with `username=admin` → `THM{USER_HAS_UPDATED}`
+- **POST** `/login` (`username=thm`, `password=letmein`) → `THM{HTTP_REQUEST_MASTER}`
 </details>
 
 ## Summary
