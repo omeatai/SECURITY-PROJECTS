@@ -2165,3 +2165,236 @@ An encrypted **tunnel** that lets remote devices participate in a **private** ne
 </details>
 
 ## 3-How The Web Works
+
+<details>
+  <summary>DNS in Detail</summary>
+
+## Introduction
+
+**DNS (Domain Name System)** maps human-friendly **domain names** (e.g. `tryhackme.com`) to **IP addresses** (e.g. `104.26.10.229`) so you do not have to memorise numeric addresses. The room walks through **domain hierarchy** (root, TLD, second-level domain, subdomains), common **DNS record types** (A, AAAA, CNAME, MX, TXT), and the **resolution path** from your machine through **recursive** and **authoritative** servers, including **caching** and **TTL**. A browser-based DNS lab lets you query a sample zone and compare results to command-line tools.
+
+## Detailed Explanation
+
+- [x] **What DNS does**
+  - Every host on the Internet has an **IP address** (IPv4 example: four octets **0–255**, e.g. `104.26.10.229`).
+  - DNS lets you use **names** instead of remembering those numbers for every service.
+- [x] **Domain hierarchy**
+  - **Root** sits at the top of the tree, then **TLDs**, then **second-level** names, then optional **subdomains** left of the second-level label (separated by dots).
+- [x] **TLD (Top-Level Domain)**
+  - The **rightmost** label of a registered name (e.g. `.com` in `tryhackme.com`).
+  - **gTLD** (generic): historically hinted at purpose (`.com` commercial, `.org` organisation, `.edu` education, `.gov` government); many **new gTLDs** exist (`.online`, `.club`, `.website`, `.biz`, etc.).
+  - **ccTLD** (country code): geographic use, e.g. `.ca` (Canada), **`.co.uk`** (United Kingdom).
+- [x] **Second-level domain**
+  - In `tryhackme.com`, **tryhackme** is the second-level name and **.com** is the TLD.
+  - Registration rules: up to **63** characters for that label plus TLD; characters **a–z**, **0–9**, **hyphens** (not at ends, no consecutive hyphens).
+- [x] **Subdomain**
+  - Left of the second-level name, e.g. **`admin`** in `admin.tryhackme.com`.
+  - Same **63-character** rule per label; **underscores are not** allowed in the subdomain label (the room’s quiz contrasts characters including `\_`).
+  - You can chain multiple labels (e.g. `jupiter.servers.tryhackme.com`); the **full** domain name must be **253** characters or fewer. There is **no fixed cap** on how many subdomain levels you create.
+- [x] **Common DNS record types**
+  - **A**: resolves to an **IPv4** address (e.g. `104.26.10.229`).
+  - **AAAA**: resolves to an **IPv6** address (e.g. `2606:4700:20::681a:be5`).
+  - **CNAME**: points to **another hostname**; the client must then resolve that name (e.g. `store.tryhackme.com` → `shops.shopify.com`).
+  - **MX**: mail exchangers for the domain—**hosts** that receive email, with a **priority** number (lower often tried first).
+  - **TXT**: arbitrary **text**—SPF/DMARC, domain verification, ACME challenges, etc.
+- [x] **What happens on a DNS query**
+  1. Your system checks a **local cache** (recent lookups).
+  2. If needed, it asks a **recursive DNS server** (often your **ISP**’s resolver; you can choose another).
+  3. The recursive resolver also **caches**; if it has a fresh answer, it returns it (common for popular sites).
+  4. Otherwise resolution walks **root** → **TLD** server for the domain’s TLD (e.g. `.com`) → **authoritative** name servers for the zone (often several for redundancy).
+  5. The **authoritative** server stores the **zone records** for that domain; updates to DNS are made there.
+  6. Answers flow back to the recursive server, are **cached** (subject to **TTL**), then returned to your machine.
+- [x] **TTL (Time To Live)**
+  - A number in **seconds** telling resolvers how long they may **cache** that record before refreshing.
+
+## Terminal Commands
+
+The room’s embedded tool shows equivalent CLI commands. On Linux/macOS you can query records with **`dig`** or **`nslookup`**. Replace the domain with your target.
+
+```bash
+# IPv4 address (A record)
+dig +short A example.com
+
+# IPv6 (AAAA)
+dig +short AAAA example.com
+
+# Mail exchangers (MX) — note priority in the left column
+dig +short MX example.com
+
+# TXT records
+dig +short TXT example.com
+
+# CNAME chain (follow)
+dig +short CNAME store.example.com
+```
+
+```bash
+# nslookup (interactive or one-shot)
+nslookup -type=A www.example.com
+nslookup -type=MX example.com
+```
+
+## Code
+
+TXT records are plain strings. Examples from the room’s style of content:
+
+```text
+_acme-challenge.example.com TXT "token_value_here"
+@ TXT "v=spf1 ip4:192.0.2.0/24 include:_spf.google.com include:amazonses.com ~all"
+_dmarc.example.com TXT "v=DMARC1; p=reject; rua=mailto:dmarc-reports@example.com; adkim=s; aspf=s; pct=100"
+@ TXT "MS=ms12345678"
+```
+
+## Questions and Answers
+
+### Question 1: What does DNS stand for?
+
+<details>
+<summary>Answer</summary>
+**Domain Name System**.
+</details>
+
+### Question 2: What is the maximum length of a single **subdomain** label?
+
+<details>
+<summary>Answer</summary>
+**63** characters.
+</details>
+
+### Question 3: Which character cannot be used in a subdomain name among the choices **3**, **b**, **\_**, **-**?
+
+<details>
+<summary>Answer</summary>
+The **underscore** (**\_**).
+</details>
+
+### Question 4: What is the maximum total length of a **domain name** (full FQDN)?
+
+<details>
+<summary>Answer</summary>
+**253** characters.
+</details>
+
+### Question 5: What type of TLD is **`.co.uk`**?
+
+<details>
+<summary>Answer</summary>
+**ccTLD** (country-code top-level domain).
+</details>
+
+### Question 6: Which record type tells clients **where to deliver email** for a domain?
+
+<details>
+<summary>Answer</summary>
+**MX** record.
+</details>
+
+### Question 7: Which record type holds an **IPv6** address?
+
+<details>
+<summary>Answer</summary>
+**AAAA** record.
+</details>
+
+### Question 8: Which record type maps a name to an **IPv4** address?
+
+<details>
+<summary>Answer</summary>
+**A** record.
+</details>
+
+### Question 9: What does a **CNAME** record return instead of a raw IP?
+
+<details>
+<summary>Answer</summary>
+Another **canonical hostname**; the client must **resolve** that name in a further lookup.
+</details>
+
+### Question 10: What field on DNS records controls how long answers may be **cached**?
+
+<details>
+<summary>Answer</summary>
+**TTL** (Time To Live), in seconds.
+</details>
+
+### Question 11: What kind of DNS server does your **ISP** usually provide to your network?
+
+<details>
+<summary>Answer</summary>
+A **recursive** DNS server (recursive resolver).
+</details>
+
+### Question 12: What kind of server **authoritatively stores** the zone records for a domain?
+
+<details>
+<summary>Answer</summary>
+The **authoritative** DNS server (nameserver for the zone).
+</details>
+
+### Question 13: In the practical zone **website.thm**, what is the **CNAME** target for **`shop.website.thm`**?
+
+<details>
+<summary>Answer</summary>
+**shops.myshopify.com**
+</details>
+
+### Question 14: What is the **TXT** record value for **`website.thm`** in that lab?
+
+<details>
+<summary>Answer</summary>
+`THM{7012BBA60997F35A9516C2E16D2944FF}`
+</details>
+
+### Question 15: What is the **numerical priority** of the **MX** record in that lab?
+
+<details>
+<summary>Answer</summary>
+**30**
+</details>
+
+### Question 16: What **IPv4 address** does the **A** record for **`www.website.thm`** show?
+
+<details>
+<summary>Answer</summary>
+**10.10.10.10**
+</details>
+
+### Question 17: At the start of resolution, what does your computer check before querying a resolver?
+
+<details>
+<summary>Answer</summary>
+The **local DNS cache** (recent lookups on the machine).
+</details>
+
+### Question 18: What is the role of **root** DNS servers in the resolution chain?
+
+<details>
+<summary>Answer</summary>
+They are the entry point of the delegated hierarchy and **refer** the query toward the correct **TLD** servers (e.g. for `.com`).
+</details>
+
+### Question 19: Why might a domain list **multiple** authoritative name servers?
+
+<details>
+<summary>Answer</summary>
+**Redundancy** and **availability**—if one nameserver fails, another can still answer queries.
+</details>
+
+### Question 20: Give two common uses of **TXT** records mentioned in the room.
+
+<details>
+<summary>Answer</summary>
+**Email authentication** hints (e.g. SPF-related data, fighting spam/spoofing) and **domain ownership verification** for third-party services.
+</details>
+
+## Summary
+
+**DNS in Detail** explains how names map to addresses, how **FQDNs** are built from TLDs, registrable labels, and subdomains, and how **A**, **AAAA**, **CNAME**, **MX**, and **TXT** records differ. You follow the **recursive** resolution path from cache and ISP resolvers through **root** and **TLD** servers to **authoritative** data, and you see how **TTL** controls caching. The hands-on zone reinforces reading **CNAME**, **TXT**, **MX** priority, and **A** records in a realistic lookup workflow.
+
+## References
+
+- [DNS in Detail – TryHackMe](https://tryhackme.com/room/dnsindetail)
+- [DNS in Detail – YouTube](https://www.youtube.com/watch?v=jpTY1S5vs9k)
+- [IANA Root Zone Database](https://www.iana.org/domains/root/db) (TLD reference)
+
+</details>
