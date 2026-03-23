@@ -29,11 +29,11 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
 - First reference in References must be the TryHackMe/Let's Defend page link (pasted at top of `rough.md`).
 - Every other links should also be added under the reference section after the TryHackMe/Let's Defend page link.
 - Each Q&A uses nested `<details><summary>Answer</summary>` with the answer inside.
-- **Answer formatting:** When an answer lists **multiple distinct items** (e.g. parts of a URL, record types, steps, flags, “A vs B” comparisons, enumerations), put the answer body on **separate lines** as a **markdown bullet list** (`- ` per item), not one long comma-separated line. Use a short lead-in sentence only when it helps; otherwise bullets alone are fine. Single-fact answers stay a normal paragraph (no forced bullets).
+- **Answer formatting:** Inside `<details><summary>Answer</summary>`, use **checked task-list lines** (`- [x] …`) for every answer line—whether there is **one** fact or **many** (e.g. a single header name, URL parts, record types, steps, flags, or “A vs B” lines). Do **not** use plain `- ` without `[x]` in Q&A answers. For multiple items, put **one `- [x]` line per item**, not one long comma-separated sentence.
 
 ## Content Guidelines
 
-- For **Questions and Answers**, prefer **markdown bullet lists** inside `<details>` when the answer contains several separate facts, parts, or options (same rule as Format Requirements above).
+- For **Questions and Answers**, always format the answer body with **`- [x]`** lines inside `<details>` (same rule as Format Requirements above), not bare paragraphs or plain `-` bullets.
 - One topic per accordion.
 - Preserve all explanations, terminal commands, and code from the rough content.
 - Use checkboxes (`- [x]`) for breakdown items in Detailed Explanation.

@@ -289,3 +289,17 @@ Correct Answer
 Make a POST request to /login page with the username of thm and a password of letmein
 Note: Use the gear button on the right to manage body parameters
 THM{HTTP_REQUEST_MASTER}
+
+<details>
+<summary>Answer</summary>
+
+-[x] **GET** `/room` → `THM{YOU'RE_IN_THE_ROOM}` -[x] **GET** `/blog` with `id=1` → `THM{YOU_FOUND_THE_BLOG}` -[x] **DELETE** `/user/1` → `THM{USER_IS_DELETED}` -[x] **PUT** `/user/2` with `username=admin` → `THM{USER_HAS_UPDATED}` -[x] **POST** `/login` (`username=thm`, `password=letmein`) → `THM{HTTP_REQUEST_MASTER}`
+
+</details>
+
+<details>
+<summary>Answer</summary>
+
+-[] Set-Cookie
+
+</details>

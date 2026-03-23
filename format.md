@@ -38,10 +38,10 @@
   <details>
   <summary>Answer</summary>
 
-  - Physical
-  - Data Link
-  - Network
-  - (…continue as needed)
+  - [x] Physical
+  - [x] Data Link
+  - [x] Network
+  - [x] (…continue as needed)
 
   </details>
   ### Question 2: Name the main parts of a URL discussed in the room.
@@ -49,10 +49,10 @@
   <details>
   <summary>Answer</summary>
 
-  - **Scheme** — protocol to use (e.g. HTTP, HTTPS)
-  - **Host** — domain or IP
-  - **Path** — resource location
-  - (…other parts as applicable)
+  - [x] **Scheme** — protocol to use (e.g. HTTP, HTTPS)
+  - [x] **Host** — domain or IP
+  - [x] **Path** — resource location
+  - [x] (…other parts as applicable)
 
   </details>
 
