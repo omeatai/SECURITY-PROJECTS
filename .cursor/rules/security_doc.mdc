@@ -2,6 +2,7 @@
 description: Format and append cybersecurity lab notes from rough.md to tryhackme_course.md
 alwaysApply: false
 ---
+
 # Security Labs Documentation Rule
 
 When the user says **"apply the new documentation rule file"** (or similar, e.g. "apply security_doc.mdc to tryhackme_course.md"), perform the documentation workflow below.
@@ -39,8 +40,8 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
 
 ## File Paths
 
-| Purpose                | Path                   |
-| ---------------------- | ---------------------- |
-| Input (raw paste)      | `rough.md`        |
-| Template               | `format.md`            |
+| Purpose                | Path                  |
+| ---------------------- | --------------------- |
+| Input (raw paste)      | `rough.md`            |
+| Template               | `format.md`           |
 | Output (append target) | `tryhackme_course.md` |

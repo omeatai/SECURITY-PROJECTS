@@ -1949,3 +1949,218 @@ The Packets & Frames room deepens your understanding of how data is structured a
 - [Packets & Frames – YouTube](https://www.youtube.com/watch?v=vzcLrE0SfiQ)
 
 </details>
+
+<details>
+  <summary>Extending Your Network</summary>
+
+## Introduction
+
+The **Extending Your Network** TryHackMe room builds on core LAN ideas by covering how services reach the Internet (**port forwarding**), how **firewalls** filter traffic, how **VPNs** link remote sites and protect data, and how **routers**, **switches**, and **VLANs** fit together at different OSI layers. You also work through browser-based labs: configuring a simple firewall ruleset, and stepping through a **network simulator** that shows how packets and TCP handshakes move between hosts.
+
+## Detailed Explanation
+
+- [x] **Port forwarding**
+  - Without port forwarding, a service such as a web server on `192.168.1.10:80` is only reachable on the **local network** (an **intranet**).
+  - To make that service reachable from the **Internet**, an administrator configures **port forwarding** on the **router** so traffic to the network’s **public IP** (e.g. `82.62.51.70`) is sent to the correct internal host and port.
+  - **Port forwarding** opens or maps specific ports (how packets are addressed to services). It is **not** the same as a **firewall**: the firewall decides **whether** traffic may pass, even when ports are forwarded.
+- [x] **Firewalls**
+  - A firewall controls what traffic may **enter** or **leave** a network—like border control.
+  - Decisions can depend on **source**, **destination**, **port**, **protocol** (e.g. TCP vs UDP), and similar policy; firewalls use **packet inspection** to apply rules.
+  - Implementations range from dedicated hardware to home routers and software such as **Snort**.
+  - **Stateful** firewalls use **whole-connection** context (dynamic, resource-intensive; may block a host if a connection is bad).
+  - **Stateless** firewalls use **static per-packet** rules (lighter, but only as good as the rules; useful for high volume, e.g. mitigating **DDoS**-style floods).
+  - For this room’s quiz: firewalls are associated with OSI layers **3 & 4** (numbers in ascending order, separated by `&`).
+- [x] **Firewall lab (static site)**
+  - Legitimate traffic is green; malicious traffic is red. The task is to block the malicious flow to the web server at **203.0.110.1** on **port 80** while allowing good traffic—room flag: `THM{FIREWALLS_RULE}`.
+- [x] **Virtual Private Networks (VPNs)**
+  - A VPN creates an encrypted **tunnel** over the Internet so devices on different physical networks behave like one **private** network.
+  - Example: two offices (**Network #1** and **Network #2**) plus a third logical network (**Network #3**) formed only by VPN-connected devices that can talk securely among themselves.
+  - Benefits include linking **geographically separate** sites, **encryption** (protecting data from sniffing, e.g. on public Wi‑Fi), and **privacy/anonymity** (with the caveat that a VPN provider that **logs** traffic undermines anonymity).
+  - **TryHackMe** uses a VPN so you can reach vulnerable lab machines **safely** without exposing those machines directly to the public Internet (and so traffic patterns align with acceptable use).
+- [x] **VPN technologies (overview)**
+  - **PPP**: Used with **PPTP** for **authentication** and **encryption**; relies on matching **private key** and **certificate**; **not routable** by itself.
+  - **PPTP**: **Point-to-Point Tunneling Protocol**—carries PPP so data can **leave** the network; widely supported and easy to set up but **weakly encrypted** compared with alternatives.
+  - **IPSec**: **Internet Protocol Security**—encrypts within the **IP** framework; **strong** encryption and broad device support but **harder** to configure.
+- [x] **Routers**
+  - A **router** **connects** networks and forwards traffic between them; the process is **routing** (verb **routing**).
+  - Routers operate at **Layer 3** of the OSI model and often expose a **web or console UI** for **port forwarding** and **firewall** rules.
+  - When multiple paths exist, routing protocols consider factors such as **shortest path**, **reliability**, and **link type** (e.g. copper vs fibre).
+- [x] **Switches**
+  - A **switch** connects **many** devices (the room cites a range such as **3–63**) over **Ethernet**.
+  - **Layer 2** switches forward **frames** using **MAC** addresses (IP packets sit inside frames).
+  - **Layer 3** switches forward frames **and** can **route** packets using **IP**—they combine switch and some router behaviour. A Layer 2 switch does **not** perform Layer 3 routing.
+- [x] **VLANs (Virtual LANs)**
+  - **VLANs** **logically** separate devices on the same physical infrastructure (e.g. **Sales** vs **Accounting**), improving **security** and policy control while still sharing uplinks such as Internet access.
+- [x] **Network simulator lab**
+  - Use **Chrome** or **Firefox**. Send a **TCP** packet from **computer1** to **computer3** to reveal the flag `THM{YOU'VE_GOT_DATA}`.
+  - The room also asks how many **HANDSHAKE** entries appear in the **Network Log** (answer in the Q&A section).
+
+## Terminal Commands
+
+This room is taught mainly through diagrams, firewall and VPN concepts, and **in-browser** labs (firewall static site, packet simulator). Router and firewall **configuration** is usually done through a **web administration** interface on the device rather than a fixed CLI script in the lesson.
+
+```bash
+# No primary command-line workflow is emphasised in this room.
+# Port forwarding and firewall rules are typically applied in the router/gateway admin UI.
+```
+
+## Code
+
+There is no programming track in this room; learning is conceptual plus interactive web labs.
+
+```py
+# No code snippets for the Extending Your Network room.
+```
+
+## Questions and Answers
+
+### Question 1: On which device is port forwarding configured?
+
+<details>
+<summary>Answer</summary>
+The **router** (gateway) of the network.
+</details>
+
+### Question 2: In one sentence, how does port forwarding differ from a firewall?
+
+<details>
+<summary>Answer</summary>
+**Port forwarding** maps or opens specific ports so traffic can reach internal services; a **firewall** decides **whether** traffic is **allowed** or **denied** on those paths (and can block even when ports are forwarded).
+</details>
+
+### Question 3: Which two OSI layers (numbers only, ascending, separated by `&`) do firewalls operate at in this room’s quiz?
+
+<details>
+<summary>Answer</summary>
+**3 & 4**
+</details>
+
+### Question 4: Which firewall category inspects the **entire connection** and tends to use more resources?
+
+<details>
+<summary>Answer</summary>
+**Stateful** firewall.
+</details>
+
+### Question 5: Which firewall category applies a **static** rule set to **individual packets** and can handle very high packet volumes well?
+
+<details>
+<summary>Answer</summary>
+**Stateless** firewall.
+</details>
+
+### Question 6: What flag do you obtain after correctly configuring the firewall in the static-site exercise (blocking malicious traffic to the web server on port 80)?
+
+<details>
+<summary>Answer</summary>
+`THM{FIREWALLS_RULE}`
+</details>
+
+### Question 7: What VPN-related technology handles **authentication** and **encryption** of data for PPTP but is **not routable** by itself?
+
+<details>
+<summary>Answer</summary>
+**PPP** (Point-to-Point Protocol).
+</details>
+
+### Question 8: Which VPN technology tunnels PPP so it can **leave** the network, is easy to deploy, but is relatively **weakly** encrypted?
+
+<details>
+<summary>Answer</summary>
+**PPTP** (Point-to-Point Tunneling Protocol).
+</details>
+
+### Question 9: Which VPN technology encrypts using the **IP** framework and is known for **strong** encryption but harder setup?
+
+<details>
+<summary>Answer</summary>
+**IPSec** (often written **IPSEC** in quizzes).
+</details>
+
+### Question 10: What is the **verb** for the action routers perform when moving data between networks?
+
+<details>
+<summary>Answer</summary>
+**Routing** (the process is **routing**).
+</details>
+
+### Question 11: At which OSI layer do routers primarily operate?
+
+<details>
+<summary>Answer</summary>
+**Layer 3** (Network layer).
+</details>
+
+### Question 12: What are the **two** switch types by OSI layer named in the room (comma-separated, e.g. Layer X,Layer Y)?
+
+<details>
+<summary>Answer</summary>
+**Layer 2,Layer 3**
+</details>
+
+### Question 13: What does a **VLAN** achieve for devices connected to the same switch?
+
+<details>
+<summary>Answer</summary>
+It **virtually segments** the network so groups (e.g. departments) can be **isolated** for security and policy while still sharing infrastructure such as Internet access.
+</details>
+
+### Question 14: Why does TryHackMe provide a VPN for accessing lab machines?
+
+<details>
+<summary>Answer</summary>
+So you can **reach** vulnerable machines **securely** without exposing them directly to the Internet, while keeping your activity in a controlled, acceptable context for providers such as **ISPs**.
+</details>
+
+### Question 15: What flag is revealed when you send a TCP packet from computer1 to computer3 in the network simulator?
+
+<details>
+<summary>Answer</summary>
+`THM{YOU'VE_GOT_DATA}`
+</details>
+
+### Question 16: How many **HANDSHAKE** entries appear in the Network Log in the simulator task?
+
+<details>
+<summary>Answer</summary>
+**5**
+</details>
+
+### Question 17: Between stateful and stateless firewalls, which is described as “dumber” and only effective when rules **exactly** match?
+
+<details>
+<summary>Answer</summary>
+**Stateless** firewall.
+</details>
+
+### Question 18: If a web server on `192.168.1.10` serves HTTP on port 80, why can only local devices reach it **before** port forwarding?
+
+<details>
+<summary>Answer</summary>
+Because it is reachable only on the **private LAN** (intranet); **NAT** and addressing keep it off the public Internet until the router **forwards** a public port to that host.
+</details>
+
+### Question 19: What kind of network path does a VPN create over the Internet between separated sites?
+
+<details>
+<summary>Answer</summary>
+An encrypted **tunnel** that lets remote devices participate in a **private** network as if they were locally connected.
+</details>
+
+### Question 20: Name one software firewall example mentioned in the room material.
+
+<details>
+<summary>Answer</summary>
+**Snort** (intrusion detection / network security software used as an example of a software firewall category).
+</details>
+
+## Summary
+
+**Extending Your Network** ties together how internal services are exposed (**port forwarding** on the **router**), how **firewalls** enforce allow/deny policy at layers **3 and 4** using **stateful** or **stateless** inspection, and how **VPNs** (PPP, PPTP, **IPSec**) extend and protect connectivity. You also reinforce **routing** vs switching, **Layer 2 vs Layer 3** switches, and **VLAN** segmentation. Hands-on items include a **firewall** rules lab, a **packet/network simulator** with TCP handshake visibility, and flags that anchor the concepts in practice.
+
+## References
+
+- [Extending Your Network – TryHackMe](https://tryhackme.com/room/extendingyournetwork)
+- [Snort](https://www.snort.org)
+
+</details>
