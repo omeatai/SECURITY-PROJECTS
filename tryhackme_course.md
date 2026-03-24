@@ -3420,3 +3420,231 @@ document.getElementById("demo").innerHTML = "Hack the Planet";
 - [How Websites Work – YouTube](https://www.youtube.com/watch?v=iWoiwFRLV4I)
 
 </details>
+
+<details>
+  <summary>Putting it all together</summary>
+
+## Introduction
+
+**Putting it all together** recaps the **full path** from typing a URL to seeing a page: **DNS** resolves the host, **HTTP** carries the conversation, and the server returns **HTML**, **JavaScript**, **CSS**, and **images** for the browser to render. The room then adds infrastructure pieces that make the web **scale** and **safer**: **load balancers**, **CDNs**, **databases**, and **WAFs**; **how web servers** serve files from a **document root**, use **virtual hosts** for many sites on one machine, and distinguish **static** vs **dynamic** content and **backend** languages—with a **drag-and-drop** quiz that unlocks a flag when you order the request flow correctly.
+
+## Detailed Explanation
+
+- [x] **End-to-end picture (from earlier modules)**
+  - Your computer needs the server’s **IP** → **DNS** resolves the name.
+  - The client talks to the server using **HTTP**; the server returns **HTML**, **JS**, **CSS**, **images**, etc., and the browser **formats** and **displays** the site.
+- [x] **Load balancers**
+  - Used when **traffic** is large or **high availability** is required—one server may not suffice.
+  - **Two main roles**: spread load across servers; provide **failover** if a server stops responding.
+  - The **load balancer** receives the request first, then **forwards** it to one of several **backend** servers.
+  - **Algorithms** include **round-robin** (each server in turn) and **weighted** (e.g. send to the **least busy** server).
+  - **Health checks**: periodic probes to each server; if a server fails or misbehaves, traffic is **stopped** until it recovers.
+- [x] **CDN (Content Delivery Network)**
+  - Hosts **static** assets (**JS**, **CSS**, **images**, **video**) on **many servers worldwide**.
+  - Sends the user to a **geographically nearby** edge server instead of always hitting the origin—**reduces latency** and **origin load**.
+- [x] **Databases**
+  - Sites often **store** and **retrieve** user data; web servers talk to **databases** (from simple files to large clusters).
+  - Examples: **MySQL**, **MSSQL**, **MongoDB**, **Postgres**—each with different features.
+- [x] **WAF (Web Application Firewall)**
+  - Sits **between** the client’s request and the **web server**.
+  - Goals: protect against **hacking** and **denial-of-service**; inspect requests for **common attacks**; distinguish **real browsers** from **bots**; **rate limiting** (cap requests per **IP** per time window). Suspicious requests can be **dropped** before they reach the app server.
+- [x] **Web servers (software)**
+  - Software that **listens** for connections and uses **HTTP** to deliver content—e.g. **Apache**, **Nginx**, **IIS**, **Node.js**.
+  - Serves files from a configured **root** (document root), e.g. **`/var/www/html`** on Linux for **Nginx/Apache** defaults, **`C:\inetpub\wwwroot`** on Windows for **IIS**.
+  - Example: `http://www.example.com/picture.jpg` maps to a file under that root, e.g. **`/var/www/html/picture.jpg`** on disk.
+- [x] **Virtual hosts**
+  - One server can host **many domain names** via **virtual host** configuration; the server reads the **hostname** from **HTTP headers** and maps to the right **site** and **document root** (e.g. `one.com` → `/var/www/website_one`, `two.com` → `/var/www/website_two`). No fixed limit on how many sites per server.
+- [x] **Static vs dynamic content**
+  - **Static**: files served **as-is** (images, CSS, JS, HTML that does not change per request).
+  - **Dynamic**: output can **change** per request (e.g. blog homepage with latest posts, search results)—work happens in the **backend** with **programming/scripting** languages; the browser sees the **resulting HTML**, not the server-side source.
+- [x] **Backend languages**
+  - Examples: **PHP**, **Python**, **Ruby**, **Node.js**, **Perl**—talk to **databases**, call **APIs**, process **user input**, etc.
+  - **PHP** example: `index.php?name=adam` with `<?php echo $_GET["name"]; ?>` outputs **Hello adam**; the client **does not** receive the raw PHP source.
+- [x] **Quiz task**
+  - Drag-and-drop tiles into the **correct order** of how a **request to a website** works; correct slots turn **green**, wrong **red**; avoid **refreshing** (resets tiles). Flag: **`THM{YOU_GOT_THE_ORDER}`**.
+
+## Terminal Commands
+
+Default **document roots** are configuration choices—on Linux servers you often see:
+
+```bash
+ls -la /var/www/html
+```
+
+On Windows with IIS:
+
+```powershell
+dir C:\inetpub\wwwroot
+```
+
+Use your distro’s package docs to locate **`nginx`** / **`apache2`** site configs for **virtual hosts** (e.g. under `/etc/nginx/sites-enabled/` or `/etc/apache2/sites-available/`).
+
+## Code
+
+Dynamic page example from the room (PHP): the **server** runs PHP; the **browser** only gets HTML.
+
+```php
+<html><body>Hello <?php echo $_GET["name"]; ?></body></html>
+```
+
+Rendered response to the client:
+
+```html
+<html><body>Hello adam</body></html>
+```
+
+## Questions and Answers
+
+### Question 1: What can be used to **host static files** and **speed up** a client’s visit to a website?
+
+<details>
+<summary>Answer</summary>
+
+- [x] A **CDN** (Content Delivery Network).
+
+</details>
+
+### Question 2: What does a load balancer perform to make sure a **host is still alive**?
+
+<details>
+<summary>Answer</summary>
+
+- [x] A **health check** (periodic checks; unhealthy servers stop receiving traffic until they recover).
+
+</details>
+
+### Question 3: What can help **protect a website** against hacking (and related abuse) in front of the app server?
+
+<details>
+<summary>Answer</summary>
+
+- [x] A **WAF** (Web Application Firewall).
+
+</details>
+
+### Question 4: What **two main features** do load balancers provide for busy or critical sites?
+
+<details>
+<summary>Answer</summary>
+
+- [x] Handle **high traffic** by spreading load across **multiple servers**
+- [x] Provide **failover** when a server becomes **unresponsive**
+
+</details>
+
+### Question 5: Name two **load-balancing algorithm** examples from the room.
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Round-robin** (each backend server in turn)
+- [x] **Weighted** (e.g. favour the **least busy** server)
+
+</details>
+
+### Question 6: What common **web server software** examples are listed in the room?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Apache**
+- [x] **Nginx**
+- [x] **IIS**
+- [x] **Node.js** (listed as NodeJS in the room)
+
+</details>
+
+### Question 7: What is the typical default **document root** for **Nginx** and **Apache** on Linux in the room’s example?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`/var/www/html`**
+
+</details>
+
+### Question 8: What default path does **IIS** use for website content on **Windows** in the room?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`C:\inetpub\wwwroot`**
+
+</details>
+
+### Question 9: What does **web server** software use to **host multiple websites** with different domain names?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Virtual hosts** (hostname from the request is matched to configuration).
+
+</details>
+
+### Question 10: What is the name for the type of content that **can change** with different requests?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Dynamic** content.
+
+</details>
+
+### Question 11: Does the **client** see the **backend** (e.g. PHP) source code as delivered by the server?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Nay**—the browser receives the **processed result** (e.g. HTML), not the raw server-side code.
+
+</details>
+
+### Question 12: What **database** examples does the room mention?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **MySQL**
+- [x] **MSSQL**
+- [x] **MongoDB**
+- [x] **Postgres**
+
+</details>
+
+### Question 13: What **flag** do you get after ordering the **request flow** tiles correctly in the quiz?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`THM{YOU_GOT_THE_ORDER}`**
+
+</details>
+
+### Question 14: What is **rate limiting** in the WAF context?
+
+<details>
+<summary>Answer</summary>
+
+- [x] Allowing only up to a **certain number of requests per IP** (per second / time window) to block abusive or automated floods.
+
+</details>
+
+### Question 15: In one sentence, what is the difference between **static** and **dynamic** content?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Static** content is served **unchanged** from files; **dynamic** content is **generated or selected per request** on the **backend** before the response is sent.
+
+</details>
+
+## Summary
+
+**Putting it all together** connects **DNS**, **HTTP**, and returned assets to the bigger picture: **load balancers** and **health checks**, **CDNs** for **static** files, **databases** for persisted data, **WAFs** with **rate limiting**, **web server** roots and **virtual hosts**, **static** vs **dynamic** pages, and **backend** languages where users never see raw **PHP**-style source. The **ordering quiz** reinforces the pipeline and awards **`THM{YOU_GOT_THE_ORDER}`**.
+
+## References
+
+- [Putting it all together – TryHackMe](https://tryhackme.com/room/puttingitalltogether)
+- [Putting it all together – YouTube](https://www.youtube.com/watch?v=Aa_FAA3v22g)
+
+</details>
