@@ -80,7 +80,9 @@ No code sections in this room; the activity uses terminal commands (Gobuster) an
 
 <details>
 <summary>Answer</summary>
+
 - [x] Offensive Security.
+
 </details>
 
 <details>
@@ -193,137 +195,175 @@ There is no programming component in this room. Instead, you work with visual di
 
 <details>
 <summary>Answer</summary>
+
 - [x] LAN stands for **Local Area Network**.
+
 </details>
 
 ### Question 2: What is the verb used to describe the job routers perform?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Routers perform **routing**.
+
 </details>
 
 ### Question 3: Which device is used to centrally connect multiple devices on a local network and send data only to the correct destination?
 
 <details>
 <summary>Answer</summary>
+
 - [x] A **switch** is used to centrally connect multiple devices and forward data intelligently to the correct port.
+
 </details>
 
 ### Question 4: Which topology is described as cost-efficient to set up?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **bus** topology is cost-efficient to set up.
+
 </details>
 
 ### Question 5: Which topology is more expensive to set up and maintain, but offers scalability and reliability?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **star** topology.
+
 </details>
 
 ### Question 6: What is a major disadvantage of a bus topology in terms of reliability?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The backbone cable is a single point of failure; if it breaks, all devices on the bus lose connectivity.
+
 </details>
 
 ### Question 7: Why can troubleshooting be difficult in a bus topology?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Because all devices share the same cable and path, making it hard to pinpoint which device or segment is causing issues.
+
 </details>
 
 ### Question 8: What is one advantage and one disadvantage of a ring topology?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Advantage: relatively easy to troubleshoot and less prone to bottlenecks
 - [x] Disadvantage: a single break or failed device can disrupt the whole ring.
+
 </details>
 
 ### Question 9: What is the technical term for dividing a network into smaller pieces?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The term is **subnetting**.
+
 </details>
 
 ### Question 10: How many bits are in a subnet mask, and what is the range of each octet?
 
 <details>
 <summary>Answer</summary>
+
 - [x] A subnet mask is 32 bits long, split into four octets, each ranging from 0 to 255.
+
 </details>
 
 ### Question 11: What address identifies the start of a network, and what address identifies devices within that network?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Network Address** identifies the start of the network
 - [x] The **Host Address** identifies devices within the network
+
 </details>
 
 ### Question 12: What is the role of the default gateway?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The default gateway is the device responsible for sending data to other networks when the destination is not on the local subnet.
+
 </details>
 
 ### Question 13: What does ARP stand for, and what is its purpose?
 
 <details>
 <summary>Answer</summary>
+
 - [x] ARP stands for **Address Resolution Protocol**
 - [x] It maps IP addresses to MAC addresses so devices can communicate on a LAN
+
 </details>
 
 ### Question 14: Which type of ARP packet asks devices whether they own a specific IP address?
 
 <details>
 <summary>Answer</summary>
+
 - [x] An **ARP Request** asks which device has a particular IP address.
+
 </details>
 
 ### Question 15: Which address acts as a physical identifier, and which acts as a logical identifier on a network?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **MAC address** is the physical identifier
 - [x] The **IP address** is the logical identifier
+
 </details>
 
 ### Question 16: What DHCP packet does a device send to discover available DHCP servers?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It sends a **DHCP Discover** packet.
+
 </details>
 
 ### Question 17: After receiving an offer from a DHCP server, what packet does the device send to accept the IP address?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The device sends a **DHCP Request** packet.
+
 </details>
 
 ### Question 18: What is the last DHCP packet sent by the server to complete the IP assignment?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The final packet is **DHCP ACK**, acknowledging that the device may use the assigned IP address.
+
 </details>
 
 ### Question 19: What flag do you receive at the end of the LAN topology lab when you successfully break the topologies as instructed?
 
 <details>
 <summary>Answer</summary>
+
 - [x] You receive the flag `THM{TOPOLOGY_FLAWS}`.
+
 </details>
 
 ## Summary
@@ -341,99 +381,127 @@ The Intro to LAN room explains how local area networks are structured using diff
 
 <details>
 <summary>Answer</summary>
+
 - [x] To understand hacker tactics and enhance system defences by finding and exploiting vulnerabilities in a controlled way.
+
 </details>
 
 ### Question 3: What role do Virtual Machines play in this TryHackMe room?
 
 <details>
 <summary>Answer</summary>
+
 - [x] They provide simulated environments that complement the lesson so you can practice hacking (e.g. FakeBank) in a legal, safe setting.
+
 </details>
 
 ### Question 4: What is Gobuster used for in this room?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Gobuster is a command-line tool used to brute-force a website for hidden directories and pages by trying words from a wordlist against the target URL.
+
 </details>
 
 ### Question 5: What do the flags `-u` and `-w` mean in the Gobuster command?
 
 <details>
 <summary>Answer</summary>
+
 - [x] `-u` specifies the target website URL to scan
 - [x] `-w` specifies the path to the wordlist file used for brute-forcing directory/page names.
+
 </details>
 
 ### Question 6: What does Status 200 in Gobuster output indicate?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The page or directory exists and returned a successful HTTP response (OK), so it is a valid, reachable path on the target.
+
 </details>
 
 ### Question 7: Why might hidden pages like admin or bank-transfer be dangerous if left exposed?
 
 <details>
 <summary>Answer</summary>
+
 - [x] They can give attackers access to sensitive functions (e.g. admin controls or money transfers) due to human error or negligence in access control.
+
 </details>
 
 ### Question 8: What is the hidden page you are directed to find and use in the FakeBank task?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The secret bank transfer page: `/bank-transfer`.
+
 </details>
 
 ### Question 9: In the room task, which accounts are involved in the transfer?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Transfer $2000 from account 2276 to your account (account number 8881).
+
 </details>
 
 ### Question 10: How should an ethical hacker use a vulnerability like an exposed bank-transfer page?
 
 <details>
 <summary>Answer</summary>
+
 - [x] With permission, find the vulnerability, demonstrate impact, and report it to the organisation (e.g. the bank) so they can fix it before a malicious hacker exploits it.
+
 </details>
 
 ### Question 11: What is a Penetration Tester's main responsibility?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Testing technology products to find exploitable security vulnerabilities.
+
 </details>
 
 ### Question 12: How does a Red Teamer differ from a typical penetration tester?
 
 <details>
 <summary>Answer</summary>
+
 - [x] A Red Teamer acts as an adversary, attacking the organisation and providing feedback from an attacker’s perspective, often in broader, more realistic scenarios.
+
 </details>
 
 ### Question 13: What does a Security Engineer typically focus on?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Designing, monitoring, and maintaining security controls, networks, and systems to help prevent cyberattacks.
+
 </details>
 
 ### Question 14: What is the recommended way to start learning cybersecurity on TryHackMe?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Break topics down, choose an area of interest, and practice regularly with hands-on exercises—for example, building a habit of learning a little each day on TryHackMe.
+
 </details>
 
 ### Question 15: Where do you confirm that your FakeBank transfer succeeded?
 
 <details>
 <summary>Answer</summary>
+
 - [x] On your account page; refresh the page if needed to see the updated balance.
+
 </details>
 
 ## Summary
@@ -515,140 +583,176 @@ There is no code implementation focus in this lesson. Instead, it emphasises pro
 
 <details>
 <summary>Answer</summary>
+
 - [x] The blue team focuses on defensive security.
+
 </details>
 
 ### Question 2: What are the two primary goals of defensive security?
 
 <details>
 <summary>Answer</summary>
+
 - [x] To prevent intrusions from occurring and to detect and respond properly when intrusions do occur.
+
 </details>
 
 ### Question 3: Why is user cyber security awareness important for defence?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Many attacks target end users
 - [x] Training them reduces risks from phishing, unsafe downloads, and other user‑driven threats
+
 </details>
 
 ### Question 4: Why must assets be documented and managed in defensive security?
 
 <details>
 <summary>Answer</summary>
+
 - [x] You can only protect what you know you have
 - [x] You need to know **where** assets are and **how critical** they are
+
 </details>
 
 ### Question 5: What is the role of firewalls and intrusion prevention systems (IPS) in defence?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Firewalls control what traffic can enter or leave a network
 - [x] IPS blocks network traffic that matches rules or attack signatures to stop malicious activity.
+
 </details>
 
 ### Question 6: Why are logging and monitoring critical in defensive security?
 
 <details>
 <summary>Answer</summary>
+
 - [x] They enable detection of malicious activities and intrusions, such as new unauthorized devices or suspicious connections, by providing visibility into network and system events.
+
 </details>
 
 ### Question 7: What is a Security Operations Center (SOC)?
 
 <details>
 <summary>Answer</summary>
+
 - [x] A team of cyber security professionals that monitors networks and systems to detect and respond to malicious events, often supported by tools like SIEMs.
+
 </details>
 
 ### Question 8: Give an example of a policy violation a SOC might care about.
 
 <details>
 <summary>Answer</summary>
+
 - [x] For example, users uploading confidential company data to an online storage service in violation of security policy.
+
 </details>
 
 ### Question 9: What is threat intelligence in the context of defensive security?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Threat intelligence is the **collection**, **processing**, and **analysis** of data about adversaries and threats to inform better defences and response strategies.
+
 </details>
 
 ### Question 10: Why does threat intelligence need data from both local and public sources?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Local** sources (e.g. logs) show what is happening in your environment
 - [x] **Public** sources (e.g. forums, reports) reveal wider adversary behaviour and emerging threats
 - [x] **Together**, they give a fuller picture for decision-making
+
 </details>
 
 ### Question 11: What are some key evidence sources used in digital forensics?
 
 <details>
 <summary>Answer</summary>
+
 - [x] File system images
 - [x] System memory dumps
 - [x] System logs
 - [x] Network logs
+
 </details>
 
 ### Question 12: What is the main aim of incident response?
 
 <details>
 <summary>Answer</summary>
+
 - [x] To reduce damage from an incident and recover affected systems as quickly and effectively as possible.
+
 </details>
 
 ### Question 13: Name the four main phases of the incident response process.
 
 <details>
 <summary>Answer</summary>
+
 - [x] Preparation
 - [x] Detection and Analysis
 - [x] Containment, Eradication and Recovery
 - [x] Post‑Incident Activity.
+
 </details>
 
 ### Question 14: What is ransomware and how does it impact victims?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Ransomware is malware that encrypts a user’s files and demands payment (a ransom) in exchange for the decryption key, denying access to data until the ransom is paid or recovery is performed.
+
 </details>
 
 ### Question 15: How does a trojan horse differ from a typical virus?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Trojan**: appears to offer a legitimate or desirable function but secretly performs malicious actions
 - [x] **Virus**: attaches to other programs and replicates by infecting additional files or systems
+
 </details>
 
 ### Question 16: What is static malware analysis?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Analysing malware **without executing** it (often by examining its code or binary)
 - [x] Typically requires knowledge of low‑level instructions such as **assembly**
+
 </details>
 
 ### Question 17: What is dynamic malware analysis?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Running malware in a **controlled environment** and monitoring its behaviour
 - [x] Examples of what you observe: **file** changes, **network** connections, **process** activity
+
 </details>
 
 ### Question 18: In the SIEM simulation scenario, what is the purpose of the flag `THM{THREAT-BLOCKED}`?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It serves as proof that you successfully followed the investigation steps in the simulated SIEM environment and identified the correct malicious activity or outcome.
+
 </details>
 
 ## Summary
@@ -715,91 +819,115 @@ There is no specific code implementation in this exercise. The emphasis is on un
 
 <details>
 <summary>Answer</summary>
+
 - [x] The main goal of defensive security is to detect and respond to attacks before they cause damage to systems or data.
+
 </details>
 
 ### Question 2: How does defensive security differ from offensive security in this context?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Defensive security**: monitor and protect systems, focusing on detection and response
 - [x] **Offensive security**: actively attempt to exploit systems to find weaknesses
+
 </details>
 
 ### Question 3: What type of information is stored as an alert in the monitoring system?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Alerts store pieces of information about suspicious or unusual activity observed on the system or network.
+
 </details>
 
 ### Question 4: Which source IP address is generating the suspicious traffic in this room?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The suspicious traffic is generated by the source IP address `32.122.195.63`.
+
 </details>
 
 ### Question 5: Where in the dashboard do you look to understand what URLs the attacker is trying to access?
 
 <details>
 <summary>Answer</summary>
+
 - [x] You look at the “URL Discovery Attempts” list and review the latest entry.
+
 </details>
 
 ### Question 6: What is the latest URL that the attacker has attempted to access?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The latest URL the attacker tried to find is `https://fakebank.com/admin`.
+
 </details>
 
 ### Question 7: Why do defenders care about URLs like `/admin` on a banking site?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Such URLs often expose administrative or sensitive functionality
 - [x] If attackers discover and exploit them, they may gain powerful access or control over the system
+
 </details>
 
 ### Question 8: What defensive actions do you take once the attack has been identified?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Block the attacker’s IP address
 - [x] Apply rate limits to prevent overwhelming traffic
 - [x] Update security rules
 - [x] Add further measures to prevent the attack from recurring
+
 </details>
 
 ### Question 9: What is meant by containment in the context of this exercise?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Containment means stopping the attacker from continuing (for example, by blocking their IP and limiting traffic) while you investigate and remediate underlying vulnerabilities.
+
 </details>
 
 ### Question 10: What flag do you receive after successfully applying the defensive measures?
 
 <details>
 <summary>Answer</summary>
+
 - [x] You receive the flag `THM{FAKEBANK-SECURED}` once the success message appears after stopping the attack.
+
 </details>
 
 ### Question 11: Why is reviewing recent alerts an important first step for defenders?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Reviewing recent alerts helps defenders quickly spot abnormal activity that may indicate an ongoing or emerging attack, allowing them to prioritise investigations and responses.
+
 </details>
 
 ### Question 12: How does this room simulate real-world defensive work?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It uses a virtual machine and monitoring dashboard to replicate how defenders review alerts
 - [x] You investigate suspicious IPs and URLs
 - [x] You apply controls like blocking and rate limiting to protect a production-like system
+
 </details>
 
 ## Summary
@@ -922,94 +1050,118 @@ There is no code to write or analyse in this room. The emphasis is on understand
 
 <details>
 <summary>Answer</summary>
+
 - [x] High starting pay
 - [x] Exciting work such as legally hacking systems or defending against attacks
 - [x] Very high demand, with millions of unfilled roles
+
 </details>
 
 ### Question 2: What is the main responsibility of a Security Analyst?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Maintains the security of an organisation’s data by analysing networks and systems
 - [x] Works with stakeholders
 - [x] Recommends or supports defensive measures
+
 </details>
 
 ### Question 3: Name two key responsibilities of a Security Analyst.
 
 <details>
 <summary>Answer</summary>
+
 - [x] Compiling ongoing reports about network and data safety
 - [x] Developing security plans based on research into new attack tools and trends
+
 </details>
 
 ### Question 4: What is the primary focus of a Security Engineer?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Designing, monitoring, and maintaining security controls, networks, and systems to help prevent cyberattacks.
+
 </details>
 
 ### Question 5: How does an Incident Responder measure the effectiveness of their response?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **MTTD** (Mean Time To Detect)
 - [x] **MTTA** (Mean Time To Acknowledge)
 - [x] **MTTR** (Mean Time To Recover)
 - [x] Together, these metrics track how quickly and effectively incidents are handled.
+
 </details>
 
 ### Question 6: What is the core work of a Digital Forensics Analyst?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Collecting, analysing, and reporting on digital evidence related to incidents or crimes
 - [x] Following legal and procedural requirements throughout
+
 </details>
 
 ### Question 7: Why does a Malware Analyst need strong low-level programming skills?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Because they reverse engineer compiled malware into readable low-level code (often assembly or C) to understand exactly how it behaves.
+
 </details>
 
 ### Question 8: What is the main goal of a Penetration Tester’s work?
 
 <details>
 <summary>Answer</summary>
+
 - [x] To identify and safely exploit vulnerabilities in systems and applications so organisations can understand their risk and fix weaknesses before real attackers abuse them.
+
 </details>
 
 ### Question 9: How does a Red Teamer differ from a typical Penetration Tester?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Red Teamer**: emulates realistic adversaries to test detection and response over longer, more covert engagements
 - [x] **Penetration Tester**: typically focuses on finding as many technical vulnerabilities as possible within a defined scope
+
 </details>
 
 ### Question 10: Why are Red Team assessments usually better suited to organisations with mature security programs?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Because they are designed to test and refine existing detection, intelligence, and incident response capabilities, which require a baseline of monitoring and processes already in place.
+
 </details>
 
 ### Question 11: Which learning paths are suggested for someone aiming to become a Penetration Tester?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The Jr Penetration Tester and Offensive Pentesting learning paths.
+
 </details>
 
 ### Question 12: What is one benefit of reading real-world career guides and success stories linked in this room?
 
 <details>
 <summary>Answer</summary>
+
 - [x] They provide practical insight into what the roles are like day to day and concrete steps others took to break into the field, helping you plan your own path.
+
 </details>
 
 ## Summary
@@ -1119,108 +1271,138 @@ This room focuses on conceptual networking foundations and simple command-line u
 
 <details>
 <summary>Answer</summary>
+
 - [x] A network is a collection of things that are connected—such as devices, people, or systems—that can communicate with each other.
+
 </details>
 
 ### Question 2: What is the key term for devices that are connected together in computing?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The key term is a **network**.
+
 </details>
 
 ### Question 3: Who invented the World Wide Web?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Tim Berners-Lee.
+
 </details>
 
 ### Question 4: What are the two broad types of networks mentioned in the room?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Private** networks
 - [x] **Public** networks (the Internet)
+
 </details>
 
 ### Question 5: What does the term “IP” stand for?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Internet Protocol.
+
 </details>
 
 ### Question 6: What is each section of an IPv4 address called, and how many sections are there?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Each section is called an **octet**, and there are 4 octets in an IPv4 address.
+
 </details>
 
 ### Question 7: What is the difference between a private and a public IP address?
 
 <details>
 <summary>Answer</summary>
+
 - [x] A **private** IP address identifies a device within a local/private network
 - [x] A **public** IP address identifies the network to the wider Internet and is assigned by an ISP
+
 </details>
 
 ### Question 8: Why was IPv6 introduced?
 
 <details>
 <summary>Answer</summary>
+
 - [x] To provide a vastly larger address space and new efficiencies because IPv4’s ~4.29 billion addresses are insufficient for the growing number of connected devices.
+
 </details>
 
 ### Question 9: What does the term “MAC” stand for and what is its purpose?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **MAC** stands for **Media Access Control**
 - [x] It is a hardware address assigned to a device’s network interface to uniquely identify it on the data link layer
+
 </details>
 
 ### Question 10: What security risk is associated with relying solely on MAC addresses for access control?
 
 <details>
 <summary>Answer</summary>
+
 - [x] MAC addresses can be spoofed, so an attacker can impersonate a trusted device and bypass simple MAC-based access controls.
+
 </details>
 
 ### Question 11: In the hotel Wi‑Fi scenario, what happens when Bob spoofs Alice’s MAC address?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The router treats Bob’s traffic as if it were Alice’s paid device, allowing his packets through and granting him access he did not pay for.
+
 </details>
 
 ### Question 12: What protocol does `ping` use, and what does it measure?
 
 <details>
 <summary>Answer</summary>
+
 - [x] `ping` uses the Internet Control Message Protocol (ICMP) and measures connectivity and round‑trip time between devices.
+
 </details>
 
 ### Question 13: What is the correct syntax to ping the IP address `10.10.10.10`?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The syntax is: `ping 10.10.10.10`.
+
 </details>
 
 ### Question 14: What flag do you get when you ping `8.8.8.8` in the lab?
 
 <details>
 <summary>Answer</summary>
+
 - [x] You receive the flag `THM{I_PINGED_THE_SERVER}`.
+
 </details>
 
 ### Question 15: What is the flag obtained by spoofing your MAC address in the interactive Wi‑Fi lab?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The flag is `THM{YOU_GOT_ON_TRYHACKME}`.
+
 </details>
 
 ## Summary
@@ -1330,154 +1512,196 @@ There is no programming component in this room. The focus is on network design, 
 
 <details>
 <summary>Answer</summary>
+
 - [x] LAN stands for **Local Area Network**.
+
 </details>
 
 ### Question 2: In simple terms, what is a network topology?
 
 <details>
 <summary>Answer</summary>
+
 - [x] A network topology is the design or layout of how devices are connected and how data flows between them in a network.
+
 </details>
 
 ### Question 3: Why is the star topology so common in modern networks?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Because it is reliable and scalable—devices are individually connected to a central device, making it easy to add more devices as demand grows.
+
 </details>
 
 ### Question 4: What is the main cost‑related disadvantage of a star topology?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It requires more cabling and dedicated networking equipment, making it more expensive to set up and maintain than simpler topologies.
+
 </details>
 
 ### Question 5: What is the central single point of failure in a star topology?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The central device (such as a switch or hub); if it fails, all connected devices lose connectivity.
+
 </details>
 
 ### Question 6: Why can a bus topology quickly become slow or bottlenecked?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Because all devices share a single backbone cable, so simultaneous data transmissions compete for the same path and create congestion.
+
 </details>
 
 ### Question 7: What makes troubleshooting a bus topology difficult?
 
 <details>
 <summary>Answer</summary>
+
 - [x] All traffic travels along one cable, so pinpointing which device or segment is causing problems is challenging.
+
 </details>
 
 ### Question 8: What is the critical single point of failure in a bus topology?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The backbone cable itself—if it breaks, devices can no longer send or receive data along the bus.
+
 </details>
 
 ### Question 9: How are devices connected in a ring topology?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Each device is connected directly to two neighbours, forming a closed loop through which data circulates.
+
 </details>
 
 ### Question 10: Why is a ring topology relatively easy to troubleshoot but potentially inefficient?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Data travels in a single direction, simplifying fault location, but it may have to pass through many devices before reaching its destination, which is inefficient.
+
 </details>
 
 ### Question 11: What is the primary job of a switch on a LAN?
 
 <details>
 <summary>Answer</summary>
+
 - [x] To connect multiple devices and intelligently forward packets only to the correct destination port, reducing unnecessary traffic.
+
 </details>
 
 ### Question 12: What is the verb used to describe the job that routers perform?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Routers perform **routing**, creating and using paths so data can travel between different networks.
+
 </details>
 
 ### Question 13: What is the technical term for dividing a network into smaller pieces?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The term is **subnetting**.
+
 </details>
 
 ### Question 14: How many bits are in a subnet mask, and what is the valid range for each octet?
 
 <details>
 <summary>Answer</summary>
+
 - [x] A subnet mask is 32 bits long, made up of four octets, each ranging from 0 to 255.
+
 </details>
 
 ### Question 15: What address identifies the start of a network, and what address identifies devices within that network?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Network Address** identifies the start of the network
 - [x] **Host Addresses** identify individual devices within that network
+
 </details>
 
 ### Question 16: What is the role of the default gateway on a subnet?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It is the device responsible for sending data to other networks when the destination is not on the local subnet.
+
 </details>
 
 ### Question 17: What does ARP stand for, and what problem does it solve?
 
 <details>
 <summary>Answer</summary>
+
 - [x] ARP stands for **Address Resolution Protocol**
 - [x] It maps IP addresses to MAC addresses so devices can find each other’s physical identifiers and communicate on a LAN
+
 </details>
 
 ### Question 18: Which ARP packet asks “Who has this IP address?” and which packet responds?
 
 <details>
 <summary>Answer</summary>
+
 - [x] An **ARP Request** asks who owns a specific IP address
 - [x] An **ARP Reply** responds with the MAC address of the device that owns that IP
+
 </details>
 
 ### Question 19: Which address is the physical identifier for a device, and which is the logical identifier?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **MAC address** is the physical identifier
 - [x] The **IP address** is the logical identifier
+
 </details>
 
 ### Question 20: What are the four main DHCP packet types involved in automatic IP assignment?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **DHCP Discover**
 - [x] **DHCP Offer**
 - [x] **DHCP Request**
 - [x] **DHCP ACK**
+
 </details>
 
 ### Question 21: What flag do you receive at the end of the LAN topology lab when you successfully break the topologies?
 
 <details>
 <summary>Answer</summary>
+
 - [x] You receive the flag `THM{TOPOLOGY_FLAWS}`.
+
 </details>
 
 ## Summary
@@ -1574,147 +1798,189 @@ There is no direct programming component in this room. Instead, you focus on how
 
 <details>
 <summary>Answer</summary>
+
 - [x] It stands for **Open Systems Interconnection**.
+
 </details>
 
 ### Question 2: How many layers does the OSI model have?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The OSI model has **7** layers.
+
 </details>
 
 ### Question 3: What is the key term for when pieces of information get added to data as it passes through OSI layers?
 
 <details>
 <summary>Answer</summary>
+
 - [x] This process is called **encapsulation**.
+
 </details>
 
 ### Question 4: Which OSI layer deals with physical components like cables and electrical signals?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Physical layer (Layer 1)**.
+
 </details>
 
 ### Question 5: What numbering system consisting of 0s and 1s is used at the Physical layer?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **binary** numbering system.
+
 </details>
 
 ### Question 6: Which cables are commonly used to physically connect devices in a LAN at the Physical layer?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Ethernet cables**.
+
 </details>
 
 ### Question 7: Which layer adds MAC addresses and focuses on physical addressing?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Data Link layer (Layer 2)**.
+
 </details>
 
 ### Question 8: What piece of hardware in every networked device contains a burned‑in MAC address?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Network Interface Card (NIC)**.
+
 </details>
 
 ### Question 9: Which layer is responsible for routing packets between networks?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Network layer (Layer 3)**.
+
 </details>
 
 ### Question 10: Name two routing protocols mentioned that can help determine optimal paths at the Network layer.
 
 <details>
 <summary>Answer</summary>
+
 - [x] **OSPF (Open Shortest Path First)** and **RIP (Routing Information Protocol)**.
+
 </details>
 
 ### Question 11: What type of addresses are handled at the Network layer?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **IP addresses**.
+
 </details>
 
 ### Question 12: At the Transport layer, which protocol guarantees the accuracy and correct ordering of data?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **TCP (Transmission Control Protocol)**.
+
 </details>
 
 ### Question 13: Which Transport‑layer protocol does not care whether data arrives or not?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **UDP (User Datagram Protocol)**.
+
 </details>
 
 ### Question 14: Which protocol would an email client or file download application typically use: TCP or UDP?
 
 <details>
 <summary>Answer</summary>
+
 - [x] They would typically use **TCP**.
+
 </details>
 
 ### Question 15: Which protocol is better suited for video streaming where some data loss is acceptable?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **UDP**, because it is faster and tolerates some packet loss.
+
 </details>
 
 ### Question 16: What is the name of the OSI layer that creates, maintains, and terminates sessions between devices?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Session layer (Layer 5)**.
+
 </details>
 
 ### Question 17: What is the technical term used when a connection between two devices is successfully established at the Session layer?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It is called a **session**.
+
 </details>
 
 ### Question 18: Which OSI layer acts as a translator and is responsible for data formats and encryption like HTTPS?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Presentation layer (Layer 6)**.
+
 </details>
 
 ### Question 19: What is the main purpose of the Application layer (Layer 7)?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It defines how users interact with networked data via software (e.g. email clients, web browsers) by providing **protocols and interfaces** such as GUIs.
+
 </details>
 
 ### Question 20: What does GUI stand for, and where is it relevant in the OSI model?
 
 <details>
 <summary>Answer</summary>
+
 - [x] GUI stands for **Graphical User Interface**, and it is relevant at the **Application layer**, where users interact with applications.
+
 </details>
 
 ### Question 21: What is the flag obtained when you successfully escape the OSI dungeon game?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The flag is `THM{OSI_DUNGEON_ESCAPED}`.
+
 </details>
 
 ## Summary
@@ -1848,144 +2114,184 @@ There is no dedicated programming component; instead, you focus on how network p
 
 <details>
 <summary>Answer</summary>
+
 - [x] It is called a **packet**.
+
 </details>
 
 ### Question 2: What is the name for a piece of data when it does not have IP addressing information and is used at Layer 2?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It is called a **frame**.
+
 </details>
 
 ### Question 3: Which OSI layer uses packets, and which uses frames?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Packets are used at **Layer 3 (Network)**, and frames are used at **Layer 2 (Data Link)**.
+
 </details>
 
 ### Question 4: What IP header field prevents packets from living forever on a network?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Time to Live (TTL)** field.
+
 </details>
 
 ### Question 5: What is the purpose of the checksum field in IP or TCP headers?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Provides **integrity checking** for the header (and payload where applicable)
 - [x] If the computed checksum at the receiver differs from the sender’s value, the data is considered corrupt
+
 </details>
 
 ### Question 6: Name the four layers of the TCP/IP model.
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Application**
 - [x] **Transport**
 - [x] **Internet**
 - [x] **Network Interface**
+
 </details>
 
 ### Question 7: Is TCP connection‑based or stateless, and what does that imply?
 
 <details>
 <summary>Answer</summary>
+
 - [x] TCP is **connection‑based**, meaning it must establish and maintain a connection between client and server to reliably deliver data.
+
 </details>
 
 ### Question 8: What is the correct order of a normal TCP three‑way handshake?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The order is **SYN, SYN/ACK, ACK**.
+
 </details>
 
 ### Question 9: Which TCP header field ensures the integrity of data?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **checksum** field.
+
 </details>
 
 ### Question 10: What is the role of the Sequence Number and Acknowledgement Number in TCP?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **Sequence Number** labels each piece of data so it can be reassembled in order, and the **Acknowledgement Number** confirms receipt and indicates the next expected sequence value.
+
 </details>
 
 ### Question 11: What does the FIN flag in TCP signify?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It indicates that a device wants to **cleanly close** the TCP connection.
+
 </details>
 
 ### Question 12: What is the purpose of the RST flag in TCP?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It abruptly **resets** the connection, usually when there is a problem or the service is unavailable.
+
 </details>
 
 ### Question 13: What does “UDP” stand for, and what type of connection is it?
 
 <details>
 <summary>Answer</summary>
+
 - [x] UDP stands for **User Datagram Protocol**, and it is a **stateless** connectionless protocol.
+
 </details>
 
 ### Question 14: In general, which protocol would you use to transfer a file reliably: TCP or UDP?
 
 <details>
 <summary>Answer</summary>
+
 - [x] You would use **TCP**.
+
 </details>
 
 ### Question 15: Which protocol is more appropriate for a video call: TCP or UDP?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **UDP**, because it tolerates some data loss while prioritising speed and low latency.
+
 </details>
 
 ### Question 16: How many possible port numbers are there on a host?
 
 <details>
 <summary>Answer</summary>
+
 - [x] There are **65,535** possible port numbers (0–65535).
+
 </details>
 
 ### Question 17: What port does HTTP typically use, and what about HTTPS?
 
 <details>
 <summary>Answer</summary>
+
 - [x] HTTP typically uses port **80**, and HTTPS uses port **443**.
+
 </details>
 
 ### Question 18: Which port is commonly used by SSH, and what is it for?
 
 <details>
 <summary>Answer</summary>
+
 - [x] SSH commonly uses port **22** and is used for secure remote login over a text‑based interface.
+
 </details>
 
 ### Question 19: What is the flag obtained after helping Alice and Bob complete a TCP handshake conversation in the lab?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The flag is `THM{TCP_CHATTER}`.
+
 </details>
 
 ### Question 20: What flag do you receive after connecting to `8.8.8.8` on port `1234` in the practical challenge?
 
 <details>
 <summary>Answer</summary>
+
 - [x] You receive the flag `THM{YOU_CONNECTED_TO_A_PORT}`.
+
 </details>
 
 ## Summary
@@ -2067,142 +2373,182 @@ There is no programming track in this room; learning is conceptual plus interact
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **router** (gateway) of the network.
+
 </details>
 
 ### Question 2: In one sentence, how does port forwarding differ from a firewall?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Port forwarding** maps or opens specific ports so traffic can reach internal services
 - [x] A **firewall** decides **whether** traffic is **allowed** or **denied** on those paths (and can block even when ports are forwarded)
+
 </details>
 
 ### Question 3: Which two OSI layers (numbers only, ascending, separated by `&`) do firewalls operate at in this room’s quiz?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **3 & 4**
+
 </details>
 
 ### Question 4: Which firewall category inspects the **entire connection** and tends to use more resources?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Stateful** firewall.
+
 </details>
 
 ### Question 5: Which firewall category applies a **static** rule set to **individual packets** and can handle very high packet volumes well?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Stateless** firewall.
+
 </details>
 
 ### Question 6: What flag do you obtain after correctly configuring the firewall in the static-site exercise (blocking malicious traffic to the web server on port 80)?
 
 <details>
 <summary>Answer</summary>
+
 - [x] `THM{FIREWALLS_RULE}`
+
 </details>
 
 ### Question 7: What VPN-related technology handles **authentication** and **encryption** of data for PPTP but is **not routable** by itself?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **PPP** (Point-to-Point Protocol).
+
 </details>
 
 ### Question 8: Which VPN technology tunnels PPP so it can **leave** the network, is easy to deploy, but is relatively **weakly** encrypted?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **PPTP** (Point-to-Point Tunneling Protocol).
+
 </details>
 
 ### Question 9: Which VPN technology encrypts using the **IP** framework and is known for **strong** encryption but harder setup?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **IPSec** (often written **IPSEC** in quizzes).
+
 </details>
 
 ### Question 10: What is the **verb** for the action routers perform when moving data between networks?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Routing** (the process is **routing**).
+
 </details>
 
 ### Question 11: At which OSI layer do routers primarily operate?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Layer 3** (Network layer).
+
 </details>
 
 ### Question 12: What are the **two** switch types by OSI layer named in the room (comma-separated, e.g. Layer X,Layer Y)?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Layer 2,Layer 3**
+
 </details>
 
 ### Question 13: What does a **VLAN** achieve for devices connected to the same switch?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It **virtually segments** the network so groups (e.g. departments) can be **isolated** for security and policy while still sharing infrastructure such as Internet access.
+
 </details>
 
 ### Question 14: Why does TryHackMe provide a VPN for accessing lab machines?
 
 <details>
 <summary>Answer</summary>
+
 - [x] So you can **reach** vulnerable machines **securely** without exposing them directly to the Internet, while keeping your activity in a controlled, acceptable context for providers such as **ISPs**.
+
 </details>
 
 ### Question 15: What flag is revealed when you send a TCP packet from computer1 to computer3 in the network simulator?
 
 <details>
 <summary>Answer</summary>
+
 - [x] `THM{YOU'VE_GOT_DATA}`
+
 </details>
 
 ### Question 16: How many **HANDSHAKE** entries appear in the Network Log in the simulator task?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **5**
+
 </details>
 
 ### Question 17: Between stateful and stateless firewalls, which is described as “dumber” and only effective when rules **exactly** match?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Stateless** firewall.
+
 </details>
 
 ### Question 18: If a web server on `192.168.1.10` serves HTTP on port 80, why can only local devices reach it **before** port forwarding?
 
 <details>
 <summary>Answer</summary>
+
 - [x] It is reachable only on the **private LAN** (intranet)
 - [x] **NAT** and addressing keep it off the public Internet until the router **forwards** a public port to that host
+
 </details>
 
 ### Question 19: What kind of network path does a VPN create over the Internet between separated sites?
 
 <details>
 <summary>Answer</summary>
+
 - [x] An encrypted **tunnel** that lets remote devices participate in a **private** network as if they were locally connected.
+
 </details>
 
 ### Question 20: Name one software firewall example mentioned in the room material.
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Snort** (intrusion detection / network security software used as an example of a software firewall category).
+
 </details>
 
 ## Summary
@@ -2303,143 +2649,183 @@ _dmarc.example.com TXT "v=DMARC1; p=reject; rua=mailto:dmarc-reports@example.com
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Domain Name System**.
+
 </details>
 
 ### Question 2: What is the maximum length of a single **subdomain** label?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **63** characters.
+
 </details>
 
 ### Question 3: Which character cannot be used in a subdomain name among the choices **3**, **b**, **\_**, **-**?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **underscore** (**\_**).
+
 </details>
 
 ### Question 4: What is the maximum total length of a **domain name** (full FQDN)?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **253** characters.
+
 </details>
 
 ### Question 5: What type of TLD is **`.co.uk`**?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **ccTLD** (country-code top-level domain).
+
 </details>
 
 ### Question 6: Which record type tells clients **where to deliver email** for a domain?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **MX** record.
+
 </details>
 
 ### Question 7: Which record type holds an **IPv6** address?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **AAAA** record.
+
 </details>
 
 ### Question 8: Which record type maps a name to an **IPv4** address?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **A** record.
+
 </details>
 
 ### Question 9: What does a **CNAME** record return instead of a raw IP?
 
 <details>
 <summary>Answer</summary>
+
 - [x] Another **canonical hostname** (not an IP directly)
 - [x] The client must **resolve** that name in a further lookup
+
 </details>
 
 ### Question 10: What field on DNS records controls how long answers may be **cached**?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **TTL** (Time To Live), in seconds.
+
 </details>
 
 ### Question 11: What kind of DNS server does your **ISP** usually provide to your network?
 
 <details>
 <summary>Answer</summary>
+
 - [x] A **recursive** DNS server (recursive resolver).
+
 </details>
 
 ### Question 12: What kind of server **authoritatively stores** the zone records for a domain?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **authoritative** DNS server (nameserver for the zone).
+
 </details>
 
 ### Question 13: In the practical zone **website.thm**, what is the **CNAME** target for **`shop.website.thm`**?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **shops.myshopify.com**
+
 </details>
 
 ### Question 14: What is the **TXT** record value for **`website.thm`** in that lab?
 
 <details>
 <summary>Answer</summary>
+
 - [x] `THM{7012BBA60997F35A9516C2E16D2944FF}`
+
 </details>
 
 ### Question 15: What is the **numerical priority** of the **MX** record in that lab?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **30**
+
 </details>
 
 ### Question 16: What **IPv4 address** does the **A** record for **`www.website.thm`** show?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **10.10.10.10**
+
 </details>
 
 ### Question 17: At the start of resolution, what does your computer check before querying a resolver?
 
 <details>
 <summary>Answer</summary>
+
 - [x] The **local DNS cache** (recent lookups on the machine).
+
 </details>
 
 ### Question 18: What is the role of **root** DNS servers in the resolution chain?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **refer**
 - [x] **TLD**
+
 </details>
 
 ### Question 19: Why might a domain list **multiple** authoritative name servers?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Redundancy** and **availability**—if one nameserver fails, another can still answer queries.
+
 </details>
 
 ### Question 20: Give two common uses of **TXT** records mentioned in the room.
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Email authentication** hints (e.g. SPF-related data, fighting spam/spoofing)
 - [x] **Domain ownership verification** for third-party services
+
 </details>
 
 ## Summary
@@ -2578,27 +2964,34 @@ Content-Length: 98
 
 <details>
 <summary>Answer</summary>
+
 - [x] **HyperText Transfer Protocol**.
+
 </details>
 
 ### Question 2: In **HTTPS**, what does the **S** stand for?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **secure**.
+
 </details>
 
 ### Question 3: What is the challenge flag after you find and click the HTTP certificate issue on the mock page?
 
 <details>
 <summary>Answer</summary>
+
 - [x] `THM{INVALID_HTTP_CERT}`
+
 </details>
 
 ### Question 4: Name the main parts of a URL discussed in the room (scheme, host, path, and at least three others).
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Scheme** — protocol to use (e.g. HTTP, HTTPS, FTP)
 - [x] **User** — optional credentials embedded in the URL
 - [x] **Host** — domain name or IP of the server
@@ -2606,112 +2999,143 @@ Content-Length: 98
 - [x] **Path** — resource path on the server
 - [x] **Query string** — parameters after `?`
 - [x] **Fragment** — anchor after `#`
+
 </details>
 
 ### Question 5: Which ports are **usually** used for HTTP and HTTPS?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **80** for HTTP
 - [x] **443** for HTTPS (other ports are possible)
+
 </details>
 
 ### Question 6: In the sample request line `GET / HTTP/1.1`, which **HTTP protocol version** is used?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **HTTP/1.1**
+
 </details>
 
 ### Question 7: Which **response** header tells the browser **how many bytes** to expect in the body?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Content-Length**
+
 </details>
 
 ### Question 8: Which method would you use to **create** a new user account?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **POST**
+
 </details>
 
 ### Question 9: Which method would you use to **update** your email address?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **PUT**
+
 </details>
 
 ### Question 10: Which method would you use to **remove** a picture you uploaded?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **DELETE**
+
 </details>
 
 ### Question 11: Which method would you use to **view** a news article?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **GET**
+
 </details>
 
 ### Question 12: Which **2xx** status code indicates a resource was **created** (e.g. new user or blog post)?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **201** (Created).
+
 </details>
 
 ### Question 13: Which status code indicates the requested **page does not exist**?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **404** (Not Found).
+
 </details>
 
 ### Question 14: Which status code fits a server that **cannot serve** requests because it is **overloaded** or **down for maintenance** (and the room also uses this pattern when the app cannot reach its database)?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **503** (Service Unavailable).
+
 </details>
 
 ### Question 15: Which status code would you expect if you try to **edit your profile** without **logging in** first?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **401** (Not Authorised).
+
 </details>
 
 ### Question 16: Which **request** header tells the server **which browser** (and often version) you are using?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **User-Agent**
+
 </details>
 
 ### Question 17: Which **response** header tells the browser **what kind of data** is in the body (HTML, JSON, image, etc.)?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Content-Type**
+
 </details>
 
 ### Question 18: Which **request** header selects **which website** you want when the same server hosts many sites?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Host**
+
 </details>
 
 ### Question 19: Which **response** header is used to **save** a cookie on your computer?
 
 <details>
 <summary>Answer</summary>
+
 - [x] **Set-Cookie**
+
 </details>
 
 ### Question 20: In the HTTP request emulator, what flags do you get for: **GET** `/room`; **GET** `/blog` with `id=1`; **DELETE** `/user/1`; **PUT** `/user/2` with `username=admin`; **POST** `/login` with `username=thm` and `password=letmein`?

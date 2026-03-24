@@ -25,10 +25,11 @@ When the user says **"apply the new documentation rule file"** (or similar, e.g.
 ## Format Requirements
 
 - Use HTML `<details>` and `<summary>` for accordion-style sections as defined in `format.md`.
+- **Accordion spacing:** For every `<details>` block, put **one blank line** after the closing `</summary>` tag and **one blank line** before `</details>`, so the inner content is visually separated from the tags (same pattern as `format.md`). This applies to **topic** accordions (e.g. `<summary>Room Title</summary>`) and to **Q&A** accordions (`<summary>Answer</summary>`).
 - Title for the accordion comes from the first `#` heading in `rough.md`.
 - First reference in References must be the TryHackMe/Let's Defend page link (pasted at top of `rough.md`).
 - Every other links should also be added under the reference section after the TryHackMe/Let's Defend page link.
-- Each Q&A uses nested `<details><summary>Answer</summary>` with the answer inside.
+- Each Q&A uses nested `<details><summary>Answer</summary>` with the answer inside, with blank lines after `</summary>` and before `</details>` as in **Accordion spacing** above.
 - **Answer formatting:** Inside `<details><summary>Answer</summary>`, use **checked task-list lines** (`- [x] …`) for every answer line—whether there is **one** fact or **many** (e.g. a single header name, URL parts, record types, steps, flags, or “A vs B” lines). Do **not** use plain `- ` without `[x]` in Q&A answers. For multiple items, put **one `- [x]` line per item**, not one long comma-separated sentence.
 
 ## Content Guidelines

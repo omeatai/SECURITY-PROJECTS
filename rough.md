@@ -300,6 +300,6 @@ THM{HTTP_REQUEST_MASTER}
 <details>
 <summary>Answer</summary>
 
--[] Set-Cookie
+- [x] **Set-Cookie**
 
 </details>
