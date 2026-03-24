@@ -2476,7 +2476,7 @@ _dmarc.example.com TXT "v=DMARC1; p=reject; rua=mailto:dmarc-reports@example.com
   - **Path**: resource path on the server (e.g. `/view-room`).
   - **Query string**: extra parameters after `?` (e.g. `?id=1`).
   - **Fragment**: client-side anchor after `#` (e.g. `#task3`), often scrolls to part of a page.
-  - Full example from the room:  
+  - Full example from the room:
     `http://user:password@tryhackme.com:80/view-room?id=1#task3`
 - [x] **Making requests and reading responses**
   - A minimal request line: `GET / HTTP/1.1`
@@ -2718,11 +2718,13 @@ Content-Length: 98
 
 <details>
 <summary>Answer</summary>
+
 - [x] **GET** `/room` → `THM{YOU'RE_IN_THE_ROOM}`
 - [x] **GET** `/blog` with `id=1` → `THM{YOU_FOUND_THE_BLOG}`
 - [x] **DELETE** `/user/1` → `THM{USER_IS_DELETED}`
 - [x] **PUT** `/user/2` with `username=admin` → `THM{USER_HAS_UPDATED}`
 - [x] **POST** `/login` (`username=thm`, `password=letmein`) → `THM{HTTP_REQUEST_MASTER}`
+
 </details>
 
 ## Summary
