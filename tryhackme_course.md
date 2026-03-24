@@ -3162,3 +3162,261 @@ Content-Length: 98
 - [HTTP Cats](https://http.cat) (visual HTTP status code reference)
 
 </details>
+
+<details>
+  <summary>How Websites Work</summary>
+
+## Introduction
+
+**How Websites Work** explains what happens when you open a page: your **browser** sends a **request** to a **web server**, and the server returns **data** the browser uses to **render** the page. You learn the split between **front end** (what the browser shows) and **back end** (the server that processes requests), how **HTML**, **CSS**, and **JavaScript** fit together, core **HTML structure** and **attributes**, hands-on **flags** from small HTML/JS labs, and two important **client-side** risks: **sensitive data exposure** in page source and **HTML injection** when user input is not **sanitised**.
+
+## Detailed Explanation
+
+- [x] **Browser and web server**
+  - Your browser (e.g. Chrome, Safari) **requests** a page from a **web server**—a computer elsewhere that handles requests and returns a **response**.
+  - The response contains data the browser uses to **display** the page; many steps happen under the hood, but the core idea is **request → response → render**.
+- [x] **Front end vs back end**
+  - **Front end (client-side)**: how the **browser** renders and presents the site.
+  - **Back end (server-side)**: the **server** that **processes** the request and returns a response.
+- [x] **Building websites: HTML, CSS, JavaScript**
+  - **HTML**: structure and content of pages.
+  - **CSS**: styling and layout.
+  - **JavaScript**: interactivity and dynamic behaviour on the page.
+- [x] **HTML basics**
+  - **HyperText Markup Language (HTML)** uses **elements** (**tags**) as building blocks; tags tell the browser **how** to show content.
+  - **`<!DOCTYPE html>`**: declares an **HTML5** document—helps **standardisation** across browsers.
+  - **`<html>`**: **root** element; other elements nest inside it.
+  - **`<head>`**: **metadata** about the page (e.g. title)—not the main visible body content.
+  - **`<body>`**: the document **body**; only content here is typically **shown** in the browser window.
+  - **`<h1>`**: a large **heading**; **`<p>`**: a **paragraph**.
+  - Many other tags exist: **`<button>`**, **`<img>`**, lists, etc.
+- [x] **Attributes (`class`, `src`, `id`)**
+  - Tags can have **attributes**, e.g. **`class`** for styling (`<p class="bold-text">`), **`src`** on **`<img>`** for image location (`<img src="img/cat.jpg">`).
+  - Multiple attributes per element are allowed: `<p attribute1="value1" attribute2="value2">`.
+  - **`id`**: should be **unique** on the page; **`class`** can be shared across many elements. **`id`** helps with styling and **JavaScript** targeting.
+- [x] **Viewing HTML source**
+  - **Chrome**: right-click → **View Page Source**.
+  - **Safari**: **Show Page Source** (and related menu naming).
+- [x] **HTML playground tasks (room)**
+  - Fix a **broken image** on the cat page to reveal a hidden answer → flag **`HTMLHERO`**.
+  - Add a **dog** image with **`<img>`** using **`img/dog-1.png`** → read text in the image → flag **`DOGHTML`**.
+- [x] **JavaScript (JS)**
+  - JS makes pages **interactive**; without it, pages stay **static**.
+  - Inline: **`<script>`** … **`</script>`** or external: `<script src="/location/of/javascript_file.js"></script>`.
+  - Example: `document.getElementById("demo").innerHTML = "Hack the Planet";` targets **`id="demo"`** and changes its content.
+  - **Events** like **`onclick`** or **`onhover`** run JS when the user interacts; e.g. a button can change text on click. Task flag: **`JSISFUN`** when the demo text is set to **Hack the Planet**; add the **Button Clicked** button example and render **HTML+JS** as instructed.
+- [x] **Sensitive data exposure**
+  - Occurs when **sensitive** information is left in **clear text** in the **front end** (e.g. HTML or JS **source**).
+  - Developers may forget to remove **credentials**, **hidden links**, or notes—visible via **View Source**.
+  - Example room password in source: **`testpasswd`**.
+  - **Assessment tip**: reviewing **page source** early can reveal **credentials** or **hidden links** useful to an attacker.
+- [x] **HTML injection**
+  - Happens when **user input** is **echoed** to the page **without sanitisation**; the browser may treat attacker-supplied **HTML** (or **script**) as real markup.
+  - **Sanitise** (filter) input before use; **never trust user input**; related deeper topics include **SQL injection** on the server side.
+  - Room task: inject HTML so a **malicious link** to `http://hacker.com` appears → flag **`HTML_INJ3CTI0N`**.
+
+## Terminal Commands
+
+The room emphasises **browser** tools and **view source**. On the command line you can still **fetch** HTML to inspect (similar to viewing source offline):
+
+```bash
+curl -s https://example.com/ | head -n 50
+```
+
+Use **find** / **grep** locally on saved HTML if you mirror a page for review (optional workflow).
+
+```bash
+grep -n "password\|passwd\|secret" saved.html
+```
+
+## Code
+
+Minimal HTML document structure (room-style):
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page title</title>
+  </head>
+  <body>
+    <h1>Heading</h1>
+    <p>Paragraph text.</p>
+    <img src="img/cat.jpg" alt="Cat">
+    <p class="bold-text">Styled paragraph</p>
+    <p id="example">Unique id example</p>
+  </body>
+</html>
+```
+
+JavaScript examples from the room:
+
+```javascript
+document.getElementById("demo").innerHTML = "Hack the Planet";
+```
+
+```html
+<button onclick='document.getElementById("demo").innerHTML = "Button Clicked";'>Click Me!</button>
+```
+
+## Questions and Answers
+
+### Question 1: What term best describes the component of a web application **rendered by your browser**?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Front End** (client-side).
+
+</details>
+
+### Question 2: What are the **two major components** that make up a website (client vs server)?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Front end** (client-side)—how the browser renders the site
+- [x] **Back end** (server-side)—the server that processes requests and returns responses
+
+</details>
+
+### Question 3: Websites are primarily created using which **three** technologies?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **HTML** — structure and content
+- [x] **CSS** — styling
+- [x] **JavaScript** — interactivity
+
+</details>
+
+### Question 4: What does **`<!DOCTYPE html>`** declare?
+
+<details>
+<summary>Answer</summary>
+
+- [x] That the page is an **HTML5** document (helps browsers interpret it consistently).
+
+</details>
+
+### Question 5: Which element is the **root** of the HTML page?
+
+<details>
+<summary>Answer</summary>
+
+- [x] The **`<html>`** element.
+
+</details>
+
+### Question 6: What does the **`<head>`** element contain?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **Information about the page** (e.g. title, metadata)—not the main visible body content.
+
+</details>
+
+### Question 7: Which element defines the **visible HTML body** shown in the browser?
+
+<details>
+<summary>Answer</summary>
+
+- [x] The **`<body>`** element.
+
+</details>
+
+### Question 8: How does the **`id`** attribute differ from **`class`** for uniqueness?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`id`** should be **unique** per element on the page
+- [x] **Multiple elements** can share the same **`class`**
+
+</details>
+
+### Question 9: What hidden text is revealed after you **fix the broken image** on the cat page?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`HTMLHERO`**
+
+</details>
+
+### Question 10: After adding the **dog** image (`img/dog-1.png`), what is the text in that image?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`DOGHTML`**
+
+</details>
+
+### Question 11: What is the **flag** after you set the demo element’s content to **Hack the Planet** with JavaScript?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`JSISFUN`**
+
+</details>
+
+### Question 12: What **password** is hidden in the **page source** of the sensitive-data task site?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`testpasswd`**
+
+</details>
+
+### Question 13: What **flag** do you get when you successfully **inject HTML** showing a malicious link to **`http://hacker.com`**?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **`HTML_INJ3CTI0N`**
+
+</details>
+
+### Question 14: What is **sensitive data exposure** in this context?
+
+<details>
+<summary>Answer</summary>
+
+- [x] When a site does **not** properly protect or remove **sensitive clear-text** information exposed to the user—often in **HTML** or **JavaScript** source.
+
+</details>
+
+### Question 15: What is **HTML injection**, and what is the general defensive rule?
+
+<details>
+<summary>Answer</summary>
+
+- [x] **HTML injection**: unfiltered user input is **displayed** on the page, so an attacker can inject **HTML** (or script) the browser will render
+- [x] **Rule**: **never trust user input**—**sanitise** input before using it in the page
+
+</details>
+
+### Question 16: Why can **HTML comments** or leftover text in source be dangerous?
+
+<details>
+<summary>Answer</summary>
+
+- [x] They may contain **temporary credentials**, **hidden links**, or other **secrets** an attacker can use to **extend access** in the application.
+
+</details>
+
+## Summary
+
+**How Websites Work** ties together **browser ↔ server** requests, **front end** vs **back end**, and the **HTML / CSS / JavaScript** stack. You practise **HTML structure** and **attributes** (`class`, `id`, `src`), use **View Page Source** to audit pages, complete small **HTML/JS** labs for flags (**`HTMLHERO`**, **`DOGHTML`**, **`JSISFUN`**), find **exposed secrets** like **`testpasswd`**, and see how **HTML injection** (**`HTML_INJ3CTI0N`**) arises when **input is not sanitised**.
+
+## References
+
+- [How Websites Work – TryHackMe](https://tryhackme.com/room/howwebsiteswork)
+- [How Websites Work – YouTube](https://www.youtube.com/watch?v=iWoiwFRLV4I)
+
+</details>
