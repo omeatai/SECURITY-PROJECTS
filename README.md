@@ -6,6 +6,6 @@
 
 ### ONLINE COURSES
 
-- [x] [TRYHACKME.COM](https://github.com/omeatai/SECURITY-LABS-IFEANYI/blob/main/tryhackme_course.md)
+- [x] [TRYHACKME.COM](https://github.com/omeatai/SECURITY-LABS-IFEANYI/blob/main/tryhackme.md)
 - [x] [LETSDEFEND.IO](https://github.com/omeatai/SECURITY-LABS-IFEANYI/blob/main/letsdefend.md)
 - [x] [UDEMY COURSES]()
