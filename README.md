@@ -2,7 +2,7 @@
 
 ### PROJECTS
 
-- [x] [ALL CYBERSECURITY PROJECTS](https://docs.google.com/document/d/1U1xe2pl0LvR-GBGsy2m3pMkDmZ624lxpGtCyh8jFkmA/)
+- [x] [VIEW CYBERSECURITY PROJECTS](https://docs.google.com/document/d/1U1xe2pl0LvR-GBGsy2m3pMkDmZ624lxpGtCyh8jFkmA/)
 
 ### ONLINE COURSES
 
