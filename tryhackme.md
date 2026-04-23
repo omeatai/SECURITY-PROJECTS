@@ -3242,7 +3242,7 @@ Minimal HTML document structure (room-style):
   <body>
     <h1>Heading</h1>
     <p>Paragraph text.</p>
-    <img src="img/cat.jpg" alt="Cat">
+    <img src="img/cat.jpg" alt="Cat" />
     <p class="bold-text">Styled paragraph</p>
     <p id="example">Unique id example</p>
   </body>
@@ -3256,7 +3256,9 @@ document.getElementById("demo").innerHTML = "Hack the Planet";
 ```
 
 ```html
-<button onclick='document.getElementById("demo").innerHTML = "Button Clicked";'>Click Me!</button>
+<button onclick='document.getElementById("demo").innerHTML = "Button Clicked";'>
+  Click Me!
+</button>
 ```
 
 ## Questions and Answers
@@ -3490,7 +3492,11 @@ Dynamic page example from the room (PHP): the **server** runs PHP; the **browser
 Rendered response to the client:
 
 ```html
-<html><body>Hello adam</body></html>
+<html>
+  <body>
+    Hello adam
+  </body>
+</html>
 ```
 
 ## Questions and Answers
@@ -3648,3 +3654,5 @@ Rendered response to the client:
 - [Putting it all together – YouTube](https://www.youtube.com/watch?v=Aa_FAA3v22g)
 
 </details>
+
+## 4-Computer Fundamentals
